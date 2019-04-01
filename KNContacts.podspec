@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.author             = "dragosrobertn"
   s.social_media_url   = "http://twitter.com/dragosrobertn"
 
-  s.swift_version = "4.2"
+  s.swift_version = '4.2'
   s.platform     = :ios, "10.0"
 
   s.source       = { :git => "https://github.com/dragosrobertn/KNContacts.git", :tag => s.version }
