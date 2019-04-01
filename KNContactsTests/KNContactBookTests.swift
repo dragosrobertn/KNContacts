@@ -73,6 +73,19 @@ class KNContactBookTests: XCTestCase {
         XCTAssertFalse(contactBook.contains(element: contact))
     }
     
+    func testAddsAndRemovesAnotherContactByIDFromContactBook() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        let contact = KNContact(for: mutableContact)
+        
+        contactBook.add(contact, id: "custom-id")
+        
+        XCTAssertEqual(contactBook.toArray().count, 4)
+        
+        contactBook.remove("custom-id")
+        XCTAssertEqual(contactBook.toArray().count, 3)
+        XCTAssertFalse(contactBook.contains(element: contact))
+    }
+    
     func testAddsAndRemovesContactsArrayFromContactBook() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
         let contact = KNContact(for: mutableContact)
