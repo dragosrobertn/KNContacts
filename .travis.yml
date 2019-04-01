@@ -7,9 +7,7 @@ jobs:
   include:
     - stage: "Tests"               
       name: "Unit Tests"
-      script: xcodebuild -workspace KINN.xcworkspace -scheme KINN -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KINNUnitTests | xcpretty
-    - name: "UI Tests"
-      script: xcodebuild -workspace KINN.xcworkspace -scheme KINN -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KINNUITests
-      
+      script: xcodebuild -project KNContacts.xcodeproj -scheme KNContacts  -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KNContactsTests | xcpretty
+
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'KINN'
+  - bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
