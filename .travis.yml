@@ -1,0 +1,15 @@
+os: osx
+language: swift
+cache: cocoapods
+osx_image: xcode10.2
+
+jobs:  
+  include:
+    - stage: "Tests"               
+      name: "Unit Tests"
+      script: xcodebuild -workspace KINN.xcworkspace -scheme KINN -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KINNUnitTests | xcpretty
+    - name: "UI Tests"
+      script: xcodebuild -workspace KINN.xcworkspace -scheme KINN -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KINNUITests
+      
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'KINN'
