@@ -40,11 +40,24 @@ class KNContactTests: XCTestCase {
         XCTAssertEqual(contact.fullName(), "")
     }
     
-    // This needs adjusting for the any year...
     func testKNContactGetsBirthday() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let date = Calendar.current.date(byAdding: .year, value: -29, to: Date())!
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday = dateComponents
+        let contact = KNContact(for: mutableContact)
         
         XCTAssertEqual(contact.getAge(), 29)
+        XCTAssertEqual(contact.getAgeAtNextBirthday(), "30")
+    }
+    
+    func testKNContactGetsAgeAtNextBirthdayReturnNilWhenDateNotPresent() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday = nil
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertNil(contact.getAgeAtNextBirthday())
     }
     
     func testKNContactGetsNilWhenBirthdayNotAvailable() {

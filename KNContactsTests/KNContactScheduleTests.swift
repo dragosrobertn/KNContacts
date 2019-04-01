@@ -41,6 +41,24 @@ class KNContactScheduleTests: XCTestCase {
         XCTAssertTrue(favourites.getSchedule(for: date) == [], "Schedule for date can be retrieved")
     }
     
+    
+    func testAddsADateToTheScheduleByString() {
+        let date = Date()
+        let dateString = KNDatesUtils().formatter(with: favourites.format).string(from: Date())
+        let list: [String] = []
+        favourites.add(list: list, fromString: dateString)
+        
+        XCTAssertTrue(favourites.getSchedule().count == 1, "Schedule has a date entry")
+        XCTAssertTrue(favourites.getSchedule(for: date) == [], "Schedule for date can be retrieved")
+    }
+    
+    func testAttemptingToAddListToTheScheduleByIncorrectlyFormattedStringReturns() {
+        let list: [String] = []
+        favourites.add(list: list, fromString: "2019-13-13")
+        
+        XCTAssertTrue(favourites.getSchedule().count == 0, "Schedule has a date entry")
+    }
+    
     func testReturnsEmptyIfScheduleDoesntExist() {
         XCTAssertTrue(favourites.getSchedule(for: Date()).containsSameElements(as: []), "Schedule is empty")
     }

@@ -49,6 +49,17 @@ class KNContactBookTests: XCTestCase {
         XCTAssertEqual(contactBook.get(forKey: id).details, mutableContact)
     }
     
+    func testAddsWithIDAndRetrievesAnotherContactToContactBook() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        let contact = KNContact(for: mutableContact)
+        let id = mutableContact.identifier
+        
+        contactBook.add(contact, id: contact.id)
+        
+        XCTAssertEqual(contactBook.toArray().count, 4)
+        XCTAssertEqual(contactBook.get(forKey: id).details, mutableContact)
+    }
+    
     func testAddsAndRemovesAnotherContactFromContactBook() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
         let contact = KNContact(for: mutableContact)
@@ -58,6 +69,19 @@ class KNContactBookTests: XCTestCase {
         XCTAssertEqual(contactBook.toArray().count, 4)
         
         contactBook.remove(contact)
+        XCTAssertEqual(contactBook.toArray().count, 3)
+        XCTAssertFalse(contactBook.contains(element: contact))
+    }
+    
+    func testAddsAndRemovesContactsArrayFromContactBook() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        let contact = KNContact(for: mutableContact)
+        
+        contactBook.add([contact])
+        
+        XCTAssertEqual(contactBook.toArray().count, 4)
+        
+        contactBook.remove([contact])
         XCTAssertEqual(contactBook.toArray().count, 3)
         XCTAssertFalse(contactBook.contains(element: contact))
     }
@@ -167,6 +191,40 @@ class KNContactBookTests: XCTestCase {
         XCTAssertEqual(arrayWithContactsSortedByBirthday[1].details, january26thContact)
         XCTAssertEqual(arrayWithContactsSortedByBirthday[2].details, february8thContact)
         XCTAssertEqual(arrayWithContactsSortedByBirthday[3].details, december2ndContact)
+    }
+    
+    func testRetrivesContactsSortedByOrderFullName() {
+        let contactFamilyNameZ = UnitTestsContactHelpers.getMutableContact()
+        contactFamilyNameZ.familyName = "Zaid"
+        
+        let contactFamilyNameA = UnitTestsContactHelpers.getMutableContact()
+        contactFamilyNameA.familyName = "Adam"
+        
+        let contactFamilyNameD = UnitTestsContactHelpers.getMutableContact()
+        contactFamilyNameD.familyName = "Daniel"
+        
+        let contactFamilyNameAGivenNameG = UnitTestsContactHelpers.getMutableContact()
+        contactFamilyNameAGivenNameG.familyName = "Ari"
+        contactFamilyNameAGivenNameG.givenName = "G"
+        
+        
+        self.contactBook.reset()
+        
+        for contactWithGivenName in [contactFamilyNameZ, contactFamilyNameA, contactFamilyNameAGivenNameG, contactFamilyNameD] {
+            let contact = KNContact(for: contactWithGivenName)
+            self.mutableContactsArray.append(contact)
+            self.contactIDsArray.append(contact.id)
+            
+            contactBook.add(contact)
+        }
+        
+        let order = KNContactBookOrdering().fullName
+        let arrayWithContactsSortedByBirthday = contactBook.toArray(orderedBy: order)
+        
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[0].details, contactFamilyNameAGivenNameG)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[1].details, contactFamilyNameA)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[2].details, contactFamilyNameD)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[3].details, contactFamilyNameZ)
     }
     
     func testRetrievesUpdatedContacts() {
