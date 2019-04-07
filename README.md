@@ -17,9 +17,9 @@ KNContacts framework features a couple of classes, structs and enums to facilita
 
 It also provides some extensions to Array type, Dates and Int.
 
-### More to do
-- Documentation
-- Better error handling
+### Still left to do
+- [ ] Documentation
+- [ ] Better error handling
 
 ### Requirements
 - Swift 4.2
