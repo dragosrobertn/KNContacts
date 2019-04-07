@@ -7,7 +7,7 @@ KNContacts is wrapper for CNContacts for easier access to information like curre
 KNContacts framework features a couple of classes, structs and enums to facilitate access to contacts, contact books and schedule of contacts.
 
 | Type            | Name           | Description  |
-| ------------- |:--------------:| --------------:|
+| ------------- | -------------- | -------------- |
 | struct          | KNContact   |  Wrapper struct for CNContact, provides access to helper methods and original contact details. |
 | class           | KNContactBook      |  Collection of KNContacts with methods for adding, removing, sorting and retrieving specific or random elements |
 | struct          | KNContactBookOrdering     |   Helper ordering methods to sort contacts in KNContactBook  |
