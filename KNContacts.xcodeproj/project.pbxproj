@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		156E1CE8224FCBEE00D58B8F /* KNContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156E1CDE224FCBEE00D58B8F /* KNContacts.framework */; };
-		156E1CEF224FCBEE00D58B8F /* KNContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 156E1CE1224FCBEE00D58B8F /* KNContacts.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		156E1CFC224FD40200D58B8F /* KNDatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CF8224FD40200D58B8F /* KNDatesUtils.swift */; };
 		156E1CFD224FD40200D58B8F /* KNContactsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CF9224FD40200D58B8F /* KNContactsSchedule.swift */; };
 		156E1CFE224FD40200D58B8F /* KNContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CFA224FD40200D58B8F /* KNContact.swift */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		156E1CDE224FCBEE00D58B8F /* KNContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KNContacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		156E1CE1224FCBEE00D58B8F /* KNContacts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNContacts.h; sourceTree = "<group>"; };
 		156E1CE2224FCBEE00D58B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		156E1CE7224FCBEE00D58B8F /* KNContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KNContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		156E1CEE224FCBEE00D58B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,7 +47,6 @@
 		156E1CF9224FD40200D58B8F /* KNContactsSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactsSchedule.swift; sourceTree = "<group>"; };
 		156E1CFA224FD40200D58B8F /* KNContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContact.swift; sourceTree = "<group>"; };
 		156E1CFB224FD40200D58B8F /* KNContactBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactBook.swift; sourceTree = "<group>"; };
-		156E1D00224FD45100D58B8F /* KNContactsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KNContactsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		156E1D01224FD45100D58B8F /* KNContactBookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactBookTests.swift; sourceTree = "<group>"; };
 		156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactScheduleTests.swift; sourceTree = "<group>"; };
 		156E1D03224FD45100D58B8F /* KNContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactTests.swift; sourceTree = "<group>"; };
@@ -99,7 +96,6 @@
 		156E1CE0224FCBEE00D58B8F /* KNContacts */ = {
 			isa = PBXGroup;
 			children = (
-				156E1CE1224FCBEE00D58B8F /* KNContacts.h */,
 				156E1CE2224FCBEE00D58B8F /* Info.plist */,
 				156E1D0B224FD4EE00D58B8F /* Extensions.swift */,
 				156E1D142251882800D58B8F /* KNTimeFormat.swift */,
@@ -120,7 +116,6 @@
 				156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */,
 				156E1D03224FD45100D58B8F /* KNContactTests.swift */,
 				156E1CEE224FCBEE00D58B8F /* Info.plist */,
-				156E1D00224FD45100D58B8F /* KNContactsTests-Bridging-Header.h */,
 			);
 			path = KNContactsTests;
 			sourceTree = "<group>";
@@ -132,7 +127,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				156E1CEF224FCBEE00D58B8F /* KNContacts.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
