@@ -10,16 +10,17 @@ import XCTest
 
 class KNContactScheduleTests: XCTestCase {
     
-    let contactBook = KNContactBook(with: "com.dragosneagu.Contact Book For Tests")
-    var favourites = KNContactsSchedule(name: "com.dragosneagu.schedule.favourites")
+    let contactBook = KNContactBook(id: "Contact Book For Tests")
+    var favourites = KNContactsSchedule(name: "favourites")
     var mutableContactsArray: [KNContact] = []
     var contactIDsArray: [String] = []
     
+    let today = Date()
     let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
     override func setUp() {
         super.setUp()
         for _ in 1...3 {
-            let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+            let contact = UnitTestsContactHelpers.getKNContact()
             self.mutableContactsArray.append(contact)
             self.contactIDsArray.append(contact.id)
             
@@ -28,28 +29,26 @@ class KNContactScheduleTests: XCTestCase {
     }
 
     func testCorrectlyCreatesAContactSchedule() {
-        XCTAssertTrue(favourites.name == "com.dragosneagu.schedule.favourites", "Schedule name is favourites")
+        XCTAssertTrue(favourites.name == "favourites", "Schedule name is favourites")
         XCTAssertTrue(favourites.getSchedule().isEmpty, "Schedule is 0")
     }
     
     func testAddsADateToTheSchedule() {
-        let date = Date()
         let list: [String] = []
-        favourites.add(list: list, to: date)
+        favourites.add(list: list, to: today)
         
         XCTAssertTrue(favourites.getSchedule().count == 1, "Schedule has a date entry")
-        XCTAssertTrue(favourites.getSchedule(for: date) == [], "Schedule for date can be retrieved")
+        XCTAssertTrue(favourites.getSchedule(for: today) == [], "Schedule for date can be retrieved")
     }
     
     
     func testAddsADateToTheScheduleByString() {
-        let date = Date()
         let dateString = KNDatesUtils().formatter(with: favourites.format).string(from: Date())
         let list: [String] = []
         favourites.add(list: list, fromString: dateString)
         
         XCTAssertTrue(favourites.getSchedule().count == 1, "Schedule has a date entry")
-        XCTAssertTrue(favourites.getSchedule(for: date) == [], "Schedule for date can be retrieved")
+        XCTAssertTrue(favourites.getSchedule(for: today) == [], "Schedule for date can be retrieved")
     }
     
     func testAttemptingToAddListToTheScheduleByIncorrectlyFormattedStringReturns() {
@@ -64,7 +63,6 @@ class KNContactScheduleTests: XCTestCase {
     }
     
     func testAddsScheduleForDate() {
-        let today = Date()
         let todayList = ["1", "2", "3"]
         let tomorrowList = ["4", "5"]
         
@@ -79,7 +77,6 @@ class KNContactScheduleTests: XCTestCase {
     }
     
     func testResetScheduleForAllDates() {
-        let today = Date()
         let todayList = ["1", "2", "3"]
         let tomorrowList = ["4", "5"]
         

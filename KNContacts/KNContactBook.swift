@@ -13,7 +13,7 @@ public class KNContactBook {
     public var id: String
     private var entries: [String: KNContact] = [:]
     
-    public init(with id: String) {
+    public init(id: String) {
         self.id = id
     }
     

@@ -58,9 +58,9 @@ public struct KNContact: Hashable {
         return phoneNumbers.first?.value.stringValue ?? String()
     }
     
-    public func getFirstEmailAddress() -> NSString {
+    public func getFirstEmailAddress() -> String {
         let emailAddresses = self.details.emailAddresses
-        return (emailAddresses.first?.value ?? "")!
+        return String(emailAddresses.first?.value ?? "")
     }
     
     public func isBirthdayToday() -> Bool {

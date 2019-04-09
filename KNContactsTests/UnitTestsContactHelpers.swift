@@ -17,6 +17,7 @@ class UnitTestsContactHelpers: XCTestCase {
 
         contact.familyName = "Smith"
         contact.givenName = "John"
+        contact.phoneticGivenName = "Jon"
         contact.birthday = dateComponents
         contact.emailAddresses =
             [CNLabeledValue(label: "work", value: "first"),
@@ -28,7 +29,7 @@ class UnitTestsContactHelpers: XCTestCase {
         return contact
     }
     
-    class func getKNContactWithMutableContact() -> KNContact {
+    class func getKNContact() -> KNContact {
         let mutableContact = self.getMutableContact()
         return KNContact(for: mutableContact)
     }

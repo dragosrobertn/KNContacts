@@ -12,7 +12,7 @@ import XCTest
 class KNContactTests: XCTestCase {
     
     func testKNContactIdIsSameAsContactIdentifier() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.id, contact.id)
     }
@@ -26,9 +26,15 @@ class KNContactTests: XCTestCase {
     }
     
     func testKNContactGetsFullName() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.fullName(), "John Smith")
+    }
+    
+    func testKNContactGetsPhoneticFullName() {
+        let contact = UnitTestsContactHelpers.getKNContact()
+        
+        XCTAssertEqual(contact.fullName(format: .phoneticFullName), "Jon")
     }
     
     func testKNContactGetsEmptyNameIfFullNameCannotBeConstructed() {
@@ -77,13 +83,13 @@ class KNContactTests: XCTestCase {
     }
     
     func testKNContactGetsBirthdayAsOrdinalAtNextBirthday() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.getAgeAsOrdinalAtNextBirthday(), "30th")
     }
     
     func testKNContactGetsBirthdayAsOrdinal() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.getAgeAsOrdinal(), "29th")
     }
@@ -97,7 +103,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testIsBirthdayComingIsFalse() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertFalse(contact.isBirthdayComing(in: 7))
     }
@@ -126,7 +132,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testIsBirthdayTodayIsFalse() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertFalse(contact.isBirthdayToday())
     }
@@ -144,7 +150,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testGetFirstEmailAddress() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.getFirstEmailAddress(), "first")
         XCTAssertNotEqual(contact.getFirstEmailAddress(), "second")
@@ -159,7 +165,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testGetFirstPhoneNumber() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.getFirstPhoneNumber(), "123456789")
         XCTAssertNotEqual(contact.getFirstPhoneNumber(), "987654321")
@@ -174,7 +180,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testFormattedBirthdayWithFullDateForm() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.formattedBirthday(with: .fullDate, currentYear: false), "1990-01-01")
     }
@@ -188,7 +194,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testFormattedThisYearsBirthdayWithFullDate() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.formattedBirthday(with: .fullDate, currentYear: true), "2019-01-01")
     }
@@ -202,7 +208,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testFormattedBirthday() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.formattedBirthday(), "1 Jan")
     }
@@ -216,7 +222,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testFormattedBirthdayWithCustomStringFormat() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         
         XCTAssertEqual(contact.formattedBirthday(with: "d MM"), "1 01")
     }
@@ -238,7 +244,7 @@ class KNContactTests: XCTestCase {
     }
     
     func testBirthdayAsDate() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+        let contact = UnitTestsContactHelpers.getKNContact()
         let dateComp = DateComponents(calendar: Calendar.current, year: 1990, month: 01, day: 01)
         
         XCTAssertEqual(contact.birthday(), dateComp.date)
@@ -261,9 +267,8 @@ class KNContactTests: XCTestCase {
     }
     
     func testKNContactsAreNotTheSame() {
-        let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
-        let anotherKNContact = UnitTestsContactHelpers.getKNContactWithMutableContact()
-        
+        let contact = UnitTestsContactHelpers.getKNContact()
+        let anotherKNContact = UnitTestsContactHelpers.getKNContact()
         XCTAssertFalse(contact == anotherKNContact)
     }
 }

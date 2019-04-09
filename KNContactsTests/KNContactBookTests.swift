@@ -10,14 +10,14 @@ import XCTest
 
 class KNContactBookTests: XCTestCase {
     
-    let contactBook = KNContactBook(with: "com.dragosneagu.Contact Book For Tests")
+    let contactBook = KNContactBook(id: "Contact Book For Tests")
     var mutableContactsArray: [KNContact] = []
     var contactIDsArray: [String] = []
 
     override func setUp() {
         super.setUp()
         for _ in 1...3 {
-            let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+            let contact = UnitTestsContactHelpers.getKNContact()
             self.mutableContactsArray.append(contact)
             self.contactIDsArray.append(contact.id)
             
@@ -26,7 +26,7 @@ class KNContactBookTests: XCTestCase {
     }
     
     func testCorrectlyCreatesContactBookWithName() {
-        XCTAssertEqual(contactBook.id, "com.dragosneagu.Contact Book For Tests")
+        XCTAssertEqual(contactBook.id, "Contact Book For Tests")
     }
 
     func testCorrectlyCountsHowManyContactsAreInTheContactBook() {
@@ -158,7 +158,7 @@ class KNContactBookTests: XCTestCase {
     func testRetrievesNumberOfRandomContactsWithoutTheExistingOnes() {
         var newlyAddedContact: [KNContact] = []
         for _ in 1...10 {
-            let contact = UnitTestsContactHelpers.getKNContactWithMutableContact()
+            let contact = UnitTestsContactHelpers.getKNContact()
             newlyAddedContact.append(contact)
             contactBook.add(contact)
         }
@@ -219,7 +219,6 @@ class KNContactBookTests: XCTestCase {
         let contactFamilyNameAGivenNameG = UnitTestsContactHelpers.getMutableContact()
         contactFamilyNameAGivenNameG.familyName = "Ari"
         contactFamilyNameAGivenNameG.givenName = "G"
-        
         
         self.contactBook.reset()
         
