@@ -10,9 +10,9 @@ jobs:
       script: xcodebuild -project KNContacts.xcodeproj -scheme KNContacts  -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KNContactsTests | xcpretty
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
   - gem install jazzy
   - make documentation
+  - bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
 
 deploy:
   provider: pages
