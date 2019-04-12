@@ -18,6 +18,21 @@ public struct KNContact: Hashable {
         self.details = contact
     }
 
+    /**
+    Returns the full name of contacts using a formatting style (fullName or phoneticFullName).
+
+    - Author:
+    dragosrobertn
+
+    - returns:
+    A string representing the full name. It can be an empty string.
+
+    - parameters:
+        - format: A CNContactFormatterStyle enum option. Optional. Defaults to .fullName
+
+    - version:
+    1.0.0
+    */
     public func fullName(format: CNContactFormatterStyle = .fullName) -> String {
         guard let name = CNContactFormatter.string(from: self.details, style: format) else { return "" }
         return name

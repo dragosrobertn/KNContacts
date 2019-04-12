@@ -1,0 +1,439 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": null,
+      "symbol": "KNContact",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": null,
+      "symbol": "KNContact",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 12,
+      "symbol": "KNContact",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 14,
+      "symbol": "KNContact.details",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 15,
+      "symbol": "KNContact.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 17,
+      "symbol": "KNContact.init(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 41,
+      "symbol": "KNContact.birthday(currentYear:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 60,
+      "symbol": "KNContact.formattedBirthday(with:currentYear:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 65,
+      "symbol": "KNContact.formattedBirthday(with:currentYear:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 71,
+      "symbol": "KNContact.getFirstPhoneNumber()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 76,
+      "symbol": "KNContact.getFirstEmailAddress()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 81,
+      "symbol": "KNContact.isBirthdayToday()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 86,
+      "symbol": "KNContact.isBirthdayComing(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 95,
+      "symbol": "KNContact.getAge()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 102,
+      "symbol": "KNContact.getAgeAsOrdinalAtNextBirthday()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 108,
+      "symbol": "KNContact.getAgeAtNextBirthday()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContact.swift",
+      "line": 113,
+      "symbol": "KNContact.getAgeAsOrdinal()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 11,
+      "symbol": "KNContactBook",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 13,
+      "symbol": "KNContactBook.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 16,
+      "symbol": "KNContactBook.init(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 20,
+      "symbol": "KNContactBook.reset()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 24,
+      "symbol": "KNContactBook.add(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 28,
+      "symbol": "KNContactBook.add(_:id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 32,
+      "symbol": "KNContactBook.add(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 36,
+      "symbol": "KNContactBook.remove(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 40,
+      "symbol": "KNContactBook.remove(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 44,
+      "symbol": "KNContactBook.remove(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 48,
+      "symbol": "KNContactBook.get(forKey:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 52,
+      "symbol": "KNContactBook.getOptional(forKey:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 57,
+      "symbol": "KNContactBook.toArray()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 61,
+      "symbol": "KNContactBook.toArray(orderedBy:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 65,
+      "symbol": "KNContactBook.keysArray()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 69,
+      "symbol": "KNContactBook.randomElements(number:except:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 85,
+      "symbol": "KNContactBook.updatedValues(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBook.swift",
+      "line": 89,
+      "symbol": "KNContactBook.contains(element:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBookOrdering.swift",
+      "line": 9,
+      "symbol": "KNContactBookOrdering",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBookOrdering.swift",
+      "line": 11,
+      "symbol": "KNContactBookOrdering.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBookOrdering.swift",
+      "line": 13,
+      "symbol": "KNContactBookOrdering.thisYearsBirthday",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactBookOrdering.swift",
+      "line": 19,
+      "symbol": "KNContactBookOrdering.fullName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 11,
+      "symbol": "KNContactsSchedule",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 13,
+      "symbol": "KNContactsSchedule.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 14,
+      "symbol": "KNContactsSchedule.format",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 17,
+      "symbol": "KNContactsSchedule.init(name:format:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 22,
+      "symbol": "KNContactsSchedule.add(list:to:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 27,
+      "symbol": "KNContactsSchedule.add(list:fromString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 35,
+      "symbol": "KNContactsSchedule.getSchedule()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 39,
+      "symbol": "KNContactsSchedule.getSchedule(for:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 45,
+      "symbol": "KNContactsSchedule.scheduleForToday()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNContactsSchedule.swift",
+      "line": 49,
+      "symbol": "KNContactsSchedule.reset()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNDatesUtils.swift",
+      "line": 11,
+      "symbol": "KNDatesUtils",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNDatesUtils.swift",
+      "line": 13,
+      "symbol": "KNDatesUtils.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNDatesUtils.swift",
+      "line": 15,
+      "symbol": "KNDatesUtils.formatter(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNDatesUtils.swift",
+      "line": 19,
+      "symbol": "KNDatesUtils.formatter(with:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNDatesUtils.swift",
+      "line": 25,
+      "symbol": "KNDatesUtils.string(from:format:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNDatesUtils.swift",
+      "line": 29,
+      "symbol": "KNDatesUtils.string(from:format:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 9,
+      "symbol": "KNTimeFormat",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 10,
+      "symbol": "KNTimeFormat.hourAndMinutes",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 11,
+      "symbol": "KNTimeFormat.dayAndMonth",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 12,
+      "symbol": "KNTimeFormat.fullDate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 13,
+      "symbol": "KNTimeFormat.timeStamp",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 14,
+      "symbol": "KNTimeFormat.dayAndFullMonth",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/drn/Documents/Repos/KNContacts/KNContacts/KNTimeFormat.swift",
+      "line": 15,
+      "symbol": "KNTimeFormat.fullMonth",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/drn/Documents/Repos/KNContacts"
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KNContacts  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="KNContacts  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">KNContacts Docs</a> (6% documented)</p>
+        <p class="header-right"><a href="https://github.com/dragosrobertn/KNContacts"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">KNContacts Reference</a>
+        <img id="carat" src="img/carat.png" />
+        KNContacts  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/KNContactBook.html">KNContactBook</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/KNTimeFormat.html">KNTimeFormat</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/KNContact.html">KNContact</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KNContactBookOrdering.html">KNContactBookOrdering</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KNContactsSchedule.html">KNContactsSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/KNDatesUtils.html">KNDatesUtils</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='kncontacts' class='heading'>KNContacts</h1>
+
+<p><img src="https://img.shields.io/cocoapods/v/KNContacts.svg" alt="Cocoapods"> <a href="https://travis-ci.org/dragosrobertn/KNContacts"><img src="https://travis-ci.org/dragosrobertn/KNContacts.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/gh/dragosrobertn/KNContacts"><img src="https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg" alt="codecov"></a> <img src="https://img.shields.io/badge/contributions-welcome-informational.svg" alt="contributions"></p>
+
+<p>KNContacts is wrapper for CNContacts for easier access to information like current age and age at next birthday, full contact name, creating contact books (groups), ordering them and creating contact schedules.</p>
+<h3 id='more-information' class='heading'>More information</h3>
+
+<p>KNContacts framework features a couple of classes, structs and enums to facilitate access to contacts, contact books and schedule of contacts.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>struct</td>
+<td><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContact.swift">KNContact</a></td>
+<td>Wrapper struct for CNContact, provides access to helper methods and original contact details.</td>
+</tr>
+<tr>
+<td>class</td>
+<td><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBook.swift">KNContactBook</a></td>
+<td>Collection of KNContacts with methods for adding, removing, sorting and retrieving specific or random elements</td>
+</tr>
+<tr>
+<td>struct</td>
+<td><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBookOrdering.swift">KNContactBookOrdering</a></td>
+<td>Helper ordering methods to sort contacts in KNContactBook</td>
+</tr>
+<tr>
+<td>struct</td>
+<td><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactsSchedule.swift">KNContactsSchedule</a></td>
+<td>Dictionary wrapper for creating contact schedule for using custom time formats for scheduling and retrieving at a particular time</td>
+</tr>
+<tr>
+<td>struct</td>
+<td><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNDatesUtils.swift">KNDatesUtils</a></td>
+<td>Date formatting helper methods</td>
+</tr>
+<tr>
+<td>enum</td>
+<td><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNTimeFormat.swift">KNTimeFormat</a></td>
+<td>Enum with pre-defined time formats</td>
+</tr>
+</tbody></table>
+
+<p>It also provides some extensions to Array type, Dates and Int.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p><em>Sample initialisation and usage</em></p>
+<h3 id='code-kncontact-code-and-code-kncontactbook-code' class='heading'><code><a href="Structs/KNContact.html">KNContact</a></code> and <code><a href="Classes/KNContactBook.html">KNContactBook</a></code></h3>
+
+<p><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContact.swift">KNContact</a> is a wrapper structure and you can initialise a new obejct by passing in a CNContact or CNMutableContact object. <a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBook.swift">KNContactBook</a> is a collection of KNContact objects which can be sorted and random elements extracted.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Contacts</span>
+<span class="kd">import</span> <span class="kt">KNContacts</span>
+
+<span class="k">var</span> <span class="nv">allContacts</span> <span class="o">=</span> <span class="kt">KNContactBook</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"allContacts"</span><span class="p">)</span>
+
+<span class="c1">// Retrieve or create your CNContact list from a store - KNContacts does *not* handle authorisation for you.</span>
+<span class="c1">// Make sure you have all necessary key descriptors.</span>
+
+<span class="k">var</span> <span class="nv">keys</span> <span class="o">=</span> <span class="p">[</span><span class="kt">CNContactGivenNameKey</span><span class="p">,</span> <span class="kt">CNContactMiddleNameKey</span><span class="p">,</span> <span class="kt">CNContactFamilyNameKey</span><span class="p">,</span>
+            <span class="kt">CNContactEmailAddressesKey</span><span class="p">,</span> <span class="kt">CNContactBirthdayKey</span><span class="p">,</span> <span class="kt">CNContactPhoneNumbersKey</span><span class="p">,</span>
+            <span class="kt">CNContactFormatter</span><span class="o">.</span><span class="nf">descriptorForRequiredKeys</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="o">.</span><span class="n">fullName</span><span class="p">)]</span> <span class="k">as!</span> <span class="p">[</span><span class="kt">CNKeyDescriptor</span><span class="p">]</span>
+
+<span class="k">let</span> <span class="nv">requestForContacts</span> <span class="o">=</span> <span class="kt">CNContactFetchRequest</span><span class="p">(</span><span class="nv">keysToFetch</span><span class="p">:</span> <span class="n">keys</span><span class="p">)</span>
+
+<span class="k">do</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="kt">CNContactStore</span><span class="p">()</span><span class="o">.</span><span class="nf">enumerateContacts</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">requestForContacts</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">cnContact</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="k">in</span>
+        <span class="k">let</span> <span class="nv">knContact</span> <span class="o">=</span> <span class="kt">KNContact</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">cnContact</span><span class="p">)</span>
+        <span class="n">allContacts</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">knContact</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="k">let</span> <span class="nv">error</span> <span class="p">{</span>
+    <span class="c1">// Handle error somehow!</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// And then perform actions on KNContactBook</span>
+<span class="k">let</span> <span class="nv">randomContacts</span> <span class="o">=</span> <span class="n">allContacts</span><span class="o">.</span><span class="nf">randomElements</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">randomElements</span> <span class="o">=</span> <span class="n">allContacts</span><span class="o">.</span><span class="nf">randomElements</span><span class="p">(</span><span class="nv">number</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="nv">except</span><span class="p">:</span> <span class="n">randomContacts</span><span class="p">)</span>
+
+<span class="n">randomElements</span><span class="o">.</span><span class="nf">forEach</span><span class="p">({</span> <span class="p">(</span><span class="n">contact</span><span class="p">)</span> <span class="k">in</span> 
+    <span class="nf">print</span><span class="p">(</span><span class="n">contact</span><span class="o">.</span><span class="nf">fullName</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="o">.</span><span class="n">fullName</span><span class="p">))</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">contact</span><span class="o">.</span><span class="nf">isBirthdayToday</span><span class="p">())</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"It's their birthday today!"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">contact</span><span class="o">.</span><span class="nf">isBirthdayComing</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="mi">7</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Birthday coming up in the next week!"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Birthday on </span><span class="se">\(</span><span class="n">contact</span><span class="o">.</span><span class="nf">formattedBirthday</span><span class="p">()</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">})</span>
+</code></pre>
+<h3 id='code-kncontactsschedule-code-code-kncontactbookordering-code-code-kndatesutils-code' class='heading'><code><a href="Structs/KNContactsSchedule.html">KNContactsSchedule</a></code>,  <code><a href="Structs/KNContactBookOrdering.html">KNContactBookOrdering</a></code>, <code><a href="Structs/KNDatesUtils.html">KNDatesUtils</a></code></h3>
+
+<p><a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContact.swift">KNContact</a> can also return ordered array of elements. Two options are provided in <a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBookOrdering.swift">KNContactBookOrdering</a>
+But the <code>toArray(orderedBy:)</code> method can take any sorting function.
+<a href="https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNDatesUtils.swift">KNDatesUtils</a> provides easy access to string date formatters.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">order</span> <span class="o">=</span> <span class="kt">KNContactBookOrdering</span><span class="p">()</span><span class="o">.</span><span class="n">thisYearsBirthday</span>
+<span class="k">let</span> <span class="nv">contactsSortedByBirthday</span> <span class="o">=</span> <span class="n">allContacts</span><span class="o">.</span><span class="nf">toArray</span><span class="p">(</span><span class="nv">orderedBy</span><span class="p">:</span> <span class="n">order</span><span class="p">)</span>
+
+<span class="c1">// And finally schedules can be created for easier retrieval at a later date.</span>
+<span class="k">var</span> <span class="nv">thisWeeksBirthdaySchedule</span> <span class="o">=</span> <span class="kt">KNContactsSchedule</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"birthdaysThisYear"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">dayCount</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="mi">7</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">birthdayList</span> <span class="o">=</span> <span class="n">contactsSortedByBirthday</span><span class="o">.</span><span class="nf">filter</span><span class="p">({</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">isBirthdayComing</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">dayCount</span><span class="p">)</span> <span class="p">})</span><span class="o">.</span><span class="nf">map</span><span class="p">({</span> <span class="nv">$0</span><span class="o">.</span><span class="n">id</span> <span class="p">})</span>
+    <span class="k">let</span> <span class="nv">date</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="n">dayCount</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Date</span><span class="p">())</span><span class="o">!</span>
+    <span class="k">let</span> <span class="nv">dateString</span> <span class="o">=</span> <span class="kt">KNDatesUtils</span><span class="p">()</span><span class="o">.</span><span class="nf">formatter</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">fullDate</span><span class="p">)</span><span class="o">.</span><span class="nf">string</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">date</span><span class="p">)</span>
+    <span class="n">thisWeeksBirthdaySchedule</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">list</span><span class="p">:</span> <span class="n">birthdayList</span><span class="p">,</span> <span class="nv">fromString</span><span class="p">:</span> <span class="n">dateString</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// And retrieve schedule by date</span>
+<span class="k">let</span> <span class="nv">tomorrow</span> <span class="o">=</span> <span class="kt">Calendar</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="nf">date</span><span class="p">(</span><span class="nv">byAdding</span><span class="p">:</span> <span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="kt">Date</span><span class="p">())</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">schedule</span> <span class="o">=</span> <span class="n">thisWeeksBirthdaySchedule</span><span class="o">.</span><span class="nf">getSchedule</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="n">tomorrow</span><span class="p">)</span>
+</code></pre>
+<h3 id='still-left-to-do' class='heading'>Still left to do</h3>
+
+<ul>
+<li>[ ] Documentation</li>
+<li>[ ] Better error handling</li>
+</ul>
+<h3 id='requirements' class='heading'>Requirements</h3>
+
+<ul>
+<li>Swift 4.2</li>
+</ul>
+<h3 id='usage' class='heading'>Usage</h3>
+
+<p>KNContacts is currently available using CocoaPods. Just add this snippet into your podfile to use the latest version.</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'KNContacts'</span>
+</code></pre>
+<h3 id='applications-using-kncontacts' class='heading'>Applications using KNContacts</h3>
+
+<ul>
+<li><a href="https://itunes.apple.com/app/kinn/id1343398089">KINN - Contacts Manager</a></li>
+</ul>
+
+<p>If your app uses KNContacts, feel free to submit a Pull Request.</p>
+<h3 id='contributing' class='heading'>Contributing</h3>
+
+<p>Pull requests are welcome, all changes should be accompanied by tests and a passing build. </p>
+
+<p>Issues or features requests are welcome, feel free to create implementations yourself. The development of this framework is done using trunk based development strategy so please create your pull requests against the master branch and ensure the build is passing.</p>
+
+<p>This library is MIT Licensed.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://dragosrobertn.io" target="_blank" rel="external">dragosrobertn</a>. All rights reserved. (Last updated: 2019-04-12)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
