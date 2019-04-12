@@ -1,5 +1,5 @@
 # KNContacts 
-![Cocoapods](https://img.shields.io/cocoapods/v/KNContacts.svg) [![Build Status](https://travis-ci.org/dragosrobertn/KNContacts.svg?branch=master)](https://travis-ci.org/dragosrobertn/KNContacts) [![codecov](https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg)](https://codecov.io/gh/dragosrobertn/KNContacts)
+![Cocoapods](https://img.shields.io/cocoapods/v/KNContacts.svg) [![Build Status](https://travis-ci.org/dragosrobertn/KNContacts.svg?branch=master)](https://travis-ci.org/dragosrobertn/KNContacts) [![codecov](https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg)](https://codecov.io/gh/dragosrobertn/KNContacts) ![contributions](https://img.shields.io/badge/contributions-welcome-informational.svg)
 
 KNContacts is wrapper for CNContacts for easier access to information like current age and age at next birthday, full contact name, creating contact books (groups), ordering them and creating contact schedules.
 
@@ -9,12 +9,12 @@ KNContacts framework features a couple of classes, structs and enums to facilita
 
 | Type            | Name                                    | Description  |
 | ------------- | -------------------------------- | -------------- |
-| struct          | KNContact                            | Wrapper struct for CNContact, provides access to helper methods and original contact details. |
-| class           | KNContactBook                   | Collection of KNContacts with methods for adding, removing, sorting and retrieving specific or random elements |
-| struct          | KNContactBookOrdering     | Helper ordering methods to sort contacts in KNContactBook  |
-| struct          | KNContactsSchedule           | Dictionary wrapper for creating contact schedule for using custom time formats for scheduling and retrieving at a particular time  |
-| struct          | KNDatesUtils                        | Date formatting helper methods |
-| enum          | KNTimeFormat                     | Enum with pre-defined time formats |
+| struct          | [KNContact](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContact.swift)                           | Wrapper struct for CNContact, provides access to helper methods and original contact details. |
+| class           | [KNContactBook](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBook.swift)                   | Collection of KNContacts with methods for adding, removing, sorting and retrieving specific or random elements |
+| struct          | [KNContactBookOrdering](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBookOrdering.swift)   | Helper ordering methods to sort contacts in KNContactBook  |
+| struct          | [KNContactsSchedule](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactsSchedule.swift)         | Dictionary wrapper for creating contact schedule for using custom time formats for scheduling and retrieving at a particular time  |
+| struct          | [KNDatesUtils](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNDatesUtils.swift)                     | Date formatting helper methods |
+| enum            | [KNTimeFormat](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNTimeFormat.swift)                     | Enum with pre-defined time formats |
 
 It also provides some extensions to Array type, Dates and Int.
 
@@ -23,7 +23,7 @@ It also provides some extensions to Array type, Dates and Int.
 *Sample initialisation and usage*
 
 ### `KNContact` and `KNContactBook`
-KNContact is a wrapper structure and you can initialise a new obejct by passing in a CNContact or CNMutableContact object. KNContactBook is a collection of KNContact objects which can be sorted and random elements extracted.
+[KNContact](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContact.swift) is a wrapper structure and you can initialise a new obejct by passing in a CNContact or CNMutableContact object. [KNContactBook](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBook.swift) is a collection of KNContact objects which can be sorted and random elements extracted.
 
 ```swift
 import Contacts
@@ -67,12 +67,11 @@ randomElements.forEach({ (contact) in
 ```
 ### `KNContactsSchedule`,  `KNContactBookOrdering`, `KNDatesUtils`
 
-`KNContactBook` can also return ordered array of elements. Two options are provided in `KNContactBookOrdering`
+[KNContact](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContact.swift) can also return ordered array of elements. Two options are provided in [KNContactBookOrdering](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNContactBookOrdering.swift)
 But the `toArray(orderedBy:)` method can take any sorting function.
-`KNDatesUtils` provides easy access to string date formatters.
+[KNDatesUtils](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNDatesUtils.swift) provides easy access to string date formatters.
 
 ```swift
-
 let order = KNContactBookOrdering().thisYearsBirthday
 let contactsSortedByBirthday = allContacts.toArray(orderedBy: order)
 
@@ -89,7 +88,6 @@ for dayCount in 1...7 {
 // And retrieve schedule by date
 let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
 let schedule = thisWeeksBirthdaySchedule.getSchedule(for: tomorrow)
-
 ```
 
 ### Still left to do
