@@ -8,8 +8,6 @@ jobs:
     - stage: "Tests"               
       name: "Unit Tests"
       script: xcodebuild -project KNContacts.xcodeproj -scheme KNContacts  -destination 'platform=iOS Simulator,OS=12.2,name=iPhone X' clean build test -only-testing:KNContactsTests | xcpretty
-    - stage: "Docs"
-      name: "Build Docs"
       deploy:
         provider: pages
         skip-cleanup: true
@@ -17,9 +15,7 @@ jobs:
         local-dir: docs
         on:
           branch: master
-
-
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
-  - gem install jazzy
-  - make documentation
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
+        - gem install jazzy
+        - make documentation
