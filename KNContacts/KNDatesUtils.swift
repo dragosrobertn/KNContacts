@@ -8,9 +8,20 @@
 
 import Foundation
 
+/**
+ Helper struct which returns date formatters or formatted strings by using the formet formatter.
+ The format can be either a valid date format string or a `KNTimeFormat` enum value.
+ 
+ - Author:
+ dragosrobertn
+ 
+ - Version:
+ 1.0.0
+ */
 public struct KNDatesUtils {
-    let formatter = DateFormatter()
+    private let formatter = DateFormatter()
     
+    // Initialiser
     public init() {}
     
     /**

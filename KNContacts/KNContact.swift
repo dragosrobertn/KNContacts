@@ -12,13 +12,19 @@ import UIKit
 /**
 KNContact class is a wrapper class which gives quick access to helper methods for a `CNContact`, like their full name,
 birthday and age information, first email address or phone number.
+ 
+ - Author:
+ dragosrobertn
+ 
+ - Version:
+ 1.0.0
 **/
 public struct KNContact {
     
-    //: A `CNContact` object representing the contact.
+    /// A `CNContact` object representing the wrapped contact.
     public let details: CNContact
     
-    //: Quick access to the contacts identifier.
+    /// Quick access to the contacts identifier.
     public var id: String { return self.details.identifier }
     
     /**
@@ -284,12 +290,14 @@ public struct KNContact {
 extension KNContact: Hashable { }
 
 extension KNContact: Comparable {
+    /// Implementation of Comparable protocol, by comparing the contact identifiers
     public static func < (lhs: KNContact, rhs: KNContact) -> Bool {
         return lhs.id < rhs.id
     }
 }
 
 extension KNContact: Equatable {
+    /// Implementation of Equatable protocol, by checking if the contact identifiers match
     public static func == (lhs: KNContact, rhs: KNContact) -> Bool {
         return lhs.id == rhs.id
     }

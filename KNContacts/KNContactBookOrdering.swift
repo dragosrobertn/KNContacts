@@ -6,10 +6,18 @@
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
 
-
-//: Struct with helper closures to help with sorting.
+/**
+ Helper struct with helper closures to help with sorting contacts either in a collection of `KNContact` objects or a `KNContactBook`.
+ 
+ - Author:
+ dragosrobertn
+ 
+ - version:
+ 1.0.0
+ */
 public struct KNContactBookOrdering {
     
+    // Initialiser
     public init() {}
     
     /**

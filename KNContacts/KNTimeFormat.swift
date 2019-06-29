@@ -13,10 +13,10 @@
  - Author:
  dragosrobertn
  
- - returns:
+ - Returns:
  A string representing a time format.
  
- - version:
+ - Version:
  1.0.0
  */
 public enum KNTimeFormat: String, Codable {
