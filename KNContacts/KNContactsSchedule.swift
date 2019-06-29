@@ -1,6 +1,6 @@
 //
 //  KNContactSchedule.swift
-//  KINN
+//  KNContacts
 //
 //  Created by Dragos-Robert Neagu on 16/02/2019.
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.

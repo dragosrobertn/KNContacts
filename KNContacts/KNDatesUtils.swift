@@ -1,6 +1,6 @@
 //
 //  DatesUtils.swift
-//  KINN
+//  KNContacts
 //
 //  Created by Dragos-Robert Neagu on 20/12/2018.
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
@@ -19,11 +19,11 @@ public struct KNDatesUtils {
      - Author:
      dragosrobertn
      
-     - returns:
+     - Returns:
      A DateFormatter object using the date format passed.
      
-     - parameters:
-     - format: KNTimeFormat enum option. Required.
+     - Parameters:
+        - format: KNTimeFormat enum option. Required.
      
      - version:
      1.0.0
@@ -38,11 +38,11 @@ public struct KNDatesUtils {
      - Author:
      dragosrobertn
      
-     - returns:
+     - Returns:
      A DateFormatter object using the date format passed.
      
-     - parameters:
-     - format: String representing a valid date format. Required.
+     - Parameters:
+        - format: String representing a valid date format. Required.
      
      - version:
      1.0.0
@@ -58,12 +58,12 @@ public struct KNDatesUtils {
      - Author:
      dragosrobertn
      
-     - returns:
+     - Returns:
      A string representing the formatted date based on the KNTimeFormat and date passed in.
      
-     - parameters:
-     - from: Date object. Required.
-     - format: KNTimeFormat enum value. Required.
+     - Parameters:
+         - from: Date object. Required.
+         - format: KNTimeFormat enum value. Required.
      
      - version:
      1.0.0
@@ -78,12 +78,12 @@ public struct KNDatesUtils {
      - Author:
      dragosrobertn
      
-     - returns:
+     - Returns:
      A string representing the formatted date based on the custom date format and date passed in.
      
-     - parameters:
-     - from: Date object. Required.
-     - format: String representing a valid custom date format. Required.
+     - Parameters:
+         - from: Date object. Required.
+         - format: String representing a valid custom date format. Required.
      
      - version:
      1.0.0

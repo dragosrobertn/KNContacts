@@ -6,6 +6,8 @@
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
 
+
+//: Struct with helper closures to help with sorting.
 public struct KNContactBookOrdering {
     
     public init() {}
