@@ -12,11 +12,8 @@ import Foundation
  Helper struct which returns date formatters or formatted strings by using the formet formatter.
  The format can be either a valid date format string or a `KNTimeFormat` enum value.
  
- - Author:
- dragosrobertn
- 
- - Version:
- 1.0.0
+ - Author: dragosrobertn
+ - Version: 1.0.0
  */
 public struct KNDatesUtils {
     private let formatter = DateFormatter()
@@ -27,17 +24,12 @@ public struct KNDatesUtils {
     /**
      Helper method to return a DateFormatter object to be used in formatted
      
-     - Author:
-     dragosrobertn
-     
-     - Returns:
-     A DateFormatter object using the date format passed.
-     
+     - Author: dragosrobertn
      - Parameters:
         - format: KNTimeFormat enum option. Required.
      
-     - version:
-     1.0.0
+     - Returns: A DateFormatter object using the date format passed.
+     - Version: 1.0.0
      */
     public func formatter(with format: KNTimeFormat) -> DateFormatter {
         return self.formatter(with: format.rawValue)
@@ -46,17 +38,12 @@ public struct KNDatesUtils {
     /**
      Helper method to return a DateFormatter object to be used in formatted
      
-     - Author:
-     dragosrobertn
-     
-     - Returns:
-     A DateFormatter object using the date format passed.
-     
+     - Author: dragosrobertn
      - Parameters:
         - format: String representing a valid date format. Required.
      
-     - version:
-     1.0.0
+     - Returns: A DateFormatter object using the date format passed.
+     - Version: 1.0.0
      */
     public func formatter(with format: String) -> DateFormatter {
         formatter.dateFormat = format
@@ -66,18 +53,13 @@ public struct KNDatesUtils {
     /**
      Helper method that returns a formatted date as a string, accepting a KNTimeFormat value.
      
-     - Author:
-     dragosrobertn
-     
-     - Returns:
-     A string representing the formatted date based on the KNTimeFormat and date passed in.
-     
+     - Author: dragosrobertn
      - Parameters:
          - from: Date object. Required.
          - format: KNTimeFormat enum value. Required.
      
-     - version:
-     1.0.0
+     - Returns: A string representing the formatted date based on the KNTimeFormat and date passed in.
+     - Version: 1.0.0
      */
     public func string(from date: Date, format: KNTimeFormat) -> String {
         return self.string(from: date, format: format.rawValue)
@@ -86,18 +68,13 @@ public struct KNDatesUtils {
     /**
      Helper method that returns a formatted date as a string, aceppting a custom date format as a string. E.g. "YYYY-MM-DD"
      
-     - Author:
-     dragosrobertn
-     
-     - Returns:
-     A string representing the formatted date based on the custom date format and date passed in.
-     
+     - Author: dragosrobertn
      - Parameters:
          - from: Date object. Required.
          - format: String representing a valid custom date format. Required.
      
-     - version:
-     1.0.0
+     - Returns: A string representing the formatted date based on the custom date format and date passed in.
+     - Version: 1.0.0
      */
     public func string(from date: Date, format: String) -> String {
         return self.formatter(with: format).string(from: date)

@@ -8,11 +8,20 @@
 
 import Foundation
 
+/**
+KNContactBook class is a collection of `KNContact` objects to help with
+contact grouping, sorting and selecting random elements.
+    
+    - Author: dragosrobertn
+    - Version: 1.0.0
+**/
 public class KNContactBook {
     
+    // The contact book identifier or name.
     public var id: String
     private var entries: [String: KNContact] = [:]
     
+    // Initialiser with an identifier representing a way to name or identify the contact book.
     public init(id: String) {
         self.id = id
     }

@@ -10,14 +10,9 @@
 /**
  Enum helper, returns a String that represents a time format such as "HH:mm", "yyyy-MM-dd".
  
- - Author:
- dragosrobertn
- 
- - Returns:
- A string representing a time format.
- 
- - Version:
- 1.0.0
+ - Author: dragosrobertn
+ - Returns: A string representing a time format.
+ - Version: 1.0.0
  */
 public enum KNTimeFormat: String, Codable {
     /// Date format represented as "HH:mm". E.g. "10:30"
