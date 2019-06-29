@@ -26,6 +26,7 @@
 		156E1D132251874800D58B8F /* KNContactBookOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D112251873400D58B8F /* KNContactBookOrdering.swift */; };
 		156E1D152251882800D58B8F /* KNTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNTimeFormat.swift */; };
 		156E1D162251883700D58B8F /* KNTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNTimeFormat.swift */; };
+		15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */; };
 		15EA3F49225A636D003F0201 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 15EA3F48225A636D003F0201 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestsContactHelpers.swift; sourceTree = "<group>"; };
 		156E1D112251873400D58B8F /* KNContactBookOrdering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNContactBookOrdering.swift; sourceTree = "<group>"; };
 		156E1D142251882800D58B8F /* KNTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNTimeFormat.swift; sourceTree = "<group>"; };
+		15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNDatesUtilsTests.swift; sourceTree = "<group>"; };
 		15EA3F48225A636D003F0201 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 		156E1CEB224FCBEE00D58B8F /* KNContactsTests */ = {
 			isa = PBXGroup;
 			children = (
+				15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */,
 				156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */,
 				156E1D01224FD45100D58B8F /* KNContactBookTests.swift */,
 				156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */,
@@ -198,6 +201,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 156E1CD4224FCBEE00D58B8F;
 			productRefGroup = 156E1CDF224FCBEE00D58B8F /* Products */;
@@ -251,6 +255,7 @@
 				156E1D06224FD45100D58B8F /* KNContactTests.swift in Sources */,
 				156E1D07224FD49500D58B8F /* KNDatesUtils.swift in Sources */,
 				156E1D0E224FD57000D58B8F /* Extensions.swift in Sources */,
+				15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */,
 				156E1D05224FD45100D58B8F /* KNContactScheduleTests.swift in Sources */,
 				156E1D162251883700D58B8F /* KNTimeFormat.swift in Sources */,
 				156E1D10224FD5F700D58B8F /* UnitTestsContactHelpers.swift in Sources */,
@@ -331,7 +336,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -389,7 +394,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -419,7 +424,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -446,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneagu.KNContacts;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
