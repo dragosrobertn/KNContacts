@@ -17,7 +17,7 @@ public typealias KNTimeFormat = KNDateTimeFormat
  
  - Author: dragosrobertn
  - Returns: A string representing a time format.
- - Version: 1.0.03
+ - Version: 1.1.0
  */
 public enum KNDateTimeFormat: String, Codable {
     /// Date format represented as "HH:mm". E.g. "10:30"

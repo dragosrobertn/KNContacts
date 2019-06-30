@@ -13,11 +13,8 @@ import UIKit
 KNContact class is a wrapper class which gives quick access to helper methods for a `CNContact`, like their full name,
 birthday and age information, first email address or phone number.
  
- - Author:
-    dragosrobertn
- - Version:
-    1.1.0
- 
+- Author: dragosrobertn
+- Version: 1.1.0
 **/
 public struct KNContact {
     
@@ -61,7 +58,7 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Parameters:
-     - contact: A CNContact.
+        - contact: A CNContact.
      
      - Version: 1.0.2
      */
@@ -93,7 +90,7 @@ public struct KNContact {
         - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
      
      - Returns: A date representing the contact's birthday or nil.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func getBirthday(forCurrentYear: Bool = false) -> Date? {
         guard let day = self.birthday?.day, let month = self.birthday?.month else {
@@ -122,7 +119,7 @@ public struct KNContact {
          - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
      
      - Returns: Returns a string representing a formatted birthday using the `KNTimeFormat` passed. If the contact doesn't contain birthday information returns an empty string.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func formatBirthday(with format: KNDateTimeFormat = .dayAndMonth,
                            forCurrentYear : Bool = false) -> String {
@@ -141,7 +138,7 @@ public struct KNContact {
      - Returns:
         Returns a string representing a formatted birthday using the format string passed.
         If the format is invalid or the contact doesn't contain birthday information returns an empty string.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func formatBirthday(with format: String,
                            forCurrentYear: Bool = false) -> String {
@@ -154,7 +151,7 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Returns: Returns a string representing the first phone number available for a contact, or empty if the contact doesn't have any phone numbers associated.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func getFirstPhoneNumber() -> String {
         return self.phoneNumbers.first ?? String()
@@ -165,7 +162,7 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Returns: Returns a string representing the first email address available for a contact, or empty if the contact doesn't have any email addresses associated.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func getFirstEmailAddress() -> String {
         return self.emails.first ?? String()
@@ -209,7 +206,7 @@ public struct KNContact {
      - Returns:
         Returns an optional integer representing the contact's age if the birthday information including the year is available.
         Otherwise it returns nil.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func getAge(atNextBirthday: Bool = false) -> Int? {
         guard self.info.birthday?.year != nil else { return nil }
@@ -226,7 +223,7 @@ public struct KNContact {
      - Returns:
      Returns an unwrapped String representing the contact's age as an ordinal if the birthday information including the year is available.
      Otherwise it returns nil.
-     - Version: 1.0.0
+     - Version: 1.1.0
      */
     public func getAgeAsString(atNextBirthday: Bool = false, asOrdinal: Bool = false) -> String! {
         guard let age = self.getAge(atNextBirthday: atNextBirthday) else { return String() }

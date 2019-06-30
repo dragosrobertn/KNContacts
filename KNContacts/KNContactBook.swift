@@ -12,10 +12,8 @@ import Foundation
 KNContactBook class is a collection of `KNContact` objects to help with
 contact grouping, sorting and selecting random elements.
     
-- Author:
- dragosrobertn
-- Version:
- 1.1.0
+- Author: dragosrobertn
+- Version: 1.1.0
 **/
 public class KNContactBook {
     
@@ -55,10 +53,10 @@ public class KNContactBook {
      
      - Author: dragosrobertn
      - Parameters:
-     - by: A string representing an identifier to retrieve a contact from the contact book.
+        - by: A string representing an identifier to retrieve a contact from the contact book.
      
      - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
-     - Version: 1.0.1
+     - Version: 1.1.0
      
      - Warning:
      This method force unwraps the value and it can return nil if asked to return an element that doesn't exist.
@@ -73,10 +71,10 @@ public class KNContactBook {
      
      - Author: dragosrobertn
      - Parameters:
-     - by: An array of `KNContact` to retrieve updated information for a contact from the contact book.
+        - by: An array of `KNContact` to retrieve updated information for a contact from the contact book.
      
      - Returns: If found, it returns an array of `KNContact` objects from the contact book.
-     - Version: 1.0.1
+     - Version: 1.1.0
      */
     public func getContacts(by contactsArray: [KNContact]) -> [KNContact] {
         return contactsArray.compactMap { self.getContact(by: $0.id) }
@@ -87,10 +85,10 @@ public class KNContactBook {
      
      - Author: dragosrobertn
      - Parameters:
-     - by: An array of strings to retrieve updated information for multiple contacts from the contact book.
+        - by: An array of strings to retrieve updated information for multiple contacts from the contact book.
      
      - Returns: If found, it returns an array of `KNContact` objects from the contact book.
-     - Version: 1.0.1
+     - Version: 1.1.0
      */
     public func getContacts(by contactIds: [String]) -> [KNContact] {
         return contactIds.compactMap { self.getContact(by: $0) }

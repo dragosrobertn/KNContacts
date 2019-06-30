@@ -135,8 +135,8 @@ extension KNContactsSchedule {
      - Author: dragosrobertn
      
      - Parameters:
-     - list: An array of strings representing contact identifiers. Required.
-     - fromString: A string value representing a valid date format to be used for grouping the contact identifiers by and later be retrieved.
+         - list: An array of strings representing contact identifiers. Required.
+         - fromString: A string value representing a valid date format to be used for grouping the contact identifiers by and later be retrieved.
      
      - Version: 1.0.0
      - Warning: Deprecated. Use 'add(list:to:)' instead.
