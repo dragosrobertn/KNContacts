@@ -117,6 +117,10 @@ class KNContactBookTests: XCTestCase {
         XCTAssertEqual(contactBook.getOptional(forKey: id)!.details, contact.details)
     }
     
+    func testReturnsNilIfAttemptToRetrieveInexistentContactFromContactBook() {
+        XCTAssertNil(contactBook.get(forKey: "inexistent"))
+    }
+    
     func testReturnsNilWhenRetrievalWithContactFromContactBookIfUnsureItExists() {
         XCTAssertNil(contactBook.getOptional(forKey: "inexistent"))
     }
@@ -258,5 +262,22 @@ class KNContactBookTests: XCTestCase {
         retrievedContacts = contactBook.updatedValues(for: [updatedContact])
         XCTAssertEqual(retrievedContacts.first, updatedContact)
         XCTAssertTrue(retrievedContacts.first?.details.familyName == "New Family Name")
+    }
+    
+    func testUnableToRetrieveUpdatedContactsWhichHaveBeenRemoved() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.familyName = "Old Family Name"
+        let contact = KNContact(for: mutableContact)
+        
+        contactBook.add(contact)
+        
+        var retrievedContacts = self.contactBook.updatedValues(for: [contact])
+        
+        XCTAssertEqual(retrievedContacts.first, contact)
+        
+        contactBook.remove(contact)
+        
+        retrievedContacts = contactBook.updatedValues(for: [contact])
+        XCTAssertTrue(retrievedContacts.isEmpty)
     }
 }

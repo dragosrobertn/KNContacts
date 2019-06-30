@@ -14,7 +14,7 @@
  */
 public struct KNContactBookOrdering {
     
-    // Initialiser
+    /// Initialiser
     public init() {}
     
     /**

@@ -16,9 +16,11 @@ import Foundation
  - Version: 1.0.0
  */
 public struct KNDatesUtils {
+    
+    /// DateFormatter to be used
     private let formatter = DateFormatter()
     
-    // Initialiser
+    /// Initialiser
     public init() {}
     
     /**

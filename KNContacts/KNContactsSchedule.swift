@@ -17,13 +17,13 @@ import Foundation
  */
 public struct KNContactsSchedule {
     
-    // The name of the schedule
+    /// The name of the schedule
     public let name: String
     
-    // The time format to save the schedule in
+    /// The time format to save the schedule in
     public let format: KNTimeFormat
     
-    // The collection of sorted contact identifier, grouped based on a time format.
+    /// The collection of sorted contact identifier, grouped based on a time format.
     private var schedule: [String: [String]] = [:]
     
     /**
