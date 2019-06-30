@@ -43,7 +43,7 @@ class KNContactScheduleTests: XCTestCase {
     
     
     func testAddsADateToTheScheduleByString() {
-        let dateString = KNDatesUtils().formatter(with: favourites.format).string(from: Date())
+        let dateString = KNDatesUtils.formatter(with: favourites.format).string(from: Date())
         let list: [String] = []
         favourites.add(list: list, fromString: dateString)
         

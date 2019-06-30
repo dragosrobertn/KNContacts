@@ -13,58 +13,58 @@ class KNDatesUtilsTests: XCTestCase {
     let dateComponents = DateComponents(calendar: Calendar.current, year: 1990, month: 01, day: 01, hour: 19, minute: 38, second: 21)
     
     func testCorrectlyCreatesADateFormatterObjectWhenPassedAKNTimeFormat() {
-        let dateStringFormmater = KNDatesUtils().formatter(with: KNTimeFormat.fullDate)
+        let dateStringFormmater = KNDatesUtils.formatter(with: KNTimeFormat.fullDate)
         XCTAssertNotNil(dateStringFormmater)
         XCTAssertEqual(dateStringFormmater.dateFormat!, KNTimeFormat.fullDate.rawValue)
     }
     
     func testCorrectlyCreatesADateFormatterObjectWhenPassedAStringDateFormat() {
-        let dateStringFormmater = KNDatesUtils().formatter(with: "MMMM")
+        let dateStringFormmater = KNDatesUtils.formatter(with: "MMMM")
         XCTAssertNotNil(dateStringFormmater)
         XCTAssertEqual(dateStringFormmater.dateFormat!, "MMMM")
     }
     
     func testCorrectlyCreatesADateFormatterObjectWhenPassedAnInvalidDateFormat() {
-        let dateStringFormmater = KNDatesUtils().formatter(with: invalidDateFormat)
+        let dateStringFormmater = KNDatesUtils.formatter(with: invalidDateFormat)
         XCTAssertNotNil(dateStringFormmater)
         XCTAssertEqual(dateStringFormmater.dateFormat!, invalidDateFormat)
     }
     
     func testReturnsNilIfItCantParseADate() {
-        let dateStringFormmater = KNDatesUtils().formatter(with: invalidDateFormat)
+        let dateStringFormmater = KNDatesUtils.formatter(with: invalidDateFormat)
         XCTAssertNil(dateStringFormmater.date(from: "2019-01-01"))
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatFullDate() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: .fullDate), "1990-01-01")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .fullDate), "1990-01-01")
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatDayAndFullMonth() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: .dayAndFullMonth), "1 January")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .dayAndFullMonth), "1 January")
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatFullMonth() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: .fullMonth), "January")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .fullMonth), "January")
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatDayAndMonth() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: .dayAndMonth), "1 Jan")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .dayAndMonth), "1 Jan")
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatHourAndMinutes() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: .hourAndMinutes), "19:38")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .hourAndMinutes), "19:38")
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatTimestamp() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: .timeStamp), "1990-01-01 19:38")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .timeStamp), "1990-01-01 19:38")
     }
     
     func testReturnsACorrectStringFormattedUsingACustomDateTimeStringFormatAsFullTimestamp() {
-        XCTAssertEqual(KNDatesUtils().string(from: dateComponents.date!, format: "YYYY-MM-DD HH:mm:ss"), "1990-01-01 19:38:21")
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: "YYYY-MM-DD HH:mm:ss"), "1990-01-01 19:38:21")
     }
     
     func testReturnsEmptyStringIfItCantReturnStringForInvalidFormat() {
-        XCTAssertEqual(KNDatesUtils().string(from: Date(), format: invalidDateFormat), "")
+        XCTAssertEqual(KNDatesUtils.string(from: Date(), format: invalidDateFormat), "")
     }
 
 }

@@ -73,16 +73,16 @@ But the `toArray(orderedBy:)` method can take any sorting function.
 [KNDatesUtils](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNDatesUtils.swift) provides easy access to string date formatters.
 
 ```swift
-let order = KNContactBookOrdering().thisYearsBirthday
+let order = KNContactBookOrdering.thisYearsBirthday
 let contactsSortedByBirthday = allContacts.toArray(orderedBy: order)
 
 // And finally schedules can be created for easier retrieval at a later date.
 var thisWeeksBirthdaySchedule = KNContactsSchedule(name: "birthdaysThisYear")
 
-for dayCount in 1...7 {
-    let birthdayList = contactsSortedByBirthday.filter({ $0.isBirthdayComing(in: dayCount) }).map({ $0.id })
-    let date = Calendar.current.date(byAdding: .day, value: dayCount, to: Date())!
-    let dateString = KNDatesUtils().formatter(with: .fullDate).string(from: date)
+for numberOfDays in 1...7 {
+    let birthdayList = contactsSortedByBirthday.filter({ $0.isBirthdayComing(in: numberOfDays) }).map({ $0.id })
+    let date = Calendar.current.date(byAdding: .day, value: numberOfDays, to: Date())!
+    let dateString = KNDatesUtils.formatter(with: .fullDate).string(from: date)
     thisWeeksBirthdaySchedule.add(list: birthdayList, fromString: dateString)
 }
 

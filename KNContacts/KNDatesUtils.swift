@@ -18,10 +18,7 @@ import Foundation
 public struct KNDatesUtils {
     
     /// DateFormatter to be used
-    private let formatter = DateFormatter()
-    
-    /// Initialiser
-    public init() {}
+    private static let dateFormatter = DateFormatter()
     
     /**
      Helper method to return a DateFormatter object to be used in formatted
@@ -33,7 +30,7 @@ public struct KNDatesUtils {
      - Returns: A DateFormatter object using the date format passed.
      - Version: 1.0.0
      */
-    public func formatter(with format: KNTimeFormat) -> DateFormatter {
+    static public func formatter(with format: KNTimeFormat) -> DateFormatter {
         return self.formatter(with: format.rawValue)
     }
     
@@ -47,9 +44,9 @@ public struct KNDatesUtils {
      - Returns: A DateFormatter object using the date format passed.
      - Version: 1.0.0
      */
-    public func formatter(with format: String) -> DateFormatter {
-        formatter.dateFormat = format
-        return formatter
+    static public func formatter(with format: String) -> DateFormatter {
+        dateFormatter.dateFormat = format
+        return dateFormatter
     }
     
     /**
@@ -63,7 +60,7 @@ public struct KNDatesUtils {
      - Returns: A string representing the formatted date based on the KNTimeFormat and date passed in.
      - Version: 1.0.0
      */
-    public func string(from date: Date, format: KNTimeFormat) -> String {
+    static public func string(from date: Date, format: KNTimeFormat) -> String {
         return self.string(from: date, format: format.rawValue)
     }
     
@@ -78,7 +75,7 @@ public struct KNDatesUtils {
      - Returns: A string representing the formatted date based on the custom date format and date passed in.
      - Version: 1.0.0
      */
-    public func string(from date: Date, format: String) -> String {
+    static public func string(from date: Date, format: String) -> String {
         return self.formatter(with: format).string(from: date)
     }
     

@@ -113,7 +113,7 @@ public struct KNContact {
     public func formattedBirthday(with format: String,
                            currentYear : Bool = false) -> String {
         guard let date = self.birthday(currentYear: currentYear) else { return String() }
-        return KNDatesUtils().string(from: date, format: format)
+        return KNDatesUtils.string(from: date, format: format)
     }
     
     /**
@@ -148,7 +148,7 @@ public struct KNContact {
      - Version: 1.0.0
      */
     public func isBirthdayToday() -> Bool {
-        let todayFormattedString = KNDatesUtils().string(from: Date(), format: .dayAndMonth)
+        let todayFormattedString = KNDatesUtils.string(from: Date(), format: .dayAndMonth)
         return self.formattedBirthday() == todayFormattedString
     }
     

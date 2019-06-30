@@ -201,7 +201,7 @@ class KNContactBookTests: XCTestCase {
             contactBook.add(contact)
         }
         
-        let order = KNContactBookOrdering().thisYearsBirthday
+        let order = KNContactBookOrdering.thisYearsBirthday
         let arrayWithContactsSortedByBirthday = contactBook.toArray(orderedBy: order)
         
         XCTAssertEqual(arrayWithContactsSortedByBirthday[0].details, january1stContact)
@@ -234,7 +234,7 @@ class KNContactBookTests: XCTestCase {
             contactBook.add(contact)
         }
         
-        let order = KNContactBookOrdering().fullName
+        let order = KNContactBookOrdering.fullName
         let arrayWithContactsSortedByBirthday = contactBook.toArray(orderedBy: order)
         
         XCTAssertEqual(arrayWithContactsSortedByBirthday[0].details, contactFamilyNameAGivenNameG)

@@ -14,9 +14,6 @@
  */
 public struct KNContactBookOrdering {
     
-    /// Initialiser
-    public init() {}
-    
     /**
      Closure method to sort contact by their birthday during current year in ascending order (earlier first).
      
@@ -24,7 +21,7 @@ public struct KNContactBookOrdering {
      - Returns: A closure method which returns a boolean, to be used in sorting contacts by their birthday during current year.
      - Version: 1.0.0
      */
-    public let thisYearsBirthday = {(_ c1: KNContact, _ c2: KNContact) -> Bool in
+    static public let thisYearsBirthday = {(_ c1: KNContact, _ c2: KNContact) -> Bool in
         let firstBirthday = c1.birthday(currentYear: true)!
         let secondBirthday = c2.birthday(currentYear: true)!
         return firstBirthday.compare(secondBirthday) == .orderedAscending
@@ -37,7 +34,7 @@ public struct KNContactBookOrdering {
      - Returns: A closure method which returns a boolean, to be used in sorting contacts by their full name.
      - Version: 1.0.0
      */
-    public let fullName = {(_ c1: KNContact, _ c2: KNContact) -> Bool in
+    static public let fullName = {(_ c1: KNContact, _ c2: KNContact) -> Bool in
         return c1.fullName().compare(c2.fullName()) == .orderedAscending
     }
 }

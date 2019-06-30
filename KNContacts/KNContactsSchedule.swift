@@ -54,7 +54,7 @@ public struct KNContactsSchedule {
      - Version: 1.0.0
     */
     public mutating func add(list: [String], to day: Date) {
-        let date = KNDatesUtils().string(from: day, format: format)
+        let date = KNDatesUtils.string(from: day, format: format)
         self.schedule[date] = list
     }
     
@@ -71,10 +71,10 @@ public struct KNContactsSchedule {
      - Version: 1.0.0
      */
     public mutating func add(list: [String], fromString day: String) {
-        guard let date = KNDatesUtils().formatter(with: self.format).date(from: day) else {
+        guard let date = KNDatesUtils.formatter(with: self.format).date(from: day) else {
             return
         }
-        let conformedDate = KNDatesUtils().string(from: date, format: self.format)
+        let conformedDate = KNDatesUtils.string(from: date, format: self.format)
         self.schedule[conformedDate] = list
     }
     
@@ -100,7 +100,7 @@ public struct KNContactsSchedule {
      - Version: 1.0.0
      */
     public func getSchedule(for day: Date) -> [String] {
-        let date = KNDatesUtils().string(from: day, format: format)
+        let date = KNDatesUtils.string(from: day, format: format)
         guard let daySchedule = self.schedule[date] else { return [] }
         return daySchedule
     }
