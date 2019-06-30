@@ -116,8 +116,8 @@
 		156E1CEB224FCBEE00D58B8F /* KNContactsTests */ = {
 			isa = PBXGroup;
 			children = (
-				15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */,
 				156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */,
+				15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */,
 				156E1D01224FD45100D58B8F /* KNContactBookTests.swift */,
 				156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */,
 				156E1D03224FD45100D58B8F /* KNContactTests.swift */,

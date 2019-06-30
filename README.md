@@ -16,7 +16,8 @@ KNContacts framework features a couple of classes, structs and enums to facilita
 | struct          | [KNDatesUtils](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNDatesUtils.swift)                     | Date formatting helper methods |
 | enum            | [KNTimeFormat](https://github.com/dragosrobertn/KNContacts/blob/master/KNContacts/KNTimeFormat.swift)                     | Enum with pre-defined time formats |
 
-It also provides some extensions to Array type, Dates and Int.
+## Documentation
+[You can check the full documentation here.](https://dragosrobertn.github.io/KNContacts/)
 
 ## Usage
 
@@ -89,10 +90,6 @@ for dayCount in 1...7 {
 let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
 let schedule = thisWeeksBirthdaySchedule.getSchedule(for: tomorrow)
 ```
-
-### Still left to do
-- [ ] Documentation
-- [ ] Better error handling
 
 ### Requirements
 - Swift 4.2
