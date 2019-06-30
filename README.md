@@ -30,7 +30,7 @@ KNContacts framework features a couple of classes, structs and enums to facilita
 import Contacts
 import KNContacts
 
-var allContacts = KNContactBook(id: "allContacts")
+var contactBook = KNContactBook(id: "allContacts")
 
 // Retrieve or create your CNContact list from a store - KNContacts does *not* handle authorisation for you.
 // Make sure you have all necessary key descriptors.
@@ -43,8 +43,8 @@ let requestForContacts = CNContactFetchRequest(keysToFetch: keys)
 
 do {
     try CNContactStore().enumerateContacts(with: requestForContacts) { (cnContact, _) in
-        let knContact = KNContact(for: cnContact)
-        allContacts.add(knContact)
+        let knContact = KNContact(cnContact)
+        contactBook.add(knContact)
     }
 } catch let error {
     // Handle error somehow!
@@ -52,8 +52,8 @@ do {
 }
 
 // And then perform actions on KNContactBook
-let randomContacts = allContacts.randomElements(number: 1)
-let randomElements = allContacts.randomElements(number: 3, except: randomContacts)
+let randomContacts = contactBook.randomElements(number: 1)
+let randomElements = contactBook.randomElements(number: 3, except: randomContacts)
 
 randomElements.forEach({ (contact) in 
     print(contact.fullName(format: .fullName))
@@ -62,7 +62,7 @@ randomElements.forEach({ (contact) in
     } else if (contact.isBirthdayComing(in: 7)) {
         print("Birthday coming up in the next week!")
     } else {
-        print("Birthday on \(contact.formattedBirthday())")
+        print("Birthday on \(contact.formatBirthday())")
     }
 })
 ```
@@ -74,7 +74,7 @@ But the `toArray(orderedBy:)` method can take any sorting function.
 
 ```swift
 let order = KNContactBookOrdering.thisYearsBirthday
-let contactsSortedByBirthday = allContacts.toArray(orderedBy: order)
+let contactsSortedByBirthday = contactBook.contacts.sorted(by: order)
 
 // And finally schedules can be created for easier retrieval at a later date.
 var thisWeeksBirthdaySchedule = KNContactsSchedule(name: "birthdaysThisYear")
@@ -83,7 +83,7 @@ for numberOfDays in 1...7 {
     let birthdayList = contactsSortedByBirthday.filter({ $0.isBirthdayComing(in: numberOfDays) }).map({ $0.id })
     let date = Calendar.current.date(byAdding: .day, value: numberOfDays, to: Date())!
     let dateString = KNDatesUtils.formatter(with: .fullDate).string(from: date)
-    thisWeeksBirthdaySchedule.add(list: birthdayList, fromString: dateString)
+    thisWeeksBirthdaySchedule.add(list: birthdayList, to: dateString)
 }
 
 // And retrieve schedule by date

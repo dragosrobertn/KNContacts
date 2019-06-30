@@ -334,7 +334,7 @@ class KNContactBookTests: XCTestCase {
         XCTAssertTrue(retrievedContacts.isEmpty)
         
         // Deprecated
-        var oldRetrievedContacts = self.contactBook.updatedValues(for: [contact])
+        let oldRetrievedContacts = self.contactBook.updatedValues(for: [contact])
         
         XCTAssertTrue(oldRetrievedContacts.isEmpty)
     }

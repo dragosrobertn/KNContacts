@@ -244,11 +244,11 @@ extension KNContactBook {
      - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
      - Version: 1.0.1
      
-     - Warning:
+     - Warning: Deprecated.
      This method force unwraps the value and it can return nil if asked to return an element that doesn't exist.
      If unsure if the KNContact exists in the contact book, use `KNContactBook().getOptional(forKey:)` instead.
      */
-    @available(*, deprecated, message: "Access the 'getContact(by:)' to retrive a KNContact.")
+    @available(*, deprecated, message: "Use 'getContact(by:)' to retrive a KNContact.")
     public func get(forKey: String) -> KNContact! {
         return self.getContact(by: forKey)
     }
@@ -262,9 +262,9 @@ extension KNContactBook {
      
      - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
      - Version: 1.0.0
-     - Warning: Deprecated.
+     - Warning: Deprecated. Use 'getContact(by:)' to retrive an optional KNContact.
      */
-    @available(*, deprecated, message: "Access the 'getContact(by:)' to retrive an optional KNContact.")
+    @available(*, deprecated, message: "Use 'getContact(by:)' to retrive an optional KNContact.")
     public func getOptional(forKey: String) -> KNContact? {
         guard let entry = self.get(forKey: forKey) else { return nil }
         return entry
