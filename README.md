@@ -101,6 +101,11 @@ KNContacts is currently available using CocoaPods. Just add this snippet into yo
 pod 'KNContacts'
 ```
 
+or specify the desired version.
+```ruby
+pod 'KNContacts', '~> 1.0.0'
+```
+
 ### Applications using KNContacts
 - [KINN - Contacts Manager](https://itunes.apple.com/app/kinn/id1343398089)
 
