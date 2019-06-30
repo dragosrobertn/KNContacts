@@ -12,8 +12,10 @@ import Foundation
 KNContactBook class is a collection of `KNContact` objects to help with
 contact grouping, sorting and selecting random elements.
     
-    - Author: dragosrobertn
-    - Version: 1.0.0
+- Author:
+ dragosrobertn
+- Version:
+ 1.1.0
 **/
 public class KNContactBook {
     
@@ -23,17 +25,17 @@ public class KNContactBook {
     
     /// An read-only list of all identifiers used to retrieve the contacts by in the contact book.
     /// These can be custom, but by default they use the `KNContacts.id` value.
-    public var identifiers: [String] { get { Array(self.entries.keys) } }
+    public var identifiers: [String] { get { return Array(self.entries.keys) } }
     
     /// A  read-only array list of all contacts in the contact book.
-    public var contacts: [KNContact] { get { Array(self.entries.values) } }
+    public var contacts: [KNContact] { get { return Array(self.entries.values) } }
     
     /// A read-only array list of all contact identifiers stored in the contact book.
     /// It represents the identifiers of KNContacts stored in the contact book, as opposed to how the contact book identifies the entries.
     public var contactIdentifiers: [String] { get { return self.contacts.map { $0.id } } }
     
     /// The number of entries in the contact book
-    public var count: Int { get { self.entries.count } }
+    public var count: Int { get { return self.entries.count } }
     
     /**
     Initialiser with an identifier representing a way to name or identify the contact book.
@@ -315,7 +317,7 @@ extension KNContactBook {
     }
     
     /**
-     Retrieve mutliple up to date contacts from the contact book.
+     Retrieve multiple up to date contacts from the contact book.
      
      - Author: dragosrobertn
      - Parameters:

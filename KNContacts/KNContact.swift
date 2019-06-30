@@ -13,8 +13,11 @@ import UIKit
 KNContact class is a wrapper class which gives quick access to helper methods for a `CNContact`, like their full name,
 birthday and age information, first email address or phone number.
  
- - Author: dragosrobertn
- - Version: 1.0.0
+ - Author:
+    dragosrobertn
+ - Version:
+    1.1.0
+ 
 **/
 public struct KNContact {
     
@@ -23,12 +26,17 @@ public struct KNContact {
     
     /// A `CNContact` object representing the wrapped contact information.
     public var info: CNContact
-    
-    @available(*, deprecated, message: "Use 'KNContact.info' property instead.'")
+    /**
+    A `CNContact` object representing the wrapped contact information.
+     - Warning: Deprecated. Use 'KNContact.info' property instead.
+    **/
+    @available(*, deprecated, message: "Use 'KNContact.info' property instead.")
     public var details: CNContact { return self.info }
     
-    /// List of email addresses and phone numbers
+    /// List of email addresses
     private var emails: [String] { return self.info.emailAddresses.compactMap { String($0.value) } }
+    
+    /// List of phone numbers
     private var phoneNumbers: [String] {
         return self.info.phoneNumbers.compactMap { String($0.value.stringValue) }
     }

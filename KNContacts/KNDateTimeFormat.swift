@@ -6,6 +6,11 @@
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
 
+/// Typealias KNFormat
+public typealias KNFormat = KNDateTimeFormat
+
+/// Typealias KNTimeFormat - for backwards compatibility
+public typealias KNTimeFormat = KNDateTimeFormat
 
 /**
  Enum helper, returns a String that represents a time format such as "HH:mm", "yyyy-MM-dd".
@@ -14,8 +19,6 @@
  - Returns: A string representing a time format.
  - Version: 1.0.03
  */
-public typealias KNFormat = KNDateTimeFormat
-public typealias KNTimeFormat = KNDateTimeFormat
 public enum KNDateTimeFormat: String, Codable {
     /// Date format represented as "HH:mm". E.g. "10:30"
     case hourAndMinutes = "HH:mm"
