@@ -271,7 +271,7 @@ extension KNContact {
     @available(*, deprecated, message: "Use 'formatBirthday(with format: forCurrentYear:)' instead.")
     public func formattedBirthday(with format: KNTimeFormat = .dayAndMonth,
                                   currentYear : Bool = false) -> String {
-        self.formatBirthday(with: format, forCurrentYear: currentYear)
+        return self.formatBirthday(with: format, forCurrentYear: currentYear)
     }
     
     /**
@@ -293,7 +293,7 @@ extension KNContact {
     @available(*, deprecated, message: "Use 'formatBirthday(with format: forCurrentYear:)' instead.")
     public func formattedBirthday(with format: String,
                                   currentYear : Bool = false) -> String {
-        self.formatBirthday(with: format, forCurrentYear: currentYear)
+        return self.formatBirthday(with: format, forCurrentYear: currentYear)
     }
     
     /**
