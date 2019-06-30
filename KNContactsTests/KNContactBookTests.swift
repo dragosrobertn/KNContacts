@@ -30,12 +30,12 @@ class KNContactBookTests: XCTestCase {
     }
 
     func testCorrectlyCountsHowManyContactsAreInTheContactBook() {
-        XCTAssertEqual(contactBook.keysArray().count, 3)
+        XCTAssertEqual(contactBook.count, 3)
     }
     
     func testCorrectlyResetsContacts() {
         contactBook.reset()
-        XCTAssertEqual(contactBook.keysArray().count, 0)
+        XCTAssertEqual(contactBook.count, 0)
     }
     
     func testAddsAndRetrievesAnotherContactToContactBook() {
@@ -45,8 +45,8 @@ class KNContactBookTests: XCTestCase {
         
         contactBook.add(contact)
         
-        XCTAssertEqual(contactBook.toArray().count, 4)
-        XCTAssertEqual(contactBook.get(forKey: id).details, mutableContact)
+        XCTAssertEqual(contactBook.count, 4)
+        XCTAssertEqual(contactBook.get(forKey: id).info, mutableContact)
     }
     
     func testAddsWithIDAndRetrievesAnotherContactToContactBook() {
@@ -56,8 +56,33 @@ class KNContactBookTests: XCTestCase {
         
         contactBook.add(contact, id: contact.id)
         
-        XCTAssertEqual(contactBook.toArray().count, 4)
-        XCTAssertEqual(contactBook.get(forKey: id).details, mutableContact)
+        XCTAssertEqual(contactBook.count, 4)
+        XCTAssertEqual(contactBook.get(forKey: id).info, mutableContact)
+    }
+    
+    func testAddContactByDifferentIdentifiersThanTheContactIDs() {
+        let differentContactBook = KNContactBook(id: "differentIDs")
+        var identifiersArray = [String]()
+        var contactIDs = [String]()
+        var contacts = [KNContact]()
+        
+        for _ in 1...3 {
+            let contact = UnitTestsContactHelpers.getKNContact()
+            let id = UUID().uuidString
+            
+            contacts.append(contact)
+            contactIDs.append(contact.id)
+            identifiersArray.append(id)
+            
+            differentContactBook.add(contact, id: id)
+        }
+        
+        
+        XCTAssertTrue(differentContactBook.keysArray().containsSameElements(as: identifiersArray))
+        XCTAssertTrue(differentContactBook.identifiers.containsSameElements(as: identifiersArray))
+        
+        XCTAssertFalse(differentContactBook.contactIdentifiers.containsSameElements(as: contactBook.identifiers))
+        XCTAssert(differentContactBook.contactIdentifiers.containsSameElements(as: contactIDs))
     }
     
     func testAddsAndRemovesAnotherContactFromContactBook() {
@@ -66,7 +91,7 @@ class KNContactBookTests: XCTestCase {
         
         contactBook.add(contact)
         
-        XCTAssertEqual(contactBook.toArray().count, 4)
+        XCTAssertEqual(contactBook.count, 4)
         
         contactBook.remove(contact)
         XCTAssertEqual(contactBook.toArray().count, 3)
@@ -114,7 +139,7 @@ class KNContactBookTests: XCTestCase {
         contactBook.add(contact)
         
         XCTAssertEqual(contactBook.toArray().count, 4)
-        XCTAssertEqual(contactBook.getOptional(forKey: id)!.details, contact.details)
+        XCTAssertEqual(contactBook.getOptional(forKey: id)!.info, contact.info)
     }
     
     func testReturnsNilIfAttemptToRetrieveInexistentContactFromContactBook() {
@@ -131,6 +156,14 @@ class KNContactBookTests: XCTestCase {
     
     func testItReturnsEntriesKeysAsArray() {
         XCTAssertTrue(contactBook.keysArray().containsSameElements(as: contactIDsArray))
+    }
+    
+    func testItReturnsEntriesIdentfiersAsArrayWhenIDsAreNotOverriden() {
+        XCTAssertTrue(contactBook.identifiers.containsSameElements(as: contactIDsArray))
+    }
+    
+    func testItReturnsIdentifiersArrayWhichIsDifferentFromTheKeysArray() {
+        
     }
     
     func testCorrectlyReturnTrueIfItContainsElement() {
@@ -204,6 +237,12 @@ class KNContactBookTests: XCTestCase {
         let order = KNContactBookOrdering.thisYearsBirthday
         let arrayWithContactsSortedByBirthday = contactBook.toArray(orderedBy: order)
         
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[0].info, january1stContact)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[1].info, january26thContact)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[2].info, february8thContact)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[3].info, december2ndContact)
+        
+        // deprecated
         XCTAssertEqual(arrayWithContactsSortedByBirthday[0].details, january1stContact)
         XCTAssertEqual(arrayWithContactsSortedByBirthday[1].details, january26thContact)
         XCTAssertEqual(arrayWithContactsSortedByBirthday[2].details, february8thContact)
@@ -237,10 +276,10 @@ class KNContactBookTests: XCTestCase {
         let order = KNContactBookOrdering.fullName
         let arrayWithContactsSortedByBirthday = contactBook.toArray(orderedBy: order)
         
-        XCTAssertEqual(arrayWithContactsSortedByBirthday[0].details, contactFamilyNameAGivenNameG)
-        XCTAssertEqual(arrayWithContactsSortedByBirthday[1].details, contactFamilyNameA)
-        XCTAssertEqual(arrayWithContactsSortedByBirthday[2].details, contactFamilyNameD)
-        XCTAssertEqual(arrayWithContactsSortedByBirthday[3].details, contactFamilyNameZ)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[0].info, contactFamilyNameAGivenNameG)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[1].info, contactFamilyNameA)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[2].info, contactFamilyNameD)
+        XCTAssertEqual(arrayWithContactsSortedByBirthday[3].info, contactFamilyNameZ)
     }
     
     func testRetrievesUpdatedContacts() {
@@ -250,18 +289,32 @@ class KNContactBookTests: XCTestCase {
         
         contactBook.add(contact)
         
-        var retrievedContacts = self.contactBook.updatedValues(for: [contact])
+        var retrievedContacts = self.contactBook.getContacts(by: [contact])
         
         XCTAssertEqual(retrievedContacts.first, contact)
         
         mutableContact.familyName = "New Family Name"
         let updatedContact = KNContact(for: mutableContact)
+        
+        contactBook.add(updatedContact)
+        
+        retrievedContacts = contactBook.getContacts(by: [contact.id])
+        XCTAssertEqual(retrievedContacts.first, updatedContact)
+        XCTAssertTrue(retrievedContacts.first?.info.familyName == "New Family Name")
+        
+        // Deprecated
+        var oldRetrievedContacts = self.contactBook.updatedValues(for: [contact])
+        
+        XCTAssertEqual(oldRetrievedContacts.first, contact)
+        
+        mutableContact.familyName = "New Family Name"
+        let oldUpdatedContact = KNContact(for: mutableContact)
 
         contactBook.add(updatedContact)
 
-        retrievedContacts = contactBook.updatedValues(for: [updatedContact])
-        XCTAssertEqual(retrievedContacts.first, updatedContact)
-        XCTAssertTrue(retrievedContacts.first?.details.familyName == "New Family Name")
+        oldRetrievedContacts = contactBook.updatedValues(for: [oldUpdatedContact])
+        XCTAssertEqual(oldRetrievedContacts.first, oldUpdatedContact)
+        XCTAssertTrue(oldRetrievedContacts.first?.info.familyName == "New Family Name")
     }
     
     func testUnableToRetrieveUpdatedContactsWhichHaveBeenRemoved() {
@@ -271,13 +324,18 @@ class KNContactBookTests: XCTestCase {
         
         contactBook.add(contact)
         
-        var retrievedContacts = self.contactBook.updatedValues(for: [contact])
+        var retrievedContacts = self.contactBook.getContacts(by: [contact])
         
         XCTAssertEqual(retrievedContacts.first, contact)
         
         contactBook.remove(contact)
         
-        retrievedContacts = contactBook.updatedValues(for: [contact])
+        retrievedContacts = self.contactBook.getContacts(by: [contact])
         XCTAssertTrue(retrievedContacts.isEmpty)
+        
+        // Deprecated
+        var oldRetrievedContacts = self.contactBook.updatedValues(for: [contact])
+        
+        XCTAssertTrue(oldRetrievedContacts.isEmpty)
     }
 }

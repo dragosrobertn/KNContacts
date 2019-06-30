@@ -21,7 +21,7 @@ public struct KNContactsSchedule {
     public let name: String
     
     /// The time format to save the schedule in
-    public let format: KNTimeFormat
+    public let format: KNDateTimeFormat
     
     /// The collection of sorted contact identifier, grouped based on a time format.
     private var schedule: [String: [String]] = [:]
@@ -37,7 +37,7 @@ public struct KNContactsSchedule {
      
      - Version: 1.0.0
     */
-    public init(name: String, format: KNTimeFormat = .fullDate) {
+    public init(name: String, format: KNDateTimeFormat = .fullDate) {
         self.name = name
         self.format = format
     }

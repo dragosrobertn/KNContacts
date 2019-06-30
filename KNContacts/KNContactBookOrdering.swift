@@ -22,8 +22,8 @@ public struct KNContactBookOrdering {
      - Version: 1.0.0
      */
     static public let thisYearsBirthday = {(_ c1: KNContact, _ c2: KNContact) -> Bool in
-        let firstBirthday = c1.birthday(currentYear: true)!
-        let secondBirthday = c2.birthday(currentYear: true)!
+        let firstBirthday = c1.getBirthday(forCurrentYear: true)!
+        let secondBirthday = c2.getBirthday(forCurrentYear: true)!
         return firstBirthday.compare(secondBirthday) == .orderedAscending
     }
     

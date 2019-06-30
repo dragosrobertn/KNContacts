@@ -24,8 +24,8 @@
 		156E1D10224FD5F700D58B8F /* UnitTestsContactHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */; };
 		156E1D122251873400D58B8F /* KNContactBookOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D112251873400D58B8F /* KNContactBookOrdering.swift */; };
 		156E1D132251874800D58B8F /* KNContactBookOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D112251873400D58B8F /* KNContactBookOrdering.swift */; };
-		156E1D152251882800D58B8F /* KNTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNTimeFormat.swift */; };
-		156E1D162251883700D58B8F /* KNTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNTimeFormat.swift */; };
+		156E1D152251882800D58B8F /* KNDateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNDateTimeFormat.swift */; };
+		156E1D162251883700D58B8F /* KNDateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNDateTimeFormat.swift */; };
 		15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */; };
 		15EA3F49225A636D003F0201 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 15EA3F48225A636D003F0201 /* README.md */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,7 @@
 		156E1D0B224FD4EE00D58B8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestsContactHelpers.swift; sourceTree = "<group>"; };
 		156E1D112251873400D58B8F /* KNContactBookOrdering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNContactBookOrdering.swift; sourceTree = "<group>"; };
-		156E1D142251882800D58B8F /* KNTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNTimeFormat.swift; sourceTree = "<group>"; };
+		156E1D142251882800D58B8F /* KNDateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNDateTimeFormat.swift; sourceTree = "<group>"; };
 		15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNDatesUtilsTests.swift; sourceTree = "<group>"; };
 		15EA3F48225A636D003F0201 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +103,7 @@
 			children = (
 				156E1CE2224FCBEE00D58B8F /* Info.plist */,
 				156E1D0B224FD4EE00D58B8F /* Extensions.swift */,
-				156E1D142251882800D58B8F /* KNTimeFormat.swift */,
+				156E1D142251882800D58B8F /* KNDateTimeFormat.swift */,
 				156E1CF8224FD40200D58B8F /* KNDatesUtils.swift */,
 				156E1CFA224FD40200D58B8F /* KNContact.swift */,
 				156E1CFB224FD40200D58B8F /* KNContactBook.swift */,
@@ -239,7 +239,7 @@
 			files = (
 				156E1CFE224FD40200D58B8F /* KNContact.swift in Sources */,
 				156E1CFD224FD40200D58B8F /* KNContactsSchedule.swift in Sources */,
-				156E1D152251882800D58B8F /* KNTimeFormat.swift in Sources */,
+				156E1D152251882800D58B8F /* KNDateTimeFormat.swift in Sources */,
 				156E1D0C224FD4EE00D58B8F /* Extensions.swift in Sources */,
 				156E1CFF224FD40200D58B8F /* KNContactBook.swift in Sources */,
 				156E1D122251873400D58B8F /* KNContactBookOrdering.swift in Sources */,
@@ -257,7 +257,7 @@
 				156E1D0E224FD57000D58B8F /* Extensions.swift in Sources */,
 				15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */,
 				156E1D05224FD45100D58B8F /* KNContactScheduleTests.swift in Sources */,
-				156E1D162251883700D58B8F /* KNTimeFormat.swift in Sources */,
+				156E1D162251883700D58B8F /* KNDateTimeFormat.swift in Sources */,
 				156E1D10224FD5F700D58B8F /* UnitTestsContactHelpers.swift in Sources */,
 				156E1D132251874800D58B8F /* KNContactBookOrdering.swift in Sources */,
 				156E1D08224FD49500D58B8F /* KNContact.swift in Sources */,

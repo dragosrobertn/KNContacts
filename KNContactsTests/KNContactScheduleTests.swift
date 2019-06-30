@@ -10,7 +10,7 @@ import XCTest
 
 class KNContactScheduleTests: XCTestCase {
     
-    let contactBook = KNContactBook(id: "Contact Book For Tests")
+    var contactBook = KNContactBook(id: "Contact Book For Tests")
     var favourites = KNContactsSchedule(name: "favourites")
     var mutableContactsArray: [KNContact] = []
     var contactIDsArray: [String] = []

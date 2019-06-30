@@ -18,8 +18,22 @@ contact grouping, sorting and selecting random elements.
 public class KNContactBook {
     
     /// The contact book identifier or name.
-    public var id: String
+    private(set) var id: String
     private var entries: [String: KNContact] = [:]
+    
+    /// An read-only list of all identifiers used to retrieve the contacts by in the contact book.
+    /// These can be custom, but by default they use the `KNContacts.id` value.
+    public var identifiers: [String] { get { Array(self.entries.keys) } }
+    
+    /// A  read-only array list of all contacts in the contact book.
+    public var contacts: [KNContact] { get { Array(self.entries.values) } }
+    
+    /// A read-only array list of all contact identifiers stored in the contact book.
+    /// It represents the identifiers of KNContacts stored in the contact book, as opposed to how the contact book identifies the entries.
+    public var contactIdentifiers: [String] { get { return self.contacts.map { $0.id } } }
+    
+    /// The number of entries in the contact book
+    public var count: Int { get { self.entries.count } }
     
     /**
     Initialiser with an identifier representing a way to name or identify the contact book.
@@ -35,13 +49,49 @@ public class KNContactBook {
     }
     
     /**
-     Resets the contact book by invalidating the stored contact entries.
+     Retrieves a `KNContact` from the contact book by using the passed key identifier.
      
      - Author: dragosrobertn
-     - Version: 1.0.0
+     - Parameters:
+     - by: A string representing an identifier to retrieve a contact from the contact book.
+     
+     - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
+     - Version: 1.0.1
+     
+     - Warning:
+     This method force unwraps the value and it can return nil if asked to return an element that doesn't exist.
+     If unsure if the KNContact exists in the contact book, use `KNContactBook().getOptional(forKey:)` instead.
      */
-    public func reset() {
-        self.entries = [:]
+    public func getContact(by contactID: String) -> KNContact! {
+        return self.entries[contactID]
+    }
+    
+    /**
+     Retrieves multiple `KNContact` objects from the contact book by using the passed array of KNContacts.
+     
+     - Author: dragosrobertn
+     - Parameters:
+     - by: An array of `KNContact` to retrieve updated information for a contact from the contact book.
+     
+     - Returns: If found, it returns an array of `KNContact` objects from the contact book.
+     - Version: 1.0.1
+     */
+    public func getContacts(by contactsArray: [KNContact]) -> [KNContact] {
+        return contactsArray.compactMap { self.getContact(by: $0.id) }
+    }
+    
+    /**
+     Retrieves multiple `KNContact` objects from the contact book by using the passed array of KNContacts.
+     
+     - Author: dragosrobertn
+     - Parameters:
+     - by: An array of strings to retrieve updated information for multiple contacts from the contact book.
+     
+     - Returns: If found, it returns an array of `KNContact` objects from the contact book.
+     - Version: 1.0.1
+     */
+    public func getContacts(by contactIds: [String]) -> [KNContact] {
+        return contactIds.compactMap { self.getContact(by: $0) }
     }
     
     /**
@@ -54,7 +104,7 @@ public class KNContactBook {
      - Version: 1.0.0
      */
     public func add(_ contact: KNContact) {
-        self.entries[contact.id] = contact
+        self.add(contact, id: contact.id)
     }
     
     /**
@@ -107,7 +157,7 @@ public class KNContactBook {
      - Version: 1.0.0
      */
     public func remove(_ contact: KNContact) {
-        guard (self.entries.removeValue(forKey: contact.id) != nil) else { return }
+        self.remove(contact.id)
     }
     
     /**
@@ -120,79 +170,7 @@ public class KNContactBook {
      - Version: 1.0.0
      */
     public func remove(_ contacts: [KNContact]) {
-        contacts.forEach({ contact in self.remove(contact) })
-    }
-    
-    /**
-     Retrieves a `KNContact` from the contact book by using the passed key identifier.
-     
-     - Author: dragosrobertn
-     - Parameters:
-        - forKey: A `KNContact` object to be added to the contact book.
-     
-     - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
-     - Version: 1.0.1
-     
-     - Warning:
-        This method force unwraps the value and it can return nil if asked to return an element that doesn't exist.
-        If unsure if the KNContact exists in the contact book, use `KNContactBook().getOptional(forKey:)` instead.
-     */
-    public func get(forKey: String) -> KNContact! {
-        return self.entries[forKey]
-    }
-    
-    /**
-     Retrieves a `KNContact` optional from the contact book by using the passed key identifier.
-     
-     - Author: dragosrobertn
-     - Parameters:
-        - forKey: A `KNContact` object to be added to the contact book.
-     
-     - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
-     - Version: 1.0.0
-     
-     */
-    public func getOptional(forKey: String) -> KNContact? {
-        guard let entry = self.entries[forKey] else { return nil }
-        return entry
-    }
-    
-    /**
-     A method to return all stored contacts as an array.
-     
-     - Author: dragosrobertn
-     - Returns: Returns an array of all `KNContact` objects in the contact book.
-     - Version: 1.0.0
-     */
-    public func toArray() -> [KNContact] {
-        return Array(self.entries.values)
-    }
-    
-    /**
-     A method to return all stored contacts as an array, sorted by a passed criteria.
-     
-     - Author: dragosrobertn
-     - Parameters:
-        - orderedBy:
-            A closure of the following signature `(KNContact, KNContact) -> Bool` representing the criteris used to sort contact.
-            Alternatively a `KNContactBookOrdering` helper value can be passed in.
-     
-     - Returns: Returns an array of all `KNContact` objects sorted by the passed ordering function in a the contact book.
-     - Version: 1.0.0
-     */
-    public func toArray(orderedBy orderingFunction: (KNContact, KNContact) -> Bool ) -> [KNContact] {
-        return self.toArray().sorted(by: orderingFunction)
-    }
-    
-    /**
-     A method to return all stored contact identifiers keys as an array.
-     
-     - Author: dragosrobertn
-     - Returns: Returns an array of all `KNContact` identifiers.
-     - Version: 1.0.0
-     */
-    public func keysArray() -> [String] {
-        return self.entries.values.compactMap { self.getOptional(forKey: $0.id)?.id }
+        contacts.forEach({ contact in self.remove(contact.id) })
     }
     
     /**
@@ -212,33 +190,19 @@ public class KNContactBook {
      - Version: 1.0.0
      */
     public func randomElements(number: Int, except: [KNContact] = []) -> [KNContact] {
-        var differenceList = self.toArray().difference(from: except)
+        var differenceList = self.contacts.difference(from: except)
         
         guard number < differenceList.count else { return differenceList }
         
-        var randomArray: [KNContact] = [KNContact]()
+        var arrayOfRandomContacts: [KNContact] = [KNContact]()
         
         for _ in 1...number {
             guard let randomElement = differenceList.randomItem() else { break }
-            randomArray.append(randomElement)
+            arrayOfRandomContacts.append(randomElement)
             differenceList = differenceList.difference(from: [randomElement])
         }
         
-        return randomArray
-    }
-    
-    /**
-     Retrieve mutliple up to date contacts from the contact book.
-     
-     - Author: dragosrobertn
-     - Parameters:
-        - for: An array to `KNContact` objects to retrieve updated values.
-     
-     - Returns: Returns an array of the up to date values of `KNContact` objects from the contact book.
-     - Version: 1.0.0
-     */
-    public func updatedValues(for contactsArray: [KNContact]) -> [KNContact] {
-        return contactsArray.compactMap { self.get(forKey: $0.id) }
+        return arrayOfRandomContacts
     }
     
     /**
@@ -252,7 +216,118 @@ public class KNContactBook {
      - Version: 1.0.0
      */
     public func contains(element: KNContact) -> Bool {
-        return self.keysArray().contains(element.id)
+        return self.contacts.contains(element)
+    }
+    
+    /**
+     Resets the contact book by invalidating the stored contact entries.
+     
+     - Author: dragosrobertn
+     - Version: 1.0.0
+     */
+    public func reset() {
+        self.entries = [:]
     }
 
+}
+
+// Deprecated
+extension KNContactBook {
+    
+    /**
+     Retrieves a `KNContact` from the contact book by using the passed key identifier.
+     
+     - Author: dragosrobertn
+     - Parameters:
+     - forKey: A string representing an identifier to retrieve a contact from the contact book.
+     
+     - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
+     - Version: 1.0.1
+     
+     - Warning:
+     This method force unwraps the value and it can return nil if asked to return an element that doesn't exist.
+     If unsure if the KNContact exists in the contact book, use `KNContactBook().getOptional(forKey:)` instead.
+     */
+    @available(*, deprecated, message: "Access the 'getContact(by:)' to retrive a KNContact.")
+    public func get(forKey: String) -> KNContact! {
+        return self.getContact(by: forKey)
+    }
+    
+    /**
+     Retrieves a `KNContact` optional from the contact book by using the passed key identifier.
+     
+     - Author: dragosrobertn
+     - Parameters:
+     - forKey: A `KNContact` object to be added to the contact book.
+     
+     - Returns: If found, it returns the `KNContact` object from the contact book. Otherwise nil.
+     - Version: 1.0.0
+     - Warning: Deprecated.
+     */
+    @available(*, deprecated, message: "Access the 'getContact(by:)' to retrive an optional KNContact.")
+    public func getOptional(forKey: String) -> KNContact? {
+        guard let entry = self.get(forKey: forKey) else { return nil }
+        return entry
+    }
+    
+    /**
+     A method to return all stored contacts as an array.
+     
+     - Author: dragosrobertn
+     - Returns: Returns an array of all `KNContact` objects in the contact book.
+     - Version: 1.0.0
+     - Warning: Deprecated. Access the 'contacts' property directly for an array list of contacts.
+     */
+    @available(*, deprecated, message: "Access the 'contacts' property directly for an array list of contacts")
+    public func toArray() -> [KNContact] {
+        return self.contacts
+    }
+    
+    /**
+     A method to return all stored contacts as an array, sorted by a passed criteria.
+     
+     - Author: dragosrobertn
+     - Parameters:
+     - orderedBy:
+     A closure of the following signature `(KNContact, KNContact) -> Bool` representing the criteris used to sort contact.
+     Alternatively a `KNContactBookOrdering` helper value can be passed in.
+     
+     - Returns: Returns an array of all `KNContact` objects sorted by the passed ordering function in a the contact book.
+     - Version: 1.0.0
+     - Warning: Deprecated. Access the 'contacts' property directly for an array list of contacts and perform sorting on it.
+     */
+    @available(*, deprecated, message: "Access the 'contacts' property directly for an array list of contacts and perform sorting on it.")
+    public func toArray(orderedBy orderingFunction: (KNContact, KNContact) -> Bool ) -> [KNContact] {
+        return self.contacts.sorted(by: orderingFunction)
+    }
+    
+    /**
+     A method to return all stored keys as an array.
+     
+     - Author: dragosrobertn
+     - Returns: Returns an array of all `KNContact` identifiers.
+     - Version: 1.0.0
+     - Warning: Deprecated. Access the 'identifiers' key directly for an array list of identifiers.
+     */
+    @available(*, deprecated, message: "Access the 'identifiers' key directly for an array list of identifiers.")
+    public func keysArray() -> [String] {
+        return Array(self.entries.keys)
+    }
+    
+    /**
+     Retrieve mutliple up to date contacts from the contact book.
+     
+     - Author: dragosrobertn
+     - Parameters:
+     - for: An array to `KNContact` objects to retrieve updated values.
+     
+     - Returns: Returns an array of the up to date values of `KNContact` objects from the contact book.
+     - Version: 1.0.0
+     - Warning: Deprecated. Use 'get(contacts:)' instead.
+     */
+    @available(*, deprecated, message: "Use 'get(contacts:)' instead.")
+    public func updatedValues(for contactsArray: [KNContact]) -> [KNContact] {
+        return self.getContacts(by: contactsArray)
+    }
+    
 }

@@ -30,7 +30,7 @@ public struct KNDatesUtils {
      - Returns: A DateFormatter object using the date format passed.
      - Version: 1.0.0
      */
-    static public func formatter(with format: KNTimeFormat) -> DateFormatter {
+    static public func formatter(with format: KNFormat) -> DateFormatter {
         return self.formatter(with: format.rawValue)
     }
     
@@ -60,7 +60,7 @@ public struct KNDatesUtils {
      - Returns: A string representing the formatted date based on the KNTimeFormat and date passed in.
      - Version: 1.0.0
      */
-    static public func string(from date: Date, format: KNTimeFormat) -> String {
+    static public func string(from date: Date, format: KNFormat) -> String {
         return self.string(from: date, format: format.rawValue)
     }
     

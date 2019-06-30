@@ -12,9 +12,11 @@
  
  - Author: dragosrobertn
  - Returns: A string representing a time format.
- - Version: 1.0.0
+ - Version: 1.0.03
  */
-public enum KNTimeFormat: String, Codable {
+public typealias KNFormat = KNDateTimeFormat
+public typealias KNTimeFormat = KNDateTimeFormat
+public enum KNDateTimeFormat: String, Codable {
     /// Date format represented as "HH:mm". E.g. "10:30"
     case hourAndMinutes = "HH:mm"
     

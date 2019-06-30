@@ -10,6 +10,7 @@ import Contacts
 import XCTest
 
 class KNContactTests: XCTestCase {
+    let currentYearMinus29Years = Calendar.current.dateComponents([.year], from:  Date()).year! - 29
     
     func testKNContactIdIsSameAsContactIdentifier() {
         let contact = UnitTestsContactHelpers.getKNContact()
@@ -47,14 +48,12 @@ class KNContactTests: XCTestCase {
     }
     
     func testKNContactGetsBirthday() {
-        let date = Calendar.current.date(byAdding: .year, value: -29, to: Date())!
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: date)
-        
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
-        mutableContact.birthday = dateComponents
+        mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(for: mutableContact)
         
         XCTAssertEqual(contact.getAge(), 29)
+        XCTAssertEqual(contact.getAge(atNextBirthday: true), 30)
         XCTAssertEqual(contact.getAgeAtNextBirthday(), "30")
     }
     
@@ -63,7 +62,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertNil(contact.getAgeAtNextBirthday())
+        XCTAssertEqual(contact.getAgeAtNextBirthday(), "")
     }
     
     func testKNContactGetsNilWhenBirthdayNotAvailable() {
@@ -83,23 +82,27 @@ class KNContactTests: XCTestCase {
     }
     
     func testKNContactGetsBirthdayAsOrdinalAtNextBirthday() {
-        let contact = UnitTestsContactHelpers.getKNContact()
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = currentYearMinus29Years
+        let contact = KNContact(mutableContact)
         
         XCTAssertEqual(contact.getAgeAsOrdinalAtNextBirthday(), "30th")
     }
     
     func testKNContactGetsBirthdayAsOrdinal() {
-        let contact = UnitTestsContactHelpers.getKNContact()
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = currentYearMinus29Years
+        let contact = KNContact(mutableContact)
         
         XCTAssertEqual(contact.getAgeAsOrdinal(), "29th")
     }
     
-    func testKNContactGetsNilWhenBirthdayIsNilForAgeAsOrdinal() {
+    func testKNContactGetsEmptyWhenBirthdayIsEmptyForAgeAsOrdinal() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertNil(contact.getAgeAsOrdinal())
+        XCTAssertEqual(contact.getAgeAsOrdinal(), "")
     }
     
     func testIsBirthdayComingIsFalse() {
@@ -247,6 +250,7 @@ class KNContactTests: XCTestCase {
         let contact = UnitTestsContactHelpers.getKNContact()
         let dateComp = DateComponents(calendar: Calendar.current, year: 1990, month: 01, day: 01)
         
+        XCTAssertEqual(contact.getBirthday(), dateComp.date)
         XCTAssertEqual(contact.birthday(), dateComp.date)
     }
     
@@ -255,7 +259,48 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
+        XCTAssertNil(contact.getBirthday())
         XCTAssertNil(contact.birthday())
+    }
+    
+    func testRetrievesEmptyStringAgeAsStringForWhenYearNotPresent() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = nil
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertEqual(contact.getAgeAsString(), "")
+    }
+    
+    func testRetrievesCurrentAgeAsString() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = currentYearMinus29Years
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertEqual(contact.getAgeAsString(), "29")
+    }
+    
+    func testRetrievesCurrentAgeOrdinalAsString() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = currentYearMinus29Years
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertEqual(contact.getAgeAsString(asOrdinal: true), "29th")
+    }
+    
+    func testRetrievesAgeAtNextBirthdayAsString() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = currentYearMinus29Years
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true), "30")
+    }
+    
+    func testRetrievesAgeOrdinalAtNextBirthdayAsString() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        mutableContact.birthday?.year = currentYearMinus29Years
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), "30th")
     }
     
     func testKNContactsAreTheSame() {
