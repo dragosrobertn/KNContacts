@@ -1,7 +1,7 @@
 os: osx
 language: swift
 cache: cocoapods
-osx_image: xcode10.2
+osx_image: xcode11
 
 jobs:  
   include:
