@@ -18,7 +18,7 @@ contact grouping, sorting and selecting random elements.
 public class KNContactBook {
     
     /// The contact book identifier or name.
-    private(set) var id: String
+    public var id: String
     private var entries: [String: KNContact] = [:]
     
     /// An read-only list of all identifiers used to retrieve the contacts by in the contact book.
