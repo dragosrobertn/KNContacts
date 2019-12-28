@@ -11,7 +11,7 @@ import XCTest
 
 class KNContactTests: XCTestCase {
     let currentYearMinus29Years = Calendar.current.dateComponents([.year], from:  Date()).year! - 29
-    
+    let calendar = Calendar.current
     func testKNContactIdIsSameAsContactIdentifier() {
         let contact = UnitTestsContactHelpers.getKNContact()
         
@@ -106,7 +106,14 @@ class KNContactTests: XCTestCase {
     }
     
     func testIsBirthdayComingIsFalse() {
-        let contact = UnitTestsContactHelpers.getKNContact()
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
+
+        let yesterdayTodayComponents = calendar.dateComponents([.day, .month], from: yesterday)
+        mutableContact.birthday?.day = yesterdayTodayComponents.day
+        mutableContact.birthday?.month = yesterdayTodayComponents.month
+
+        let contact = KNContact(for: mutableContact)
         
         XCTAssertFalse(contact.isBirthdayComing(in: 7))
     }
@@ -121,13 +128,12 @@ class KNContactTests: XCTestCase {
     
     func testIsBirthdayComingIsTrue() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
-        let calendar = Calendar.current
-        let aWeekFromToday = Calendar.current.date(byAdding: .day, value: 7, to: Date())!
+        let aWeekFromToday = calendar.date(byAdding: .day, value: 7, to: Date())!
 
-        let todayComponents = calendar.dateComponents([.day, .month],
+        let aWeekFromTodayComponents = calendar.dateComponents([.day, .month],
                                                       from: aWeekFromToday)
-        mutableContact.birthday?.day = todayComponents.day
-        mutableContact.birthday?.month = todayComponents.month
+        mutableContact.birthday?.day = aWeekFromTodayComponents.day
+        mutableContact.birthday?.month = aWeekFromTodayComponents.month
         
         let contact = KNContact(for: mutableContact)
         
@@ -143,7 +149,7 @@ class KNContactTests: XCTestCase {
     func testIsBirthdayTodayIsTrue() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
         
-        let todayComponents = Calendar.current.dateComponents([.day, .month], from: Date())
+        let todayComponents = calendar.dateComponents([.day, .month], from: Date())
         mutableContact.birthday?.day = todayComponents.day
         mutableContact.birthday?.month = todayComponents.month
         

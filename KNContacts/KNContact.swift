@@ -188,15 +188,17 @@ public struct KNContact {
         - in: The number of days as an integer representing the number of days to check if the birthday is upcoming
      
      - Returns: Returns a bool representing whether the today is the contact's birthday. False if the contact doesn't have birthday information available.
-     - Version: 1.0.0
+     - Version: 1.2.0
      */
     public func isBirthdayComing(in days: Int) -> Bool {
         let futureDate = calendar.date(byAdding: .day, value: days, to: Date())!
-        guard let birthday = self.getBirthday(forCurrentYear: true) else {
+        guard let birthday = self.getBirthday(forCurrentYear: true), let nextDate = calendar.nextDate(after: birthday,
+                                               matching: calendar.dateComponents([.day, .month], from: birthday),
+                                               matchingPolicy: .strict) else {
             return false
         }
         
-        return birthday.isBetween(Date(), and: futureDate) ? true : false
+        return nextDate.isBetween(Date(), and: futureDate) ? true : false
     }
     
     /**

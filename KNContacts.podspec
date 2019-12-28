@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KNContacts"
-  s.version      = "1.1.1"
+  s.version      = "1.2.0"
   s.summary      = "KNContacts is a wrapper framework for CNContacts for easier access, scheduling and ordering."
 
   s.description  = <<-DESC 
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.author             = "dragosrobertn"
   s.social_media_url   = "http://twitter.com/dragosrobertn"
 
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
   s.platform     = :ios, "10.0"
 
   s.source       = { :git => "https://github.com/dragosrobertn/KNContacts.git", :tag => s.version }
