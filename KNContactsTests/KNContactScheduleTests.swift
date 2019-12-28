@@ -45,7 +45,7 @@ class KNContactScheduleTests: XCTestCase {
     func testAddsADateToTheScheduleByString() {
         let dateString = KNDatesUtils.formatter(with: favourites.format).string(from: Date())
         let list: [String] = []
-        favourites.add(list: list, fromString: dateString)
+        favourites.add(list: list, to: dateString)
         
         XCTAssertTrue(favourites.getSchedule().count == 1, "Schedule has a date entry")
         XCTAssertTrue(favourites.getSchedule(for: today) == [], "Schedule for date can be retrieved")
@@ -53,7 +53,7 @@ class KNContactScheduleTests: XCTestCase {
     
     func testAttemptingToAddListToTheScheduleByIncorrectlyFormattedStringReturns() {
         let list: [String] = []
-        favourites.add(list: list, fromString: "2019-13-13")
+        favourites.add(list: list, to: "2019-13-13")
         
         XCTAssertTrue(favourites.getSchedule().count == 0, "Schedule has a date entry")
     }

@@ -23,12 +23,6 @@ public struct KNContact {
     
     /// A `CNContact` object representing the wrapped contact information.
     public var info: CNContact
-    /**
-    A `CNContact` object representing the wrapped contact information.
-     - Warning: Deprecated. Use 'KNContact.info' property instead.
-    **/
-    @available(*, deprecated, message: "Use 'KNContact.info' property instead.")
-    public var details: CNContact { return self.info }
     
     /// List of email addresses
     private var emails: [String] { return self.info.emailAddresses.compactMap { String($0.value) } }
@@ -233,111 +227,6 @@ public struct KNContact {
         return asOrdinal ? age.ordinal :  String(format: "%d", age)
     }
 
-}
-
-extension KNContact {
-
-    /**
-     Returns the birthday of the contact as an optional date, if the contact has birthday information is available.
-     
-     - Author: dragosrobertn
-     - Parameters:
-     - forCurrentYear:
-     A boolean value representing if the birthday date should be returned for the current year.
-     Optional. Defaults to false.
-     
-     - Returns: A date representing the contact's birthday or nil.
-     - Version: 1.0.0
-     - Warning: Deprecated. Use 'getBirthday(forCurrentYear:)' instead.'
-     */
-    @available(*, deprecated, message: "Use 'getBirthday(forCurrentYear:)' instead.'")
-    public func birthday(currentYear: Bool = false) -> Date? {
-        return self.getBirthday(forCurrentYear: currentYear)
-    }
-    
-    /**
-     Helper method to return a formatted birthday using a `KNTimeFormat`.
-     
-     - Author: dragosrobertn
-     - Parameters:
-     - with: A `KNTimeFormat` enum option. Optional. Defaults to `KNTimeFormat.dayAndMonth`
-     - currentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
-     
-     - Returns: Returns a string representing a formatted birthday using the `KNTimeFormat` passed. If the contact doesn't contain birthday information returns an empty string.
-     - Version: 1.0.0
-     - Warning: Use 'formatBirthday(with format: forCurrentYear:)' instead.
-     */
-    @available(*, deprecated, message: "Use 'formatBirthday(with format: forCurrentYear:)' instead.")
-    public func formattedBirthday(with format: KNTimeFormat = .dayAndMonth,
-                                  currentYear : Bool = false) -> String {
-        return self.formatBirthday(with: format, forCurrentYear: currentYear)
-    }
-    
-    /**
-     Helper method to return a formatted birthday using a string representing a date formatt.
-     
-     - Author: dragosrobertn
-     - Parameters:
-     - with: A string representing the date format desired to display the birthday. Required.
-     - currentYear:
-     A boolean value representing if the birthday date should be returned for the current year.
-     Optional. Defaults to false.
-     
-     - Returns:
-     Returns a string representing a formatted birthday using the format string passed.
-     If the format is invalid or the contact doesn't contain birthday information returns an empty string.
-     - Version: 1.0.0
-     - Warning: Deprecated. Use 'formatBirthday(with format: forCurrentYear:)' instead.
-     */
-    @available(*, deprecated, message: "Use 'formatBirthday(with format: forCurrentYear:)' instead.")
-    public func formattedBirthday(with format: String,
-                                  currentYear : Bool = false) -> String {
-        return self.formatBirthday(with: format, forCurrentYear: currentYear)
-    }
-    
-    /**
-     Helper method to retrieve a contact's upcoming birthday as an ordinal value e.g. If the contact is currently 29, it will return "30th".
-     
-     - Author: dragosrobertn
-     - Returns: Returns an unwrapped String representing the contact's age at their next birthday as an ordinal if the birthday information including the year is available.
-     - Version: 1.0.0
-     - Warning: Deprecated. Use 'getAgeAsString(atNextBirthday:asOrdinal)' instead.
-     */
-    @available(*, deprecated, message: "Use 'getAgeAsString(atNextBirthday:asOrdinal)' instead.")
-    public func getAgeAsOrdinalAtNextBirthday() -> String! {
-        return self.getAgeAsString(atNextBirthday: true, asOrdinal: true)
-    }
-    
-    /**
-     Helper method to retrieve a contact's age on an upcoming birthday e.g. If the contact is currently 29, it will return "30".
-     
-     - Author:dragosrobertn
-     - Returns:
-     Returns an optional String representing the contact's age at their next birthday if the birthday information including the year is available.
-     If the information isn't available it returns nil.
-     - Version: 1.0.0
-     - Warning: Deprecated. Use 'getAgeAsString(atNextBirthday:asOrdinal)' instead.
-     
-     */
-    @available(*, deprecated, message: "Use 'getAgeAsString(atNextBirthday:asOrdinal)' instead.")
-    public func getAgeAtNextBirthday() -> String! {
-        return self.getAgeAsString(atNextBirthday: true)
-    }
-    
-    /**
-     Helper method to retrieve a contact's current birthday as an ordinal value e.g. If the contact is currently 29, it will return "29th".
-     
-     - Author: dragosrobertn
-     - Returns:
-     Returns an unwrapped String representing the contact's age as an ordinal if the birthday information including the year is available.
-     Otherwise it returns nil.
-     - Version: 1.0.0
-     - Warning: Deprecated. Use 'getAgeAsString(atNextBirthday:asOrdinal)' instead.
-     */
-    @available(*, deprecated, message: "Use 'getAgeAsString(atNextBirthday:asOrdinal)' instead.")
-    public func getAgeAsOrdinal() -> String! {
-        return self.getAgeAsString(asOrdinal: true)
-    }
 }
 
 extension KNContact: Hashable { }

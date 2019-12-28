@@ -126,23 +126,3 @@ public struct KNContactsSchedule {
         self.schedule.removeAll()
     }
 }
-
-extension KNContactsSchedule {
-    /**
-     Adds multiple contact identifers to the schedule for a particular day passed as a String type.
-     The string representing a datetime format will be parsed and if invalid, the method will return without adding the identifiers to the schedule.
-     
-     - Author: dragosrobertn
-     
-     - Parameters:
-         - list: An array of strings representing contact identifiers. Required.
-         - fromString: A string value representing a valid date format to be used for grouping the contact identifiers by and later be retrieved.
-     
-     - Version: 1.0.0
-     - Warning: Deprecated. Use 'add(list:to:)' instead.
-     */
-    @available(*, deprecated, message: "Use 'add(list:to:)' instead.")
-    public mutating func add(list: [String], fromString day: String) {
-       self.add(list: list, to: day)
-    }
-}

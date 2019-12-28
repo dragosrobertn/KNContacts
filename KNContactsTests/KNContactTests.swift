@@ -54,7 +54,7 @@ class KNContactTests: XCTestCase {
         
         XCTAssertEqual(contact.getAge(), 29)
         XCTAssertEqual(contact.getAge(atNextBirthday: true), 30)
-        XCTAssertEqual(contact.getAgeAtNextBirthday(), "30")
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true), "30")
     }
     
     func testKNContactGetsAgeAtNextBirthdayReturnNilWhenDateNotPresent() {
@@ -62,7 +62,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.getAgeAtNextBirthday(), "")
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true), "")
     }
     
     func testKNContactGetsNilWhenBirthdayNotAvailable() {
@@ -78,7 +78,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsOrdinalAtNextBirthday(), "")
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), "")
     }
     
     func testKNContactGetsBirthdayAsOrdinalAtNextBirthday() {
@@ -86,7 +86,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsOrdinalAtNextBirthday(), "30th")
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), "30th")
     }
     
     func testKNContactGetsBirthdayAsOrdinal() {
@@ -94,7 +94,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsOrdinal(), "29th")
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: false, asOrdinal: true), "29th")
     }
     
     func testKNContactGetsEmptyWhenBirthdayIsEmptyForAgeAsOrdinal() {
@@ -102,7 +102,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsOrdinal(), "")
+        XCTAssertEqual(contact.getAgeAsString(asOrdinal: true), "")
     }
     
     func testIsBirthdayComingIsFalse() {
@@ -191,7 +191,8 @@ class KNContactTests: XCTestCase {
     func testFormattedBirthdayWithFullDateForm() {
         let contact = UnitTestsContactHelpers.getKNContact()
         
-        XCTAssertEqual(contact.formattedBirthday(with: .fullDate, currentYear: false), "1990-01-01")
+        XCTAssertEqual(contact.formatBirthday(with: .fullDate, forCurrentYear: false), "1990-01-01")
+
     }
     
     func testFormattedBirthdayReturnsEmptyStringWhenBirthdayIsNotPresentUsingFullDeclaration() {
@@ -199,13 +200,13 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.formattedBirthday(with: .fullDate, currentYear: false), "")
+        XCTAssertEqual(contact.formatBirthday(with: .fullDate, forCurrentYear: false), "")
     }
     
     func testFormattedThisYearsBirthdayWithFullDate() {
         let contact = UnitTestsContactHelpers.getKNContact()
         
-        XCTAssertEqual(contact.formattedBirthday(with: .fullDate, currentYear: true), "2019-01-01")
+        XCTAssertEqual(contact.formatBirthday(with: .fullDate, forCurrentYear: true), "2019-01-01")
     }
     
     func testFormatedThisYearsBirthdayReturnsEmptyStringWhenBirthdayIsNotPresent() {
@@ -213,13 +214,13 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.formattedBirthday(with: .fullDate, currentYear: true), "")
+        XCTAssertEqual(contact.formatBirthday(with: .fullDate, forCurrentYear: true), "")
     }
     
     func testFormattedBirthday() {
         let contact = UnitTestsContactHelpers.getKNContact()
         
-        XCTAssertEqual(contact.formattedBirthday(), "1 Jan")
+        XCTAssertEqual(contact.formatBirthday(), "1 Jan")
     }
     
     func testFormattedBirthdayReturnsEmptyStringWhenBirthdayIsNotPresent() {
@@ -227,13 +228,13 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.formattedBirthday(), "")
+        XCTAssertEqual(contact.formatBirthday(), "")
     }
     
     func testFormattedBirthdayWithCustomStringFormat() {
         let contact = UnitTestsContactHelpers.getKNContact()
         
-        XCTAssertEqual(contact.formattedBirthday(with: "d MM"), "1 01")
+        XCTAssertEqual(contact.formatBirthday(with: "d MM"), "1 01")
     }
     
     func testFormattedBirthdayWithStringFormatReturnsEmptyStringWhenBirthdayIsNotPresent() {
@@ -241,7 +242,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.formattedBirthday(with: "d MM"), "")
+        XCTAssertEqual(contact.formatBirthday(with: "d MM"), "")
     }
     
     func testFormattedBirthdayReturnsEmptyStringFormatIdGibberish() {
@@ -249,7 +250,7 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday = nil
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.formattedBirthday(with: "gibberish"), "")
+        XCTAssertEqual(contact.formatBirthday(with: "gibberish"), "")
     }
     
     func testBirthdayAsDate() {
@@ -257,7 +258,6 @@ class KNContactTests: XCTestCase {
         let dateComp = DateComponents(calendar: Calendar.current, year: 1990, month: 01, day: 01)
         
         XCTAssertEqual(contact.getBirthday(), dateComp.date)
-        XCTAssertEqual(contact.birthday(), dateComp.date)
     }
     
     func testBirthdayAsDateReturnNilWhenBirthdayNotPresent() {
@@ -266,7 +266,6 @@ class KNContactTests: XCTestCase {
         let contact = KNContact(for: mutableContact)
         
         XCTAssertNil(contact.getBirthday())
-        XCTAssertNil(contact.birthday())
     }
     
     func testRetrievesEmptyStringAgeAsStringForWhenYearNotPresent() {
