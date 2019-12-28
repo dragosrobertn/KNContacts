@@ -97,9 +97,6 @@ let schedule = thisWeeksBirthdaySchedule.getSchedule(for: tomorrow)
 | from `v1.2.0`      | Swift 5.0      |
 | up to `v1.1.1`     | Swift 4.2      |
 
-- Swift 5.0 
-- Swift 4.2 `v1.1.1` 
-
 ### Usage
 KNContacts is currently available using CocoaPods. Just add this snippet into your podfile to use the latest version.
 
