@@ -14,7 +14,7 @@ KNContact class is a wrapper class which gives quick access to helper methods fo
 birthday and age information, first email address or phone number.
  
 - Author: dragosrobertn
-- Version: 1.1.0
+- Version: 1.2.1
 **/
 public struct KNContact {
     
@@ -68,11 +68,10 @@ public struct KNContact {
         - format: A CNContactFormatterStyle enum option. Optional. Defaults to .fullName
      
      - Returns: A string representing the full name. It can be an empty string.
-     - Version: 1.0.2
+     - Version: 1.2.1
      */
     public func fullName(format: CNContactFormatterStyle = .fullName) -> String {
-        guard let name = CNContactFormatter.string(from: self.info, style: format) else { return "" }
-        return name
+        return CNContactFormatter.string(from: self.info, style: format) ?? ""
     }
 
     
@@ -180,19 +179,19 @@ public struct KNContact {
      - Author: dragosrobertn
      - Parameters:
         - in: The number of days as an integer representing the number of days to check if the birthday is upcoming
+        - startingDate: The date from which to start checking if the birthday is upcoming. Default is today's date.
      
      - Returns: Returns a bool representing whether the today is the contact's birthday. False if the contact doesn't have birthday information available.
-     - Version: 1.2.0
+     - Version: 1.2.1
      */
-    public func isBirthdayComing(in days: Int) -> Bool {
-        let futureDate = calendar.date(byAdding: .day, value: days, to: Date())!
-        guard let birthday = self.getBirthday(forCurrentYear: true), let nextDate = calendar.nextDate(after: birthday,
-                                               matching: calendar.dateComponents([.day, .month], from: birthday),
-                                               matchingPolicy: .strict) else {
-            return false
-        }
+    public func isBirthdayComing(in days: Int, startingDate: Date = Date()) -> Bool {
+        guard let birthday = self.getBirthday(forCurrentYear: true) else { return false }
+        let birthdayComponents = calendar.dateComponents([.day, .month], from: birthday)
+        let dateComponents: [DateComponents] = (0...days)
+            .compactMap({ number in return calendar.date(byAdding: .day, value: number, to: startingDate)! })
+            .compactMap({ date in return calendar.dateComponents([.day, .month], from: date)})
         
-        return nextDate.isBetween(Date(), and: futureDate) ? true : false
+        return dateComponents.contains(birthdayComponents)
     }
     
     /**
