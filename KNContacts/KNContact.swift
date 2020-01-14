@@ -179,7 +179,7 @@ public struct KNContact {
      - Author: dragosrobertn
      - Parameters:
         - in: The number of days as an integer representing the number of days to check if the birthday is upcoming
-        - startingDate: The date from which to start checking if the birthday is upcoming. Default is today's date.
+        - startingDate: The date from which to start checking if the birthday is upcoming. Default is today's date and the starting date will be excluded..
      
      - Returns: Returns a bool representing whether the today is the contact's birthday. False if the contact doesn't have birthday information available.
      - Version: 1.2.1
@@ -187,7 +187,7 @@ public struct KNContact {
     public func isBirthdayComing(in days: Int, startingDate: Date = Date()) -> Bool {
         guard let birthday = self.getBirthday(forCurrentYear: true) else { return false }
         let birthdayComponents = calendar.dateComponents([.day, .month], from: birthday)
-        let dateComponents: [DateComponents] = (0...days)
+        let dateComponents: [DateComponents] = (1...days)
             .compactMap({ number in return calendar.date(byAdding: .day, value: number, to: startingDate)! })
             .compactMap({ date in return calendar.dateComponents([.day, .month], from: date)})
         

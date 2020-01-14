@@ -126,6 +126,18 @@ class KNContactTests: XCTestCase {
         XCTAssertFalse(contact.isBirthdayComing(in: 7))
     }
     
+    func testIsBirthdayComingIsFalseWhenBirthdayIsToday() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        
+        let todayComponents = calendar.dateComponents([.day, .month], from: Date())
+        mutableContact.birthday?.day = todayComponents.day
+        mutableContact.birthday?.month = todayComponents.month
+        
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertFalse(contact.isBirthdayComing(in: 7))
+    }
+    
     func testIsBirthdayComingIsTrue() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
         let aWeekFromToday = calendar.date(byAdding: .day, value: 7, to: Date())!
@@ -157,7 +169,7 @@ class KNContactTests: XCTestCase {
     
     func testIsBirthdayComingIsTrueForContactWithBirthdayInLateDecemberWhichMakesTheCheckPassAYear() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
-        mutableContact.birthday?.day = 27
+        mutableContact.birthday?.day = 28
         mutableContact.birthday?.month = 12
         
         let dateUtilsFormatter = KNDatesUtils.formatter(with: .fullDate)
@@ -169,7 +181,7 @@ class KNContactTests: XCTestCase {
     
     func testIsBirthdayComingIsFalseForContactWithBirthdayInLateDecemberThatJustPassedWhichMakesTheCheckPassAYear() {
         let mutableContact = UnitTestsContactHelpers.getMutableContact()
-        mutableContact.birthday?.day = 26
+        mutableContact.birthday?.day = 27
         mutableContact.birthday?.month = 12
         
         let dateUtilsFormatter = KNDatesUtils.formatter(with: .fullDate)
