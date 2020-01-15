@@ -1,5 +1,5 @@
 # KNContacts 
-![Cocoapods](https://img.shields.io/cocoapods/v/KNContacts.svg) [![Build Status](https://travis-ci.org/dragosrobertn/KNContacts.svg?branch=master)](https://travis-ci.org/dragosrobertn/KNContacts) [![codecov](https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg)](https://codecov.io/gh/dragosrobertn/KNContacts) ![contributions](https://img.shields.io/badge/contributions-welcome-informational.svg)
+[![Cocoapods](https://img.shields.io/cocoapods/v/KNContacts.svg)](https://cocoapods.org/pods/KNContacts) [![Build Status](https://travis-ci.org/dragosrobertn/KNContacts.svg?branch=master)](https://travis-ci.org/dragosrobertn/KNContacts) [![codecov](https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg)](https://codecov.io/gh/dragosrobertn/KNContacts) ![contributions](https://img.shields.io/badge/contributions-welcome-informational.svg)
 
 KNContacts is wrapper for CNContacts for easier access to information like current age and age at next birthday, full contact name, creating contact books (groups), ordering them and creating contact schedules.
 
