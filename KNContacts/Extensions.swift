@@ -28,12 +28,6 @@ extension Array where Element: Comparable {
     }
 }
 
-extension Date {
-    func isBetween(_ startDate: Date, and endDate: Date) -> Bool {
-        return (min(startDate, endDate) ... max(startDate, endDate)).contains(self)
-    }
-}
-
 extension Int {
     var ordinal: String! {
         let formatter = NumberFormatter()
