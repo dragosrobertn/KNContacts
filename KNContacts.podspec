@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "KNContacts"
-  s.version      = "1.2.1"
+  s.version      = "1.2.2"
   s.summary      = "KNContacts is a wrapper framework for CNContacts for easier access, scheduling and ordering."
 
   s.description  = <<-DESC 

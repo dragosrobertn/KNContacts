@@ -221,6 +221,32 @@ class KNContactTests: XCTestCase {
         XCTAssertTrue(contact.isBirthdayToday())
     }
     
+    func testBirthdayMatchesCurrentDateIsTrue() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        
+        let today = Date()
+        let todayComponents = calendar.dateComponents([.day, .month], from: today)
+        mutableContact.birthday?.day = todayComponents.day
+        mutableContact.birthday?.month = todayComponents.month
+        
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertTrue(contact.birthdayMatches(date: today))
+    }
+    
+    func testBirthdayMatchesTomorrowsDateIsFalse() {
+        let mutableContact = UnitTestsContactHelpers.getMutableContact()
+        
+        let tomorrow = calendar.date(byAdding: .day, value: 1, to: Date())!
+        let todayComponents = calendar.dateComponents([.day, .month], from: Date())
+        mutableContact.birthday?.day = todayComponents.day
+        mutableContact.birthday?.month = todayComponents.month
+        
+        let contact = KNContact(for: mutableContact)
+        
+        XCTAssertFalse(contact.birthdayMatches(date: tomorrow))
+    }
+    
     func testGetFirstEmailAddress() {
         let contact = UnitTestsContactHelpers.getKNContact()
         

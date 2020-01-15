@@ -14,7 +14,7 @@ KNContact class is a wrapper class which gives quick access to helper methods fo
 birthday and age information, first email address or phone number.
  
 - Author: dragosrobertn
-- Version: 1.2.1
+- Version: 1.2.2
 **/
 public struct KNContact {
     
@@ -165,12 +165,25 @@ public struct KNContact {
      Helper method to find out if current date matches the contact's birthday.
      
      - Author: dragosrobertn
-     - Returns: Returns a boolean value representing whether the today is the contact's birthday.
+     - Returns: Returns a boolean value representing whether current date is the contact's birthday.
      - Version: 1.0.0
      */
     public func isBirthdayToday() -> Bool {
-        let todayFormattedString = KNDatesUtils.string(from: Date(), format: .dayAndMonth)
-        return self.formatBirthday() == todayFormattedString
+        return self.birthdayMatches(date: Date())
+    }
+    
+    /**
+     Helper method to find out if current date matches the contact's birthday.
+     
+     - Author: dragosrobertn
+     - Parameters:
+        - date: The date to which to compare the contact's birthday
+     - Returns: Returns a boolean value representing whether the passed date matches the contact's birthday
+     - Version: 1.2.2
+     */
+    public func birthdayMatches(date: Date) -> Bool {
+        let formattedDate = KNDatesUtils.string(from: date, format: .dayAndMonth)
+        return self.formatBirthday() == formattedDate
     }
     
     /**
@@ -181,7 +194,8 @@ public struct KNContact {
         - in: The number of days as an integer representing the number of days to check if the birthday is upcoming
         - startingDate: The date from which to start checking if the birthday is upcoming. Default is today's date and the starting date will be excluded..
      
-     - Returns: Returns a bool representing whether the today is the contact's birthday. False if the contact doesn't have birthday information available.
+     - Returns: Returns a bool representing whether the contact's birthday is in the interval between the starting date and the number of following days provided by the days param.
+                False if the contact doesn't have birthday information available.
      - Version: 1.2.1
      */
     public func isBirthdayComing(in days: Int, startingDate: Date = Date()) -> Bool {
