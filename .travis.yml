@@ -7,7 +7,7 @@ jobs:
   include:
     - stage: "Tests"               
       name: "Unit Tests"
-      script: xcodebuild -project KNContacts.xcodeproj -scheme KNContacts  -destination 'platform=iOS Simulator,OS=13.3,name=iPhone 11' clean build test -only-testing:KNContactsTests | xcpretty
+      script: xcodebuild -project KNContacts.xcodeproj -scheme KNContacts -destination 'platform=iOS Simulator,OS=13.3,name=iPhone 11' clean build test -only-testing:KNContactsTests | xcpretty
 
 after_success:
   - gem install jazzy -v 0.13.2
