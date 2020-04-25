@@ -3,7 +3,7 @@
 //  KNContactsTests
 //
 //  Created by Dragos-Robert Neagu on 11/06/2019.
-//  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
+//  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
 import XCTest
@@ -40,15 +40,18 @@ class KNDatesUtilsTests: XCTestCase {
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatDayAndFullMonth() {
-        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .dayAndFullMonth), "1 January")
+        let localisedDate = UnitTestsContactHelpers.getLocalisedStringFor("1 January", locale: Locale.current)
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .dayAndFullMonth), localisedDate)
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatFullMonth() {
-        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .fullMonth), "January")
+        let localisedDate = UnitTestsContactHelpers.getLocalisedStringFor("January", locale: Locale.current)
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .fullMonth), localisedDate)
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatDayAndMonth() {
-        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .dayAndMonth), "1 Jan")
+        let localisedDate = UnitTestsContactHelpers.getLocalisedStringFor("1 Jan", locale: Locale.current)
+        XCTAssertEqual(KNDatesUtils.string(from: dateComponents.date!, format: .dayAndMonth), localisedDate)
     }
     
     func testReturnsACorrectStringFormattedUsingAKNTimeFormatHourAndMinutes() {

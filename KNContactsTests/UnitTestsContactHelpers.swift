@@ -3,7 +3,7 @@
 //  KINNUnitTests
 //
 //  Created by Dragos-Robert Neagu on 30/11/2018.
-//  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
+//  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
 import Contacts
@@ -32,5 +32,47 @@ class UnitTestsContactHelpers: XCTestCase {
     class func getKNContact() -> KNContact {
         let mutableContact = self.getMutableContact()
         return KNContact(for: mutableContact)
+    }
+    
+    class func getLocalisedStringFor(_ key: String, locale: Locale) -> String {
+        var dictionary : [String : [String: String]] = [:]
+        
+        let spanish = [
+            "30th": "30.º",
+            "29th": "29.º",
+            "1 Jan": "1 ene",
+            "1 January": "1 enero",
+            "January": "enero"
+        ]
+        let german = [
+            "30th": "30.",
+            "29th": "29.",
+            "1 Jan": "1 Jan.",
+            "1 January": "1 Januar",
+            "January": "Januar"
+        ]
+        let romanian = [
+            "30th": "30a",
+            "29th": "29a",
+            "1 Jan": "1 ian.",
+            "1 January": "1 ianuarie",
+            "January": "ianuarie"
+        ]
+        let russian = [
+            "30th": "30.",
+            "29th": "29.",
+            "1 Jan": "1 янв.",
+            "1 January": "1 января",
+            "January": "января"
+        ]
+        
+        dictionary["es_ES"] = spanish
+        dictionary["de_DE"] = german
+        dictionary["ro_RO"] = romanian
+        dictionary["ru_RU"] = russian
+        
+        let language = dictionary[locale.identifier]
+        return language?[key] ?? key
+        
     }
 }

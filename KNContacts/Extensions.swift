@@ -32,6 +32,7 @@ extension Int {
     var ordinal: String! {
         let formatter = NumberFormatter()
         formatter.numberStyle = .ordinal
+        formatter.locale = Locale.current
         return formatter.string(from: self as NSNumber)!
     }
 }

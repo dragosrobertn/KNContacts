@@ -3,7 +3,7 @@
 //  KNContacts
 //
 //  Created by Dragos-Robert Neagu on 20/12/2018.
-//  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
+//  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
 import Foundation
@@ -42,9 +42,10 @@ public struct KNDatesUtils {
         - format: String representing a valid date format. Required.
      
      - Returns: A DateFormatter object using the date format passed.
-     - Version: 1.0.0
+     - Version: 1.2.3
      */
     static public func formatter(with format: String) -> DateFormatter {
+        dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = format
         return dateFormatter
     }

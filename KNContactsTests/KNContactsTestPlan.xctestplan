@@ -1,0 +1,57 @@
+{
+  "configurations" : [
+    {
+      "id" : "30D4B134-A692-414B-9A85-1AB21EDB6FBD",
+      "name" : "English (UK)",
+      "options" : {
+        "language" : "en",
+        "region" : "GB"
+      }
+    },
+    {
+      "id" : "137F91D9-2DCA-45EB-BEDD-891FE3C09B80",
+      "name" : "Spanish (Spain)",
+      "options" : {
+        "language" : "es",
+        "region" : "ES"
+      }
+    },
+    {
+      "id" : "6A3A5FB3-21D3-4B01-8CB8-9324F9DB2C0E",
+      "name" : "German (Germany)",
+      "options" : {
+        "language" : "de",
+        "region" : "DE"
+      }
+    },
+    {
+      "id" : "D4B4FD67-82AC-4742-BCE5-4EDD098EE074",
+      "name" : "Romanian (Romania)",
+      "options" : {
+        "language" : "ro",
+        "region" : "RO"
+      }
+    },
+    {
+      "id" : "6E2FF792-037C-4AF1-BC8D-F106D7C5433C",
+      "name" : "Russian (Russia)",
+      "options" : {
+        "language" : "ru",
+        "region" : "RU"
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:KNContacts.xcodeproj",
+        "identifier" : "156E1CE6224FCBEE00D58B8F",
+        "name" : "KNContactsTests"
+      }
+    }
+  ],
+  "version" : 1
+}

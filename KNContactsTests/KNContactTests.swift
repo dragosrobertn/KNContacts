@@ -3,7 +3,7 @@
 //  KINNUnitTests
 //
 //  Created by Dragos-Robert Neagu on 19/10/2018.
-//  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
+//  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
 import Contacts
@@ -86,7 +86,9 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), "30th")
+        let localisedAge = UnitTestsContactHelpers.getLocalisedStringFor("30th", locale: Locale.current)
+        
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), localisedAge)
     }
     
     func testKNContactGetsBirthdayAsOrdinal() {
@@ -94,7 +96,9 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: false, asOrdinal: true), "29th")
+        let localisedAge = UnitTestsContactHelpers.getLocalisedStringFor("29th", locale: Locale.current)
+        
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: false, asOrdinal: true), localisedAge)
     }
     
     func testKNContactGetsEmptyWhenBirthdayIsEmptyForAgeAsOrdinal() {
@@ -308,8 +312,8 @@ class KNContactTests: XCTestCase {
     
     func testFormattedBirthday() {
         let contact = UnitTestsContactHelpers.getKNContact()
-        
-        XCTAssertEqual(contact.formatBirthday(), "1 Jan")
+        let localisedDate = UnitTestsContactHelpers.getLocalisedStringFor("1 Jan", locale: Locale.current)
+        XCTAssertEqual(contact.formatBirthday(), localisedDate)
     }
     
     func testFormattedBirthdayReturnsEmptyStringWhenBirthdayIsNotPresent() {
@@ -378,7 +382,8 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsString(asOrdinal: true), "29th")
+        let localisedAge = UnitTestsContactHelpers.getLocalisedStringFor("29th", locale: Locale.current)
+        XCTAssertEqual(contact.getAgeAsString(asOrdinal: true), localisedAge)
     }
     
     func testRetrievesAgeAtNextBirthdayAsString() {
@@ -394,7 +399,9 @@ class KNContactTests: XCTestCase {
         mutableContact.birthday?.year = currentYearMinus29Years
         let contact = KNContact(for: mutableContact)
         
-        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), "30th")
+        let localisedAge = UnitTestsContactHelpers.getLocalisedStringFor("30th", locale: Locale.current)
+        
+        XCTAssertEqual(contact.getAgeAsString(atNextBirthday: true, asOrdinal: true), localisedAge)
     }
     
     func testKNContactsAreTheSame() {

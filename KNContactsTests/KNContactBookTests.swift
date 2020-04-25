@@ -3,7 +3,7 @@
 //  KINNUnitTests
 //
 //  Created by Dragos-Robert Neagu on 30/11/2018.
-//  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
+//  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
 import XCTest

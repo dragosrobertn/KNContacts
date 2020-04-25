@@ -29,6 +29,7 @@
 		15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */; };
 		15EA3F49225A636D003F0201 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 15EA3F48225A636D003F0201 /* README.md */; };
 		15EE1C5E23B6B69900981435 /* KNContacts.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 15EE1C5D23B6B69900981435 /* KNContacts.podspec */; };
+		C98D13F82454D64F009CDD57 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = C98D13F72454D64F009CDD57 /* .travis.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNDatesUtilsTests.swift; sourceTree = "<group>"; };
 		15EA3F48225A636D003F0201 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		15EE1C5D23B6B69900981435 /* KNContacts.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KNContacts.podspec; sourceTree = "<group>"; };
+		C98D13F62454B246009CDD57 /* KNContactsTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KNContactsTestPlan.xctestplan; sourceTree = "<group>"; };
+		C98D13F72454D64F009CDD57 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				15EE1C5D23B6B69900981435 /* KNContacts.podspec */,
+				C98D13F72454D64F009CDD57 /* .travis.yml */,
 				15EA3F48225A636D003F0201 /* README.md */,
 				156E1CE0224FCBEE00D58B8F /* KNContacts */,
 				156E1CEB224FCBEE00D58B8F /* KNContactsTests */,
@@ -119,6 +123,7 @@
 		156E1CEB224FCBEE00D58B8F /* KNContactsTests */ = {
 			isa = PBXGroup;
 			children = (
+				C98D13F62454B246009CDD57 /* KNContactsTestPlan.xctestplan */,
 				156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */,
 				15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */,
 				156E1D01224FD45100D58B8F /* KNContactBookTests.swift */,
@@ -222,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98D13F82454D64F009CDD57 /* .travis.yml in Resources */,
 				15EE1C5E23B6B69900981435 /* KNContacts.podspec in Resources */,
 				15EA3F49225A636D003F0201 /* README.md in Resources */,
 			);
