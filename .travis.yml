@@ -16,6 +16,7 @@ after_success:
 
 deploy:
   provider: pages
+  cleanup: false
   github_token: $GH_TOKEN
   local_dir: docs
   on:
