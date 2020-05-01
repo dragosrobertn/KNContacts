@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build-and-test:
+    name: Build and test on ${{ matrix.destination }}
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        destination:
+#           - "OS=12.4,name=iPhone 8"
+          - "OS=13.4.1,name=iPhone 11 Pro Max"
+
+    steps:
+      - name: Checkout KNContacts repo
+        uses: actions/checkout@v2
+
+      - name: Check Xcode Version
+        run: xcodebuild -version -sdk
+      
+      - name: List available simulators	
+        run: |	
+          xcrun simctl delete unavailable	
+          xcrun simctl list	
+          	
+#       - name: Install required simulators	
+#         if: contains("${{ matrix.destination }}", "12.4")
+#         run: |	
+#           gem install xcode-install
+#           xcversion simulators --install='iOS 12.4'	
+          
+      - name: Run unit tests
+        run: |
+          set -o pipefail
+          xcodebuild clean build test \
+              -scheme KNContacts \
+              -destination "${{ matrix.destination }}" \
+              -testPlan KNContactsTestPlan | xcpretty
+      
+      - name: Upload test coverage to CodeCov
+        if: ${{ success() }}
+        run: |
+          bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
+               
+  publish-docs:
+    name: Publish Jazzy Docs
+    runs-on: macos-latest
+    needs: build-and-test
+    
+    steps:
+      - name: Checkout KNContacts repo
+        uses: actions/checkout@v2
+        
+      - name: Publish Jazzy Docs
+        uses: Steven0351/publish-jazzy-docs@v1.1.2
+        with:
+          version: 0.13.1
+          personal_access_token: ${{ secrets.GH_TOKEN }}
+          config: .jazzy.yaml
+
+      - name: Remove build
+        run: | 
+          rm -rf ./build
