@@ -40,6 +40,10 @@ jobs:
               -scheme KNContacts \
               -destination "${{ matrix.destination }}" \
               -testPlan KNContactsTestPlan | xcpretty
+      
+      - name: Upload test coverage to CodeCov
+        run: |
+          bash <(curl -s https://codecov.io/bash) -J 'KNContacts'
                
   publish-docs:
     name: Publish Jazzy Docs
