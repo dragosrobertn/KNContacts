@@ -30,8 +30,8 @@ public struct KNDatesUtils {
      - Returns: A DateFormatter object using the date format passed.
      - Version: 1.0.0
      */
-    static public func formatter(with format: KNFormat) -> DateFormatter {
-        return self.formatter(with: format.rawValue)
+    static public func formatter(with format: KNFormat, locale: Locale = Locale.current) -> DateFormatter {
+        return self.formatter(with: format.rawValue, locale: locale)
     }
     
     /**
@@ -44,8 +44,8 @@ public struct KNDatesUtils {
      - Returns: A DateFormatter object using the date format passed.
      - Version: 1.2.3
      */
-    static public func formatter(with format: String) -> DateFormatter {
-        dateFormatter.locale = Locale.current
+    static public func formatter(with format: String, locale: Locale = Locale.current) -> DateFormatter {
+        dateFormatter.locale = locale
         dateFormatter.dateFormat = format
         return dateFormatter
     }
@@ -61,8 +61,8 @@ public struct KNDatesUtils {
      - Returns: A string representing the formatted date based on the KNTimeFormat and date passed in.
      - Version: 1.0.0
      */
-    static public func string(from date: Date, format: KNFormat) -> String {
-        return self.string(from: date, format: format.rawValue)
+    static public func string(from date: Date, format: KNFormat, locale: Locale = Locale.current) -> String {
+        return self.string(from: date, format: format.rawValue, locale: locale)
     }
     
     /**
@@ -76,8 +76,8 @@ public struct KNDatesUtils {
      - Returns: A string representing the formatted date based on the custom date format and date passed in.
      - Version: 1.0.0
      */
-    static public func string(from date: Date, format: String) -> String {
-        return self.formatter(with: format).string(from: date)
+    static public func string(from date: Date, format: String, locale: Locale = Locale.current) -> String {
+        return self.formatter(with: format, locale: locale).string(from: date)
     }
     
 }
