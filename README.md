@@ -92,14 +92,16 @@ let schedule = thisWeeksBirthdaySchedule.getSchedule(for: tomorrow)
 ```
 
 ### Requirements
-| KNContacts version |  Swift Version | Package Managers Supported        |
-|------------------------|-----------------|------------------------------------------|
-| from `v1.3.0`          | Swift 5.0         | Swift Package Manager, Cocopods |
-| from `v1.2.0`          | Swift 5.0         | Cocopods                                         |
-| up to `v1.1.1`         | Swift 4.2         | Cocopods                                         |
+| KNContacts version |  Swift Version | Package Managers Supported              |
+|------------------------|-----------------|------------------------------------|
+| from `v1.3.0`          | Swift 5.0         | Swift Package Manager, Cocoapods |
+| from `v1.2.0`          | Swift 5.0         | Cocoapods                        |
+| up to `v1.1.1`         | Swift 4.2         | Cocoapods                        |
 
 ### Usage
 KNContacts is currently available using CocoaPods and Swift Package Manager. Just add this snippet into your podfile to use the latest version.
+
+#### Cocoapods
 
 ```ruby
 pod 'KNContacts'
@@ -108,6 +110,14 @@ pod 'KNContacts'
 or specify the desired version.
 ```ruby
 pod 'KNContacts', '~> 1.0.0'
+```
+#### Swift Package Manager
+Once you have SPM set up, add this package to the dependencies. SPM has been supported only since version 1.3.0.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/dragosrobertn/KNContacts.git", .upToNextMajor(from: "1.3.0"))
+]
 ```
 
 ### Applications using KNContacts
