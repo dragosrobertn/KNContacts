@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>KNContact Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Struct/KNContact" class="dashAnchor"></a>
+
+    <a title="KNContact Structure Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          KNContacts Docs
+        </a>
+         (94% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/dragosrobertn/KNContacts">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fdragosrobertn%2Egithub%2Eio%2Fdocsets%2FKNContacts%2Exml">
+            <img class="header-icon" src="../img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">KNContacts Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      KNContact Structure Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Guides.html">Guides</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../readme.html">README</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/KNContactBook.html">KNContactBook</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/KNDateTimeFormat.html">KNDateTimeFormat</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Int.html">Int</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/KNContact.html">KNContact</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/KNContactBookOrdering.html">KNContactBookOrdering</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/KNContactsSchedule.html">KNContactsSchedule</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/KNDatesUtils.html">KNDatesUtils</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:10KNContacts8KNFormata">KNFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Typealiases.html#/s:10KNContacts12KNTimeFormata">KNTimeFormat</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>KNContact</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">KNContact</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">KNContact</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">KNContact</span><span class="p">:</span> <span class="kt">Comparable</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">KNContact</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                </div>
+              </div>
+            <p>KNContact class is a wrapper class which gives quick access to helper methods for a <code>CNContact</code>, like their full name,
+birthday and age information, first email address or phone number.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.2.2
+*
+
+</div>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV2idSSvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV2idSSvp">id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Quick access to the contacts identifier.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV4infoSo9CNContactCvp"></a>
+                    <a name="//apple_ref/swift/Property/info" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV4infoSo9CNContactCvp">info</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>CNContact</code> object representing the wrapped contact information.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">info</span><span class="p">:</span> <span class="kt">CNContact</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV3forACSo9CNContactC_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV3forACSo9CNContactC_tcfc">init(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises a <code>KNContact</code> object by wrapping a CNContact.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.0.0</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="k">for</span> <span class="nv">contact</span><span class="p">:</span> <span class="kt">CNContact</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contact</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A CNContact.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactVyACSo9CNContactCcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactVyACSo9CNContactCcfc">init(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialises a <code>KNContact</code> object by wrapping a CNContact.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.0.2</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">contact</span><span class="p">:</span> <span class="kt">CNContact</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contact</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A CNContact.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV8fullName6formatSSSo23CNContactFormatterStyleV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fullName(format:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV8fullName6formatSSSo23CNContactFormatterStyleV_tF">fullName(format:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the full name of contacts using a formatting style (fullName or phoneticFullName).</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.2.1</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">fullName</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span> <span class="kt">CNContactFormatterStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">fullName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A CNContactFormatterStyle enum option. Optional. Defaults to .fullName</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A string representing the full name. It can be an empty string.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV11getBirthday14forCurrentYear10Foundation4DateVSgSb_tF"></a>
+                    <a name="//apple_ref/swift/Method/getBirthday(forCurrentYear:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV11getBirthday14forCurrentYear10Foundation4DateVSgSb_tF">getBirthday(forCurrentYear:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the birthday of the contact as an optional date, if the contact has birthday information is available.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.1.0</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getBirthday</span><span class="p">(</span><span class="nv">forCurrentYear</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Date</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forCurrentYear</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A date representing the contact&rsquo;s birthday or nil.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV14formatBirthday4with14forCurrentYearSSAA16KNDateTimeFormatO_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/formatBirthday(with:forCurrentYear:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV14formatBirthday4with14forCurrentYearSSAA16KNDateTimeFormatO_SbtF">formatBirthday(with:forCurrentYear:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to return a formatted birthday using a <code><a href="../Typealiases.html#/s:10KNContacts12KNTimeFormata">KNTimeFormat</a></code>.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.1.0</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">formatBirthday</span><span class="p">(</span><span class="n">with</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Enums/KNDateTimeFormat.html">KNDateTimeFormat</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">dayAndMonth</span><span class="p">,</span>
+                       <span class="nv">forCurrentYear</span> <span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>with</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Typealiases.html#/s:10KNContacts12KNTimeFormata">KNTimeFormat</a></code> enum option. Optional. Defaults to <code>KNTimeFormat.dayAndMonth</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forCurrentYear</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a string representing a formatted birthday using the <code><a href="../Typealiases.html#/s:10KNContacts12KNTimeFormata">KNTimeFormat</a></code> passed. If the contact doesn&rsquo;t contain birthday information returns an empty string.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV14formatBirthday4with14forCurrentYearS2S_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/formatBirthday(with:forCurrentYear:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV14formatBirthday4with14forCurrentYearS2S_SbtF">formatBirthday(with:forCurrentYear:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to return a formatted birthday using a string representing a date formatt.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.1.0</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">formatBirthday</span><span class="p">(</span><span class="n">with</span> <span class="nv">format</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                       <span class="nv">forCurrentYear</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>with</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string representing the date format desired to display the birthday. Required.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forCurrentYear</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a string representing a formatted birthday using the format string passed.
+If the format is invalid or the contact doesn&rsquo;t contain birthday information returns an empty string.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV19getFirstPhoneNumberSSyF"></a>
+                    <a name="//apple_ref/swift/Method/getFirstPhoneNumber()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV19getFirstPhoneNumberSSyF">getFirstPhoneNumber()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to get the first phone number available for the contact as string.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.1.0
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFirstPhoneNumber</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a string representing the first phone number available for a contact, or empty if the contact doesn&rsquo;t have any phone numbers associated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV20getFirstEmailAddressSSyF"></a>
+                    <a name="//apple_ref/swift/Method/getFirstEmailAddress()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV20getFirstEmailAddressSSyF">getFirstEmailAddress()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to get the first email address available for the contact as string.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.1.0
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getFirstEmailAddress</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a string representing the first email address available for a contact, or empty if the contact doesn&rsquo;t have any email addresses associated.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV15isBirthdayTodaySbyF"></a>
+                    <a name="//apple_ref/swift/Method/isBirthdayToday()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV15isBirthdayTodaySbyF">isBirthdayToday()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to find out if current date matches the contact&rsquo;s birthday.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.0.0
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isBirthdayToday</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a boolean value representing whether current date is the contact&rsquo;s birthday.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV15birthdayMatches4dateSb10Foundation4DateV_tF"></a>
+                    <a name="//apple_ref/swift/Method/birthdayMatches(date:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV15birthdayMatches4dateSb10Foundation4DateV_tF">birthdayMatches(date:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to find out if current date matches the contact&rsquo;s birthday.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.2.2
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">birthdayMatches</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date to which to compare the contact&rsquo;s birthday</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a boolean value representing whether the passed date matches the contact&rsquo;s birthday</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV16isBirthdayComing2in12startingDateSbSi_10Foundation0H0VtF"></a>
+                    <a name="//apple_ref/swift/Method/isBirthdayComing(in:startingDate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV16isBirthdayComing2in12startingDateSbSi_10Foundation0H0VtF">isBirthdayComing(in:startingDate:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to find out if contact has an upcoming birthday in the following days.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    <p>1.2.1</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">isBirthdayComing</span><span class="p">(</span><span class="k">in</span> <span class="nv">days</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">startingDate</span><span class="p">:</span> <span class="kt">Date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">())</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>in</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The number of days as an integer representing the number of days to check if the birthday is upcoming</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startingDate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date from which to start checking if the birthday is upcoming. Default is today&rsquo;s date and the starting date will be excluded..</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a bool representing whether the contact&rsquo;s birthday is in the interval between the starting date and the number of following days provided by the days param.
+       False if the contact doesn&rsquo;t have birthday information available.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV6getAge14atNextBirthdaySiSgSb_tF"></a>
+                    <a name="//apple_ref/swift/Method/getAge(atNextBirthday:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV6getAge14atNextBirthdaySiSgSb_tF">getAge(atNextBirthday:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to find out if a contact&rsquo;s age.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.1.0
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAge</span><span class="p">(</span><span class="nv">atNextBirthday</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns an optional integer representing the contact&rsquo;s age if the birthday information including the year is available.
+Otherwise it returns nil.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV14getAgeAsString14atNextBirthday9asOrdinalSSSgSb_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/getAgeAsString(atNextBirthday:asOrdinal:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV14getAgeAsString14atNextBirthday9asOrdinalSSSgSb_SbtF">getAgeAsString(atNextBirthday:asOrdinal:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Helper method to retrieve a contact&rsquo;s age as string with option for current or turning age and an ordinal value e.g.
+If the contact is currently 29, it will return &ldquo;29&rdquo; for current age, &ldquo;30&rdquo; for age at next birthday and &ldquo;30th&rdquo; if ordinal representation.</p>
+<div class="aside aside-author">
+    <p class="aside-title">Author</p>
+    dragosrobertn
+
+</div><div class="aside aside-version">
+    <p class="aside-title">Version</p>
+    1.1.0
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getAgeAsString</span><span class="p">(</span><span class="nv">atNextBirthday</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">asOrdinal</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns an unwrapped String representing the contact&rsquo;s age as an ordinal if the birthday information including the year is available.
+Otherwise it returns nil.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV1loiySbAC_ACtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&lt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV1loiySbAC_ACtFZ">&lt;(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implementation of Comparable protocol, by comparing the contact identifiers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">KNContact</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">KNContact</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10KNContacts9KNContactV2eeoiySbAC_ACtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10KNContacts9KNContactV2eeoiySbAC_ACtFZ">==(_:_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Implementation of Equatable protocol, by checking if the contact identifiers match</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">KNContact</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">KNContact</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://github.com/dragosrobertn" target="_blank" rel="external">dragosrobertn</a>. All rights reserved. (Last updated: 2020-05-02)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

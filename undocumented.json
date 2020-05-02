@@ -1,0 +1,33 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/runners/2.169.1/work/KNContacts/KNContacts/KNContacts/Extensions.swift",
+      "line": 12,
+      "symbol": "Array.difference(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/runners/2.169.1/work/KNContacts/KNContacts/KNContacts/Extensions.swift",
+      "line": 18,
+      "symbol": "Array.randomItem()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/runners/2.169.1/work/KNContacts/KNContacts/KNContacts/Extensions.swift",
+      "line": 26,
+      "symbol": "Array.containsSameElements(as:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/runners/2.169.1/work/KNContacts/KNContacts/KNContacts/Extensions.swift",
+      "line": 32,
+      "symbol": "Int.ordinal",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/runners/2.169.1/work/KNContacts/KNContacts"
+}
