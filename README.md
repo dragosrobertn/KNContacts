@@ -92,13 +92,14 @@ let schedule = thisWeeksBirthdaySchedule.getSchedule(for: tomorrow)
 ```
 
 ### Requirements
-| KNContacts version |  Swift Version |
-|--------------------|----------------|
-| from `v1.2.0`      | Swift 5.0      |
-| up to `v1.1.1`     | Swift 4.2      |
+| KNContacts version |  Swift Version | Package Managers Supported        |
+|------------------------|-----------------|------------------------------------------|
+| from `v1.3.0`          | Swift 5.0         | Swift Package Manager, Cocopods |
+| from `v1.2.0`          | Swift 5.0         | Cocopods                                         |
+| up to `v1.1.1`         | Swift 4.2         | Cocopods                                         |
 
 ### Usage
-KNContacts is currently available using CocoaPods. Just add this snippet into your podfile to use the latest version.
+KNContacts is currently available using CocoaPods and Swift Package Manager. Just add this snippet into your podfile to use the latest version.
 
 ```ruby
 pod 'KNContacts'
@@ -119,4 +120,5 @@ Pull requests are welcome, all changes should be accompanied by tests and a pass
 
 Issues or features requests are welcome, feel free to create implementations yourself. The development of this framework is done using trunk based development strategy so please create your pull requests against the master branch and ensure the build is passing.
 
-This library is MIT Licensed.
+### License
+[This library is MIT Licensed](https://github.com/dragosrobertn/KNContacts/blob/master/LICENSE).
