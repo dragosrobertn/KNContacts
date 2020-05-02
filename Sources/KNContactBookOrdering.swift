@@ -5,7 +5,7 @@
 //  Created by Dragos-Robert Neagu on 01/04/2019.
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
-
+#if canImport(UIKit)
 /**
  Helper struct with helper closures to help with sorting contacts either in a collection of `KNContact` objects or a `KNContactBook`.
  
@@ -38,3 +38,5 @@ public struct KNContactBookOrdering {
         return c1.fullName().compare(c2.fullName()) == .orderedAscending
     }
 }
+
+#endif

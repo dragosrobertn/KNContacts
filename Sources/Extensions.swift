@@ -28,6 +28,7 @@ extension Array where Element: Comparable {
     }
 }
 
+@available(macOS 10.11, *)
 extension Int {
     var ordinal: String! {
         let formatter = NumberFormatter()

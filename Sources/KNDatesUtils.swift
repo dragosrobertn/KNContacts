@@ -5,7 +5,7 @@
 //  Created by Dragos-Robert Neagu on 20/12/2018.
 //  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
-
+#if canImport(UIKit)
 import Foundation
 
 /**
@@ -85,3 +85,5 @@ public struct KNDatesUtils {
     }
     
 }
+
+#endif

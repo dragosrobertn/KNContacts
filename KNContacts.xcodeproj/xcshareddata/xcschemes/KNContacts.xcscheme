@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1140"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "156E1CDD224FCBEE00D58B8F"
+               BlueprintIdentifier = "KNContacts::KNContacts"
                BuildableName = "KNContacts.framework"
                BlueprintName = "KNContacts"
                ReferencedContainer = "container:KNContacts.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "156E1CDD224FCBEE00D58B8F"
+            BlueprintIdentifier = "KNContacts::KNContacts"
             BuildableName = "KNContacts.framework"
             BlueprintName = "KNContacts"
             ReferencedContainer = "container:KNContacts.xcodeproj">
@@ -40,7 +40,7 @@
       </MacroExpansion>
       <TestPlans>
          <TestPlanReference
-            reference = "container:KNContactsTests/KNContactsTestPlan.xctestplan"
+            reference = "container:Tests/KNContactsTestPlan.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -49,7 +49,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "156E1CE6224FCBEE00D58B8F"
+               BlueprintIdentifier = "KNContacts::KNContactsTests"
                BuildableName = "KNContactsTests.xctest"
                BlueprintName = "KNContactsTests"
                ReferencedContainer = "container:KNContacts.xcodeproj">
@@ -70,7 +70,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "156E1CDD224FCBEE00D58B8F"
+            BlueprintIdentifier = "KNContacts::KNContacts"
             BuildableName = "KNContacts.framework"
             BlueprintName = "KNContacts"
             ReferencedContainer = "container:KNContacts.xcodeproj">
@@ -86,7 +86,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "156E1CDD224FCBEE00D58B8F"
+            BlueprintIdentifier = "KNContacts::KNContacts"
             BuildableName = "KNContacts.framework"
             BlueprintName = "KNContacts"
             ReferencedContainer = "container:KNContacts.xcodeproj">

@@ -6,6 +6,7 @@
 //  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
+import KNContacts
 import XCTest
 
 class KNContactBookTests: XCTestCase {
@@ -77,10 +78,10 @@ class KNContactBookTests: XCTestCase {
             differentContactBook.add(contact, id: id)
         }
         
-        XCTAssertTrue(differentContactBook.identifiers.containsSameElements(as: identifiersArray))
+        XCTAssertTrue(differentContactBook.identifiers.containsSame(as: identifiersArray))
         
-        XCTAssertFalse(differentContactBook.contactIdentifiers.containsSameElements(as: contactBook.identifiers))
-        XCTAssert(differentContactBook.contactIdentifiers.containsSameElements(as: contactIDs))
+        XCTAssertFalse(differentContactBook.contactIdentifiers.containsSame(as: contactBook.identifiers))
+        XCTAssert(differentContactBook.contactIdentifiers.containsSame(as: contactIDs))
     }
     
     func testAddsAndRemovesAnotherContactFromContactBook() {
@@ -149,23 +150,19 @@ class KNContactBookTests: XCTestCase {
     }
     
     func testItCorrectlyReturnsEntriesAsArray() {
-        XCTAssertTrue(contactBook.contacts.containsSameElements(as: mutableContactsArray))
+        XCTAssertTrue(contactBook.contacts.containsSame(as: mutableContactsArray))
     }
     
     func testItReturnsEntriesKeysAsArray() {
-        XCTAssertTrue(contactBook.identifiers.containsSameElements(as: contactIDsArray))
+        XCTAssertTrue(contactBook.identifiers.containsSame(as: contactIDsArray))
     }
     
     func testItReturnsEntriesIdentfiersAsArrayWhenIDsAreNotOverriden() {
-        XCTAssertTrue(contactBook.identifiers.containsSameElements(as: contactIDsArray))
-    }
-    
-    func testItReturnsIdentifiersArrayWhichIsDifferentFromTheKeysArray() {
-        
+        XCTAssertTrue(contactBook.identifiers.containsSame(as: contactIDsArray))
     }
     
     func testCorrectlyReturnTrueIfItContainsElement() {
-        XCTAssertTrue(contactBook.contains(element: mutableContactsArray.randomItem()!))
+        XCTAssertTrue(contactBook.contains(element: mutableContactsArray.random()!))
     }
     
     func testCorrectlyReturnFalseIfItDoesntContainElement() {
@@ -176,7 +173,7 @@ class KNContactBookTests: XCTestCase {
     
     func testReturnsAllCurrentElementsAtRandomWhenNotEnoughElements() {
         let allCurrentElements = contactBook.randomElements(number: 3)
-        XCTAssertTrue(allCurrentElements.containsSameElements(as: contactBook.contacts))
+        XCTAssertTrue(allCurrentElements.containsSame(as: contactBook.contacts))
     }
     
     func testRetrievesNumberOfRandomContacts() {
@@ -205,7 +202,7 @@ class KNContactBookTests: XCTestCase {
             
             let randomContact = contactBook.randomElements(number: 3, except: exceptionsList)
             XCTAssertFalse(randomContact.isEmpty)
-            XCTAssertFalse(randomContact.containsSameElements(as: exceptionsList))
+            XCTAssertFalse(randomContact.containsSame(as: exceptionsList))
         }
     }
     

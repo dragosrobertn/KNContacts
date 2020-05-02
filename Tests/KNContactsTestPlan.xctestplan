@@ -48,7 +48,7 @@
     {
       "target" : {
         "containerPath" : "container:KNContacts.xcodeproj",
-        "identifier" : "156E1CE6224FCBEE00D58B8F",
+        "identifier" : "KNContacts::KNContactsTests",
         "name" : "KNContactsTests"
       }
     }

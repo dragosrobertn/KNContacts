@@ -7,6 +7,7 @@
 //
 
 import Contacts
+import KNContacts
 import XCTest
 
 class UnitTestsContactHelpers: XCTestCase {
@@ -74,5 +75,20 @@ class UnitTestsContactHelpers: XCTestCase {
         let language = dictionary[locale.identifier]
         return language?[key] ?? key
         
+    }
+}
+
+
+extension Array where Element: Comparable {
+    func containsSame(as other: [Element]) -> Bool {
+        return self.count == other.count && self.sorted() == other.sorted()
+    }
+}
+
+extension Array where Element: Hashable {
+    func random() -> Element? {
+        if isEmpty { return nil }
+        let index = Int(arc4random_uniform(UInt32(self.count)))
+        return self[index]
     }
 }

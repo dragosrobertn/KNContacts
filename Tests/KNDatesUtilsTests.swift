@@ -6,6 +6,7 @@
 //  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
+import KNContacts
 import XCTest
 
 class KNDatesUtilsTests: XCTestCase {

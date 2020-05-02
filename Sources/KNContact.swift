@@ -5,6 +5,7 @@
 //  Created by Dragos-Robert Neagu on 25/01/2018.
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
+#if canImport(UIKit)
 
 import Contacts
 import UIKit
@@ -257,3 +258,5 @@ extension KNContact: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+#endif

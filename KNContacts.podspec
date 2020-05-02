@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "10.0"
 
   s.source       = { :git => "https://github.com/dragosrobertn/KNContacts.git", :tag => s.version }
-  s.source_files  = "KNContacts/*.swift"
+  s.source_files  = "Sources/*.swift"
 
 end

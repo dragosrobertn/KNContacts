@@ -7,6 +7,7 @@
 //
 
 import Contacts
+import KNContacts
 import XCTest
 
 class KNContactTests: XCTestCase {

@@ -3,155 +3,169 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		"KNContacts::KNContactsPackageTests::ProductTarget" /* KNContactsPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_39 /* Build configuration list for PBXAggregateTarget "KNContactsPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_42 /* PBXTargetDependency */,
+			);
+			name = KNContactsPackageTests;
+			productName = KNContactsPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
-		156E1CE8224FCBEE00D58B8F /* KNContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156E1CDE224FCBEE00D58B8F /* KNContacts.framework */; };
-		156E1CFC224FD40200D58B8F /* KNDatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CF8224FD40200D58B8F /* KNDatesUtils.swift */; };
-		156E1CFD224FD40200D58B8F /* KNContactsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CF9224FD40200D58B8F /* KNContactsSchedule.swift */; };
-		156E1CFE224FD40200D58B8F /* KNContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CFA224FD40200D58B8F /* KNContact.swift */; };
-		156E1CFF224FD40200D58B8F /* KNContactBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CFB224FD40200D58B8F /* KNContactBook.swift */; };
-		156E1D04224FD45100D58B8F /* KNContactBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D01224FD45100D58B8F /* KNContactBookTests.swift */; };
-		156E1D05224FD45100D58B8F /* KNContactScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */; };
-		156E1D06224FD45100D58B8F /* KNContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D03224FD45100D58B8F /* KNContactTests.swift */; };
-		156E1D07224FD49500D58B8F /* KNDatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CF8224FD40200D58B8F /* KNDatesUtils.swift */; };
-		156E1D08224FD49500D58B8F /* KNContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CFA224FD40200D58B8F /* KNContact.swift */; };
-		156E1D09224FD49500D58B8F /* KNContactBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CFB224FD40200D58B8F /* KNContactBook.swift */; };
-		156E1D0A224FD49500D58B8F /* KNContactsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1CF9224FD40200D58B8F /* KNContactsSchedule.swift */; };
-		156E1D0C224FD4EE00D58B8F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D0B224FD4EE00D58B8F /* Extensions.swift */; };
-		156E1D0E224FD57000D58B8F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D0B224FD4EE00D58B8F /* Extensions.swift */; };
-		156E1D10224FD5F700D58B8F /* UnitTestsContactHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */; };
-		156E1D122251873400D58B8F /* KNContactBookOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D112251873400D58B8F /* KNContactBookOrdering.swift */; };
-		156E1D132251874800D58B8F /* KNContactBookOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D112251873400D58B8F /* KNContactBookOrdering.swift */; };
-		156E1D152251882800D58B8F /* KNDateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNDateTimeFormat.swift */; };
-		156E1D162251883700D58B8F /* KNDateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156E1D142251882800D58B8F /* KNDateTimeFormat.swift */; };
-		15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */; };
-		15EA3F49225A636D003F0201 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 15EA3F48225A636D003F0201 /* README.md */; };
-		15EE1C5E23B6B69900981435 /* KNContacts.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 15EE1C5D23B6B69900981435 /* KNContacts.podspec */; };
+		C93CEEBE245D870B003C0EBA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEBD245D870B003C0EBA /* Extensions.swift */; platformFilter = ios; };
+		C93CEEC8245D87A9003C0EBA /* KNContactBookOrdering.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEC0245D87A9003C0EBA /* KNContactBookOrdering.swift */; platformFilter = ios; };
+		C93CEEC9245D87A9003C0EBA /* KNDateTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEC1245D87A9003C0EBA /* KNDateTimeFormat.swift */; platformFilter = ios; };
+		C93CEECA245D87A9003C0EBA /* KNContactsSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEC2245D87A9003C0EBA /* KNContactsSchedule.swift */; platformFilter = ios; };
+		C93CEECB245D87A9003C0EBA /* KNContactBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEC3245D87A9003C0EBA /* KNContactBook.swift */; platformFilter = ios; };
+		C93CEECC245D87A9003C0EBA /* KNDatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEC4245D87A9003C0EBA /* KNDatesUtils.swift */; platformFilter = ios; };
+		C93CEECE245D87A9003C0EBA /* KNContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEEC7245D87A9003C0EBA /* KNContact.swift */; platformFilter = ios; };
+		C93CEED9245D8958003C0EBA /* KNContactBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEED3245D894E003C0EBA /* KNContactBookTests.swift */; };
+		C93CEEDA245D8958003C0EBA /* KNContactScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEED2245D894E003C0EBA /* KNContactScheduleTests.swift */; };
+		C93CEEDB245D8958003C0EBA /* KNContactTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEED1245D894E003C0EBA /* KNContactTests.swift */; };
+		C93CEEDC245D8958003C0EBA /* KNDatesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEECF245D894E003C0EBA /* KNDatesUtilsTests.swift */; };
+		C93CEEDD245D8958003C0EBA /* UnitTestsContactHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93CEED0245D894E003C0EBA /* UnitTestsContactHelpers.swift */; };
+		OBJ_54 /* KNContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "KNContacts::KNContacts::Product" /* KNContacts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		156E1CE9224FCBEE00D58B8F /* PBXContainerItemProxy */ = {
+		C93CEEA5245D7C31003C0EBA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 156E1CD5224FCBEE00D58B8F /* Project object */;
+			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 156E1CDD224FCBEE00D58B8F;
+			remoteGlobalIDString = "KNContacts::KNContacts";
 			remoteInfo = KNContacts;
+		};
+		C93CEEA6245D7C32003C0EBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "KNContacts::KNContactsTests";
+			remoteInfo = KNContactsTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		156E1CDE224FCBEE00D58B8F /* KNContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KNContacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		156E1CE2224FCBEE00D58B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		156E1CE7224FCBEE00D58B8F /* KNContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KNContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		156E1CEE224FCBEE00D58B8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		156E1CF8224FD40200D58B8F /* KNDatesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNDatesUtils.swift; sourceTree = "<group>"; };
-		156E1CF9224FD40200D58B8F /* KNContactsSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactsSchedule.swift; sourceTree = "<group>"; };
-		156E1CFA224FD40200D58B8F /* KNContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContact.swift; sourceTree = "<group>"; };
-		156E1CFB224FD40200D58B8F /* KNContactBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactBook.swift; sourceTree = "<group>"; };
-		156E1D01224FD45100D58B8F /* KNContactBookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactBookTests.swift; sourceTree = "<group>"; };
-		156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactScheduleTests.swift; sourceTree = "<group>"; };
-		156E1D03224FD45100D58B8F /* KNContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KNContactTests.swift; sourceTree = "<group>"; };
-		156E1D0B224FD4EE00D58B8F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitTestsContactHelpers.swift; sourceTree = "<group>"; };
-		156E1D112251873400D58B8F /* KNContactBookOrdering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNContactBookOrdering.swift; sourceTree = "<group>"; };
-		156E1D142251882800D58B8F /* KNDateTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNDateTimeFormat.swift; sourceTree = "<group>"; };
-		15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNDatesUtilsTests.swift; sourceTree = "<group>"; };
-		15EA3F48225A636D003F0201 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		15EE1C5D23B6B69900981435 /* KNContacts.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KNContacts.podspec; sourceTree = "<group>"; };
-		C98D13F62454B246009CDD57 /* KNContactsTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = KNContactsTestPlan.xctestplan; sourceTree = "<group>"; };
+		C93CEEBD245D870B003C0EBA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
+		C93CEEBF245D8731003C0EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
+		C93CEEC0245D87A9003C0EBA /* KNContactBookOrdering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContactBookOrdering.swift; path = Sources/KNContactBookOrdering.swift; sourceTree = "<group>"; };
+		C93CEEC1245D87A9003C0EBA /* KNDateTimeFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNDateTimeFormat.swift; path = Sources/KNDateTimeFormat.swift; sourceTree = "<group>"; };
+		C93CEEC2245D87A9003C0EBA /* KNContactsSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContactsSchedule.swift; path = Sources/KNContactsSchedule.swift; sourceTree = "<group>"; };
+		C93CEEC3245D87A9003C0EBA /* KNContactBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContactBook.swift; path = Sources/KNContactBook.swift; sourceTree = "<group>"; };
+		C93CEEC4245D87A9003C0EBA /* KNDatesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNDatesUtils.swift; path = Sources/KNDatesUtils.swift; sourceTree = "<group>"; };
+		C93CEEC5245D87A9003C0EBA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Sources/Extensions.swift; sourceTree = "<group>"; };
+		C93CEEC6245D87A9003C0EBA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
+		C93CEEC7245D87A9003C0EBA /* KNContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContact.swift; path = Sources/KNContact.swift; sourceTree = "<group>"; };
+		C93CEECF245D894E003C0EBA /* KNDatesUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNDatesUtilsTests.swift; path = Tests/KNDatesUtilsTests.swift; sourceTree = "<group>"; };
+		C93CEED0245D894E003C0EBA /* UnitTestsContactHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnitTestsContactHelpers.swift; path = Tests/UnitTestsContactHelpers.swift; sourceTree = "<group>"; };
+		C93CEED1245D894E003C0EBA /* KNContactTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContactTests.swift; path = Tests/KNContactTests.swift; sourceTree = "<group>"; };
+		C93CEED2245D894E003C0EBA /* KNContactScheduleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContactScheduleTests.swift; path = Tests/KNContactScheduleTests.swift; sourceTree = "<group>"; };
+		C93CEED3245D894E003C0EBA /* KNContactBookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KNContactBookTests.swift; path = Tests/KNContactBookTests.swift; sourceTree = "<group>"; };
+		C93CEEDE245D8961003C0EBA /* KNContactsTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = KNContactsTestPlan.xctestplan; path = Tests/KNContactsTestPlan.xctestplan; sourceTree = "<group>"; };
+		"KNContacts::KNContacts::Product" /* KNContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KNContacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"KNContacts::KNContactsTests::Product" /* KNContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = KNContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_22 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		OBJ_23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_24 /* KNContacts.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = KNContacts.podspec; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		156E1CDB224FCBEE00D58B8F /* Frameworks */ = {
+		OBJ_31 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		156E1CE4224FCBEE00D58B8F /* Frameworks */ = {
+		OBJ_53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				156E1CE8224FCBEE00D58B8F /* KNContacts.framework in Frameworks */,
+				OBJ_54 /* KNContacts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		156E1CD4224FCBEE00D58B8F = {
+		C93CEEA7245D841A003C0EBA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				15EE1C5D23B6B69900981435 /* KNContacts.podspec */,
-				15EA3F48225A636D003F0201 /* README.md */,
-				156E1CE0224FCBEE00D58B8F /* KNContacts */,
-				156E1CEB224FCBEE00D58B8F /* KNContactsTests */,
-				156E1CDF224FCBEE00D58B8F /* Products */,
 			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		156E1CDF224FCBEE00D58B8F /* Products */ = {
+		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				156E1CDE224FCBEE00D58B8F /* KNContacts.framework */,
-				156E1CE7224FCBEE00D58B8F /* KNContactsTests.xctest */,
+				C93CEEBF245D8731003C0EBA /* Info.plist */,
+				C93CEEDE245D8961003C0EBA /* KNContactsTestPlan.xctestplan */,
+				C93CEED3245D894E003C0EBA /* KNContactBookTests.swift */,
+				C93CEED2245D894E003C0EBA /* KNContactScheduleTests.swift */,
+				C93CEED1245D894E003C0EBA /* KNContactTests.swift */,
+				C93CEECF245D894E003C0EBA /* KNDatesUtilsTests.swift */,
+				C93CEED0245D894E003C0EBA /* UnitTestsContactHelpers.swift */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"KNContacts::KNContacts::Product" /* KNContacts.framework */,
+				"KNContacts::KNContactsTests::Product" /* KNContactsTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		156E1CE0224FCBEE00D58B8F /* KNContacts */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				156E1CE2224FCBEE00D58B8F /* Info.plist */,
-				156E1D0B224FD4EE00D58B8F /* Extensions.swift */,
-				156E1D142251882800D58B8F /* KNDateTimeFormat.swift */,
-				156E1CF8224FD40200D58B8F /* KNDatesUtils.swift */,
-				156E1CFA224FD40200D58B8F /* KNContact.swift */,
-				156E1CFB224FD40200D58B8F /* KNContactBook.swift */,
-				156E1CF9224FD40200D58B8F /* KNContactsSchedule.swift */,
-				156E1D112251873400D58B8F /* KNContactBookOrdering.swift */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_19 /* Products */,
+				OBJ_22 /* LICENSE */,
+				OBJ_23 /* README.md */,
+				OBJ_24 /* KNContacts.podspec */,
+				C93CEEA7245D841A003C0EBA /* Frameworks */,
 			);
-			path = KNContacts;
 			sourceTree = "<group>";
 		};
-		156E1CEB224FCBEE00D58B8F /* KNContactsTests */ = {
+		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C98D13F62454B246009CDD57 /* KNContactsTestPlan.xctestplan */,
-				156E1D0F224FD5F700D58B8F /* UnitTestsContactHelpers.swift */,
-				15E9EBF822B00E480006A743 /* KNDatesUtilsTests.swift */,
-				156E1D01224FD45100D58B8F /* KNContactBookTests.swift */,
-				156E1D02224FD45100D58B8F /* KNContactScheduleTests.swift */,
-				156E1D03224FD45100D58B8F /* KNContactTests.swift */,
-				156E1CEE224FCBEE00D58B8F /* Info.plist */,
+				C93CEEC5245D87A9003C0EBA /* Extensions.swift */,
+				C93CEEC6245D87A9003C0EBA /* Info.plist */,
+				C93CEEC7245D87A9003C0EBA /* KNContact.swift */,
+				C93CEEC3245D87A9003C0EBA /* KNContactBook.swift */,
+				C93CEEC0245D87A9003C0EBA /* KNContactBookOrdering.swift */,
+				C93CEEC2245D87A9003C0EBA /* KNContactsSchedule.swift */,
+				C93CEEC4245D87A9003C0EBA /* KNDatesUtils.swift */,
+				C93CEEC1245D87A9003C0EBA /* KNDateTimeFormat.swift */,
+				C93CEEBD245D870B003C0EBA /* Extensions.swift */,
 			);
-			path = KNContactsTests;
-			sourceTree = "<group>";
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		156E1CD9224FCBEE00D58B8F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		156E1CDD224FCBEE00D58B8F /* KNContacts */ = {
+		"KNContacts::KNContacts" /* KNContacts */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 156E1CF2224FCBEE00D58B8F /* Build configuration list for PBXNativeTarget "KNContacts" */;
+			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "KNContacts" */;
 			buildPhases = (
-				156E1CD9224FCBEE00D58B8F /* Headers */,
-				156E1CDA224FCBEE00D58B8F /* Sources */,
-				156E1CDB224FCBEE00D58B8F /* Frameworks */,
-				156E1CDC224FCBEE00D58B8F /* Resources */,
+				OBJ_29 /* Sources */,
+				OBJ_31 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,148 +173,167 @@
 			);
 			name = KNContacts;
 			productName = KNContacts;
-			productReference = 156E1CDE224FCBEE00D58B8F /* KNContacts.framework */;
+			productReference = "KNContacts::KNContacts::Product" /* KNContacts.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		156E1CE6224FCBEE00D58B8F /* KNContactsTests */ = {
+		"KNContacts::KNContactsTests" /* KNContactsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 156E1CF5224FCBEE00D58B8F /* Build configuration list for PBXNativeTarget "KNContactsTests" */;
+			buildConfigurationList = OBJ_44 /* Build configuration list for PBXNativeTarget "KNContactsTests" */;
 			buildPhases = (
-				156E1CE3224FCBEE00D58B8F /* Sources */,
-				156E1CE4224FCBEE00D58B8F /* Frameworks */,
-				156E1CE5224FCBEE00D58B8F /* Resources */,
+				OBJ_47 /* Sources */,
+				OBJ_53 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				156E1CEA224FCBEE00D58B8F /* PBXTargetDependency */,
+				OBJ_55 /* PBXTargetDependency */,
 			);
 			name = KNContactsTests;
 			productName = KNContactsTests;
-			productReference = 156E1CE7224FCBEE00D58B8F /* KNContactsTests.xctest */;
+			productReference = "KNContacts::KNContactsTests::Product" /* KNContactsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		156E1CD5224FCBEE00D58B8F /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "Dragos-Robert Neagu";
-				TargetAttributes = {
-					156E1CDD224FCBEE00D58B8F = {
-						CreatedOnToolsVersion = 10.2;
-						LastSwiftMigration = 1020;
-					};
-					156E1CE6224FCBEE00D58B8F = {
-						CreatedOnToolsVersion = 10.2;
-						LastSwiftMigration = 1020;
-					};
-				};
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 1140;
 			};
-			buildConfigurationList = 156E1CD8224FCBEE00D58B8F /* Build configuration list for PBXProject "KNContacts" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "KNContacts" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 156E1CD4224FCBEE00D58B8F;
-			productRefGroup = 156E1CDF224FCBEE00D58B8F /* Products */;
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				156E1CDD224FCBEE00D58B8F /* KNContacts */,
-				156E1CE6224FCBEE00D58B8F /* KNContactsTests */,
+				"KNContacts::KNContacts" /* KNContacts */,
+				"KNContacts::KNContactsPackageTests::ProductTarget" /* KNContactsPackageTests */,
+				"KNContacts::KNContactsTests" /* KNContactsTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		156E1CDC224FCBEE00D58B8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15EE1C5E23B6B69900981435 /* KNContacts.podspec in Resources */,
-				15EA3F49225A636D003F0201 /* README.md in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		156E1CE5224FCBEE00D58B8F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		156E1CDA224FCBEE00D58B8F /* Sources */ = {
+		OBJ_29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				156E1CFE224FD40200D58B8F /* KNContact.swift in Sources */,
-				156E1CFD224FD40200D58B8F /* KNContactsSchedule.swift in Sources */,
-				156E1D152251882800D58B8F /* KNDateTimeFormat.swift in Sources */,
-				156E1D0C224FD4EE00D58B8F /* Extensions.swift in Sources */,
-				156E1CFF224FD40200D58B8F /* KNContactBook.swift in Sources */,
-				156E1D122251873400D58B8F /* KNContactBookOrdering.swift in Sources */,
-				156E1CFC224FD40200D58B8F /* KNDatesUtils.swift in Sources */,
+				C93CEEC8245D87A9003C0EBA /* KNContactBookOrdering.swift in Sources */,
+				C93CEECE245D87A9003C0EBA /* KNContact.swift in Sources */,
+				C93CEEC9245D87A9003C0EBA /* KNDateTimeFormat.swift in Sources */,
+				C93CEECB245D87A9003C0EBA /* KNContactBook.swift in Sources */,
+				C93CEECC245D87A9003C0EBA /* KNDatesUtils.swift in Sources */,
+				C93CEECA245D87A9003C0EBA /* KNContactsSchedule.swift in Sources */,
+				C93CEEBE245D870B003C0EBA /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		156E1CE3224FCBEE00D58B8F /* Sources */ = {
+		OBJ_47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				156E1D0A224FD49500D58B8F /* KNContactsSchedule.swift in Sources */,
-				156E1D06224FD45100D58B8F /* KNContactTests.swift in Sources */,
-				156E1D07224FD49500D58B8F /* KNDatesUtils.swift in Sources */,
-				156E1D0E224FD57000D58B8F /* Extensions.swift in Sources */,
-				15E9EBF922B00E480006A743 /* KNDatesUtilsTests.swift in Sources */,
-				156E1D05224FD45100D58B8F /* KNContactScheduleTests.swift in Sources */,
-				156E1D162251883700D58B8F /* KNDateTimeFormat.swift in Sources */,
-				156E1D10224FD5F700D58B8F /* UnitTestsContactHelpers.swift in Sources */,
-				156E1D132251874800D58B8F /* KNContactBookOrdering.swift in Sources */,
-				156E1D08224FD49500D58B8F /* KNContact.swift in Sources */,
-				156E1D09224FD49500D58B8F /* KNContactBook.swift in Sources */,
-				156E1D04224FD45100D58B8F /* KNContactBookTests.swift in Sources */,
+				C93CEED9245D8958003C0EBA /* KNContactBookTests.swift in Sources */,
+				C93CEEDA245D8958003C0EBA /* KNContactScheduleTests.swift in Sources */,
+				C93CEEDB245D8958003C0EBA /* KNContactTests.swift in Sources */,
+				C93CEEDC245D8958003C0EBA /* KNDatesUtilsTests.swift in Sources */,
+				C93CEEDD245D8958003C0EBA /* UnitTestsContactHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		156E1CEA224FCBEE00D58B8F /* PBXTargetDependency */ = {
+		OBJ_42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 156E1CDD224FCBEE00D58B8F /* KNContacts */;
-			targetProxy = 156E1CE9224FCBEE00D58B8F /* PBXContainerItemProxy */;
+			target = "KNContacts::KNContactsTests" /* KNContactsTests */;
+			targetProxy = C93CEEA6245D7C32003C0EBA /* PBXContainerItemProxy */;
+		};
+		OBJ_55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "KNContacts::KNContacts" /* KNContacts */;
+			targetProxy = C93CEEA5245D7C31003C0EBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		156E1CF0224FCBEE00D58B8F /* Debug */ = {
+		OBJ_27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = KNContacts.xcodeproj/KNContacts_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = KNContacts;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TARGET_NAME = KNContacts;
+			};
+			name = Debug;
+		};
+		OBJ_28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = KNContacts.xcodeproj/KNContacts_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
+				);
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = KNContacts;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TARGET_NAME = KNContacts;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -308,64 +341,52 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
-		156E1CF1224FCBEE00D58B8F /* Release */ = {
+		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -373,169 +394,144 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
-		156E1CF3224FCBEE00D58B8F /* Debug */ = {
+		OBJ_40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8UXEK92PP3;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KNContacts/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneagu.KNContacts;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		156E1CF4224FCBEE00D58B8F /* Release */ = {
+		OBJ_41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8UXEK92PP3;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KNContacts/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneagu.KNContacts;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		156E1CF6224FCBEE00D58B8F /* Debug */ = {
+		OBJ_45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8UXEK92PP3;
-				INFOPLIST_FILE = KNContactsTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = KNContacts.xcodeproj/KNContactsTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneagu.KNContactsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_NAME = KNContactsTests;
 			};
 			name = Debug;
 		};
-		156E1CF7224FCBEE00D58B8F /* Release */ = {
+		OBJ_46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8UXEK92PP3;
-				INFOPLIST_FILE = KNContactsTests/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = KNContacts.xcodeproj/KNContactsTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dragosneagu.KNContactsTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGET_NAME = KNContactsTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		156E1CD8224FCBEE00D58B8F /* Build configuration list for PBXProject "KNContacts" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "KNContacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				156E1CF0224FCBEE00D58B8F /* Debug */,
-				156E1CF1224FCBEE00D58B8F /* Release */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		156E1CF2224FCBEE00D58B8F /* Build configuration list for PBXNativeTarget "KNContacts" */ = {
+		OBJ_26 /* Build configuration list for PBXNativeTarget "KNContacts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				156E1CF3224FCBEE00D58B8F /* Debug */,
-				156E1CF4224FCBEE00D58B8F /* Release */,
+				OBJ_27 /* Debug */,
+				OBJ_28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		156E1CF5224FCBEE00D58B8F /* Build configuration list for PBXNativeTarget "KNContactsTests" */ = {
+		OBJ_39 /* Build configuration list for PBXAggregateTarget "KNContactsPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				156E1CF6224FCBEE00D58B8F /* Debug */,
-				156E1CF7224FCBEE00D58B8F /* Release */,
+				OBJ_40 /* Debug */,
+				OBJ_41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_44 /* Build configuration list for PBXNativeTarget "KNContactsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_45 /* Debug */,
+				OBJ_46 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 156E1CD5224FCBEE00D58B8F /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }

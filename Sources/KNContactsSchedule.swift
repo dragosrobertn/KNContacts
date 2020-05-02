@@ -5,7 +5,7 @@
 //  Created by Dragos-Robert Neagu on 16/02/2019.
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
-
+#if canImport(UIKit)
 import Foundation
 
 /**
@@ -126,3 +126,5 @@ public struct KNContactsSchedule {
         self.schedule.removeAll()
     }
 }
+
+#endif

@@ -6,6 +6,7 @@
 //  Copyright © 2019-2020 Dragos-Robert Neagu. All rights reserved.
 //
 
+import KNContacts
 import XCTest
 
 class KNContactScheduleTests: XCTestCase {
@@ -59,7 +60,7 @@ class KNContactScheduleTests: XCTestCase {
     }
     
     func testReturnsEmptyIfScheduleDoesntExist() {
-        XCTAssertTrue(favourites.getSchedule(for: Date()).containsSameElements(as: []), "Schedule is empty")
+        XCTAssertTrue(favourites.getSchedule(for: Date()).containsSame(as: []), "Schedule is empty")
     }
     
     func testAddsScheduleForDate() {
@@ -70,9 +71,9 @@ class KNContactScheduleTests: XCTestCase {
         favourites.add(list: tomorrowList, to: tomorrow)
         
         XCTAssertTrue(favourites.getSchedule().count == 2, "Schedule has 2 entries")
-        XCTAssertTrue(favourites.scheduleForToday().containsSameElements(as: todayList),
+        XCTAssertTrue(favourites.scheduleForToday().containsSame(as: todayList),
                       "Schedule retrieves correct entries for today")
-        XCTAssertTrue(favourites.getSchedule(for: tomorrow).containsSameElements(as: tomorrowList),
+        XCTAssertTrue(favourites.getSchedule(for: tomorrow).containsSame(as: tomorrowList),
                       "Schedule retrieves correct entries for tomorrow")
     }
     

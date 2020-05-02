@@ -5,7 +5,7 @@
 //  Created by Dragos-Robert Neagu on 01/04/2019.
 //  Copyright © 2019 Dragos-Robert Neagu. All rights reserved.
 //
-
+#if canImport(UIKit)
 /// Typealias KNFormat
 public typealias KNFormat = KNDateTimeFormat
 
@@ -38,3 +38,5 @@ public enum KNDateTimeFormat: String, Codable {
     /// Date format represented as "MMMM". E.g. "January"
     case fullMonth = "MMMM"
 }
+
+#endif
