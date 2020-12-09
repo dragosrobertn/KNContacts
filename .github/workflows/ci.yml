@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         destination:
-          - "OS=14.0,name=iPhone 11 Pro Max"
+          - "OS=14.2,name=iPhone 11 Pro Max"
 
     steps:
       - name: Checkout KNContacts repo
