@@ -1,5 +1,5 @@
 # KNContacts 
-[![Cocoapods](https://img.shields.io/cocoapods/v/KNContacts.svg)](https://cocoapods.org/pods/KNContacts) ![CI](https://github.com/dragosrobertn/KNContacts/workflows/CI/badge.svg?branch=master) [![codecov](https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg)](https://codecov.io/gh/dragosrobertn/KNContacts) [![codebeat badge](https://codebeat.co/badges/a2cc6f89-a90d-4583-a9fd-b50a4e66767a)](https://codebeat.co/projects/github-com-dragosrobertn-kncontacts-master) ![contributions](https://img.shields.io/badge/contributions-welcome-informational.svg)
+[![Cocoapods](https://img.shields.io/cocoapods/v/KNContacts.svg)](https://cocoapods.org/pods/KNContacts) ![CI](https://github.com/dragosrobertn/KNContacts/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/dragosrobertn/KNContacts/branch/master/graph/badge.svg)](https://codecov.io/gh/dragosrobertn/KNContacts) [![codebeat badge](https://codebeat.co/badges/a2cc6f89-a90d-4583-a9fd-b50a4e66767a)](https://codebeat.co/projects/github-com-dragosrobertn-kncontacts-master) ![contributions](https://img.shields.io/badge/contributions-welcome-informational.svg)
 
 KNContacts is wrapper for CNContacts for easier access to information like current age and age at next birthday, full contact name, creating contact books (groups), ordering them and creating contact schedules.
 
