@@ -11,12 +11,12 @@ import Contacts
 import UIKit
 
 /**
-KNContact class is a wrapper class which gives quick access to helper methods for a `CNContact`, like their full name,
-birthday and age information, first email address or phone number.
+ KNContact class is a wrapper class which gives quick access to helper methods for a `CNContact`, like their full name,
+ birthday and age information, first email address or phone number.
  
-- Author: dragosrobertn
-- Version: 1.2.2
-**/
+ - Author: dragosrobertn
+ - Version: 1.2.2
+ **/
 public struct KNContact {
     
     /// Quick access to the contacts identifier.
@@ -40,7 +40,7 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Parameters:
-        - contact: A CNContact.
+     - contact: A CNContact.
      
      - Version: 1.0.0
      */
@@ -53,20 +53,20 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Parameters:
-        - contact: A CNContact.
+     - contact: A CNContact.
      
      - Version: 1.0.2
      */
     public init(_ contact: CNContact) {
         self.info = contact
     }
-
+    
     /**
-    Returns the full name of contacts using a formatting style (fullName or phoneticFullName).
+     Returns the full name of contacts using a formatting style (fullName or phoneticFullName).
      
      - Author: dragosrobertn
      - Parameters:
-        - format: A CNContactFormatterStyle enum option. Optional. Defaults to .fullName
+     - format: A CNContactFormatterStyle enum option. Optional. Defaults to .fullName
      
      - Returns: A string representing the full name. It can be an empty string.
      - Version: 1.2.1
@@ -74,19 +74,29 @@ public struct KNContact {
     public func fullName(format: CNContactFormatterStyle = .fullName) -> String {
         return CNContactFormatter.string(from: self.info, style: format) ?? ""
     }
-
+    
     
     /**
      Returns the birthday of the contact as an optional date, if the contact has birthday information is available.
      
      - Author: dragosrobertn
      - Parameters:
-        - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
+     - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
      
      - Returns: A date representing the contact's birthday or nil.
      - Version: 1.1.0
      */
     public func getBirthday(forCurrentYear: Bool = false) -> Date? {
+        guard var components = getBirthdayComponents() else { return nil }
+        
+        if (forCurrentYear) {
+            components.year = calendar.component(.year, from: Date())
+        }
+        
+        return calendar.date(from: components)!
+    }
+    
+    public func getBirthdayComponents() -> DateComponents? {
         guard let day = self.birthday?.day, let month = self.birthday?.month else {
             return nil
         }
@@ -97,45 +107,41 @@ public struct KNContact {
             components.year = self.birthday?.year
         }
         
-        if (forCurrentYear) {
-            components.year = calendar.component(.year, from: Date())
-        }
-        
-        return calendar.date(from: components)!
+        return components
     }
-
+    
     /**
      Helper method to return a formatted birthday using a `KNTimeFormat`.
      
      - Author: dragosrobertn
      - Parameters:
-         - with: A `KNTimeFormat` enum option. Optional. Defaults to `KNTimeFormat.dayAndMonth`
-         - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
+     - with: A `KNTimeFormat` enum option. Optional. Defaults to `KNTimeFormat.dayAndMonth`
+     - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
      
      - Returns: Returns a string representing a formatted birthday using the `KNTimeFormat` passed. If the contact doesn't contain birthday information returns an empty string.
      - Version: 1.1.0
      */
     public func formatBirthday(with format: KNDateTimeFormat = .dayAndMonth,
-                           forCurrentYear : Bool = false) -> String {
+                               forCurrentYear : Bool = false) -> String {
         return self.formatBirthday(with: format.rawValue, forCurrentYear: forCurrentYear)
     }
-
+    
     
     /**
      Helper method to return a formatted birthday using a string representing a date formatt.
      
      - Author: dragosrobertn
      - Parameters:
-         - with: A string representing the date format desired to display the birthday. Required.
-         - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
+     - with: A string representing the date format desired to display the birthday. Required.
+     - forCurrentYear: A boolean value representing if the birthday date should be returned for the current year. Optional. Defaults to false.
      
      - Returns:
-        Returns a string representing a formatted birthday using the format string passed.
-        If the format is invalid or the contact doesn't contain birthday information returns an empty string.
+     Returns a string representing a formatted birthday using the format string passed.
+     If the format is invalid or the contact doesn't contain birthday information returns an empty string.
      - Version: 1.1.0
      */
     public func formatBirthday(with format: String,
-                           forCurrentYear: Bool = false) -> String {
+                               forCurrentYear: Bool = false) -> String {
         guard let date = self.getBirthday(forCurrentYear: forCurrentYear) else { return String() }
         return KNDatesUtils.string(from: date, format: format)
     }
@@ -178,7 +184,7 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Parameters:
-        - date: The date to which to compare the contact's birthday
+     - date: The date to which to compare the contact's birthday
      - Returns: Returns a boolean value representing whether the passed date matches the contact's birthday
      - Version: 1.2.2
      */
@@ -192,21 +198,33 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Parameters:
-        - in: The number of days as an integer representing the number of days to check if the birthday is upcoming
-        - startingDate: The date from which to start checking if the birthday is upcoming. Default is today's date and the starting date will be excluded..
+     - in: The number of days as an integer representing the number of days to check if the birthday is upcoming
+     - startingDate: The date from which to start checking if the birthday is upcoming. Default is today's date and the starting date will be excluded..
      
      - Returns: Returns a bool representing whether the contact's birthday is in the interval between the starting date and the number of following days provided by the days param.
-                False if the contact doesn't have birthday information available.
-     - Version: 1.2.1
+     False if the contact doesn't have birthday information available.
+     - Version: 1.3
      */
     public func isBirthdayComing(in days: Int, startingDate: Date = Date()) -> Bool {
-        guard let birthday = self.getBirthday(forCurrentYear: true) else { return false }
+        guard let birthday = self.getBirthday() else { return false }
         let birthdayComponents = calendar.dateComponents([.day, .month], from: birthday)
         let dateComponents: [DateComponents] = (1...days)
             .compactMap({ number in return calendar.date(byAdding: .day, value: number, to: startingDate)! })
             .compactMap({ date in return calendar.dateComponents([.day, .month], from: date)})
         
-        return dateComponents.contains(birthdayComponents)
+        return dateComponents.contains(birthdayComponents) ||
+            isLeapYearBirthday(dateComponents)
+    }
+    
+    private func isLeapYearBirthday(_ dateComponents: [DateComponents]) -> Bool {
+        guard let birthdayComponents = getBirthdayComponents() else { return false}
+        if  (birthdayComponents.month == 2 &&
+                birthdayComponents.day == 29 &&
+                (dateComponents.contains(DateComponents(month: 2, day: 28)) ||
+                    dateComponents.contains(DateComponents(month: 3, day: 1)))) {
+            return true
+        }
+        return false
     }
     
     /**
@@ -214,8 +232,8 @@ public struct KNContact {
      
      - Author: dragosrobertn
      - Returns:
-        Returns an optional integer representing the contact's age if the birthday information including the year is available.
-        Otherwise it returns nil.
+     Returns an optional integer representing the contact's age if the birthday information including the year is available.
+     Otherwise it returns nil.
      - Version: 1.1.0
      */
     public func getAge(atNextBirthday: Bool = false) -> Int? {
@@ -238,9 +256,9 @@ public struct KNContact {
     public func getAgeAsString(atNextBirthday: Bool = false, asOrdinal: Bool = false) -> String! {
         guard let age = self.getAge(atNextBirthday: atNextBirthday) else { return String() }
         
-        return asOrdinal ? age.ordinal :  String(format: "%d", age)
+        return asOrdinal ? age.ordinal : String(format: "%d", age)
     }
-
+    
 }
 
 extension KNContact: Hashable { }
